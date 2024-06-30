@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)file:///C:/Users/PCD/Documents/my_web_design_tool/web/m.html -->
+<html lang="ar"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اجعل إجازتك مميزة</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap');
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+            background-size: cover;
+            background-blend-mode: multiply;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #1f1f1f;
+            color: #00ff00;
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #00ff00;
+            position: relative;
+        }
+        h1, h2 {
+            font-family: 'Cairo', sans-serif;
+        }
+        header::after {
+            content: "مشروع غير ربحي";
+            display: block;
+            color: #00ff00;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            position: relative;
+        }
+        .container::before, .container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background: linear-gradient(to right, #121212 0%, rgba(18, 18, 18, 0) 100%);
+            z-index: 1;
+        }
+        .container::after {
+            right: 0;
+            transform: rotate(180deg);
+        }
+        .container::before {
+            left: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filter-buttons button {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .filter-buttons button:hover {
+            background-color: #00cc00;
+        }
+        .course-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .course {
+            background-color: #1f1f1f;
+            width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            direction: rtl;
+        }
+        .course:hover {
+            background-color: #272727;
+            transform: translateY(-10px);
+        }
+        .course h3 {
+            margin-top: 0;
+            color: #00ff00;
+        }
+        .course .details {
+            margin: 10px 0;
+            text-align: center;
+        }
+        .course .details span {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .course .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .course .learning-points {
+            text-align: right;
+            margin-top: 10px;
+            padding-bottom: 50px; /* Ensure enough space for the button */
+        }
+        .course .learning-points ul {
+            padding-right: 20px;
+            margin: 0;
+            list-style: none;
+        }
+        .course .learning-points li {
+            margin-bottom: 5px;
+        }
+        .course .learning-points li.hidden {
+            display: none;
+        }
+        .course .learning-points li.show-more {
+            cursor: pointer;
+            color: #00ff00;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .course .rating {
+            color: #ffd700;
+        }
+        .course .difficulty {
+            background-color: #fff;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .difficulty.easy {
+            background-color: #00ff00;
+        }
+        .difficulty.medium {
+            background-color: #ffff00;
+            color: #000;
+        }
+        .difficulty.hard {
+            background-color: #ff0000;
+            color: #fff;
+        }
+        .difficulty.basic {
+            background-color: #fff;
+            color: #000;
+        }
+        .course a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% - 40px);
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #00ff00;
+            text-decoration: none;
+            border: 1px solid #00ff00;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .course a .cert-icon {
+            margin-right: 10px;
+            color: #333; /* لون أقرب للأسود */
+        }
+        .course a:hover {
+            background-color: #00ff00;
+            color: #000;
+        }
+        .course a:hover .cert-icon {
+            color: #000;
+        }
+        footer {
+            background-color: #1f1f1f;
+            color: #00ff00;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 2px solid #00ff00;
+            margin-top: 40px;
+        }
+        .section-title {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        .section-title::before, .section-title::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background-color: #00ff00;
+        }
+        .section-title::before {
+            left: 0;
+        }
+        .section-title::after {
+            right: 0;
+        }
+        .section-title h2 {
+            display: inline-block;
+            margin: 0 20px;
+        }
+        .section-title.soon h2::before {
+            content: '🔒';
+            margin-right: 8px;
+        }
+        .section-title.soon {
+            margin: 60px 0 20px;
+        }
+        .about {
+            text-align: center;
+            margin: 60px 0;
+            position: relative;
+        }
+        .about::before, .about::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background-color: #00ff00;
+        }
+        .about::before {
+            left: 0;
+        }
+        .about::after {
+            right: 0;
+        }
+        .about h2 {
+            display: inline-block;
+            margin: 0 20px;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+                margin: 20px auto;
+            }
+            .course {
+                width: 100%;
+            }
+            .section-title::before, .section-title::after,
+            .about::before, .about::after {
+                width: 15%;
+            }
+            .course .details span.title::before, .course .details span.title::after {
+                width: 15%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>اجعل إجازتك مميزة</h1>
+    </header>
+    <div class="container">
+        <div class="content">
+            <div class="filter-buttons">
+                <button onclick="sortCourses(&#39;newest&#39;)">الدورات الجديدة</button>
+                <button onclick="sortCourses(&#39;rating-high&#39;)">تقييم الدورات (أعلى)</button>
+                <button onclick="sortCourses(&#39;rating-low&#39;)">تقييم الدورات (أقل)</button>
+            </div>
+            <div class="section-title">
+                <h2>دورات متاحة</h2>
+            </div>
+            <div class="course-grid" id="course-grid">
+                <div class="course" data-date="2024-06-10" data-rating="4.7">
+                    <h3>دورة تطوير الواقع</h3>
+                    <div class="info">
+                        <div class="rating">★★★★★</div>
+                        <div class="difficulty easy">سهل</div>
+                        <div class="time">🕒 12</div>
+                    </div>
+                    <div class="details">
+                        <span class="title">ماذا سوف تتعلم</span>
+                    </div>
+                    <div class="learning-points">
+                        <ul>
+                            <!-- HTML -->
+                            <li><strong style="color: #00ff00;">HTML:</strong></li>
+                            <li>أساسيات هيكلة صفحات الويب باستخدام HTML.</li>
+                            <li class="hidden" style="display: none;">العناصر المتقدمة والتصميم التفاعلي.</li>
+                            <li class="hidden" style="display: none;">استخدام HTML5 لبناء تطبيقات متقدمة.</li>
+                            
+                            <!-- CSS -->
+                            <li class="hidden" style="display: none;"><strong style="color: #00ff00;">CSS:</strong></li>
+                            <li class="hidden" style="display: none;">أساسيات تصميم الصفحات باستخدام CSS.</li>
+                            <li class="hidden" style="display: none;">التنسيقات المتقدمة وتخطيطات الشبكة.</li>
+                            <li class="hidden" style="display: none;">استخدام الرسوم المتحركة والتحولات.</li>
+                    
+                            <!-- JavaScript -->
+                            <li class="hidden" style="display: none;"><strong style="color: #00ff00;">JavaScript:</strong></li>
+                            <li class="hidden" style="display: none;">مقدمة إلى JavaScript وبرمجة الويب.</li>
+                            <li class="hidden" style="display: none;">التعامل مع DOM والأحداث.</li>
+                            <li class="hidden" style="display: none;">استخدام المكتبات والأطر مثل React وVue.</li>
+                            <li class="show-more" onclick="toggleLearningPoints(this)" style="cursor: pointer;">إظهار الباقي</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="file:///C:/Users/PCD/Documents/my_web_design_tool/web/vr_development.html">
+                        <span class="cert-icon">🎓</span>
+                        الانتقال إلى الدورة
+                    </a>
+                </div>
+                <div class="course" data-date="2024-06-15" data-rating="4.3">
+                    <h3>دورة اختبار الاختراق</h3>
+                    <div class="info">
+                        <div class="rating">★★★★☆</div>
+                        <div class="difficulty hard">صعب</div>
+                        <div class="time">🕒 15</div>
+                    </div>
+                    <div class="details">
+                        <span class="title">ماذا سوف تتعلم</span>
+                    </div>
+                    <!-- دورة Nmap -->
+                    <div class="learning-points">
+                        <ul>
+                            <li><strong style="color: #00ff00;">Nmap:</strong></li>
+                            <li>أساسيات استخدام Nmap في اختبار الاختراق.</li>
+                            <li class="hidden" style="display: none;">تقنيات فحص المنافذ والخدمات.</li>
+                            <li class="hidden" style="display: none;">تحليل نتائج الفحص وتحديد الثغرات الأمنية.</li>
+
+
+                            <li class="hidden" style="display: none;"><strong style="color: #00ff00;">Metasploit:</strong></li>
+                            <li class="hidden" style="display: none;">مقدمة عن أداة Metasploit واستخداماتها.</li>
+                            <li class="hidden" style="display: none;">استخدام Metasploit في اختبار الاختراق المتقدم.</li>
+                            <li class="hidden" style="display: none;">تقنيات استغلال الثغرات وتطبيق الحماية.</li>
+
+
+                            <li class="hidden" style="display: none;"><strong style="color: #00ff00;">Wireshark:</strong></li>
+                            <li class="hidden" style="display: none;">مقدمة في استخدام Wireshark لتحليل الشبكات.</li>
+                            <li class="hidden" style="display: none;">التقاط وتحليل الحزم الشبكية.</li>
+                            <li class="hidden" style="display: none;">تحديد الأنشطة المشبوهة وتطبيق الأمان.</li>
+                            <li class="show-more" onclick="toggleLearningPoints(this)" style="cursor: pointer;">إظهار الباقي</li>
+                        </ul>
+                    </div>
+
+                    
+                    <a href="file:///C:/Users/PCD/Documents/my_web_design_tool/web/pentesting.html">
+                        <span class="cert-icon">🎓</span>
+                        الانتقال إلى الدورة
+                    </a>
+                </div>
+                <div class="course" data-date="2024-06-20" data-rating="4.5">
+                    <h3>دورة Python</h3>
+                    <div class="info">
+                        <div class="rating">★★★★☆</div>
+                        <div class="difficulty easy">سهل</div>
+                        <div class="time">🕒 20</div>
+                    </div>
+                    <div class="details">
+                        <span class="title">ماذا سوف تتعلم</span>
+                    </div>
+                    <div class="learning-points">
+                        <ul>
+                            <!-- أساسيات Python -->
+                            <li><strong style="color: #00ff00;">أساسيات Python:</strong></li>
+                            <li>مقدمة إلى لغة البرمجة Python.</li>
+                            <li class="hidden" style="display: none;">الأساسيات مثل المتغيرات، والتحكم في التدفق، والدوال.</li>
+                            <li class="hidden" style="display: none;">التعامل مع الملفات ومدخلات ومخرجات المستخدم.</li>
+                    
+                            <!-- مكتبات Python -->
+                            <li class="hidden" style="display: none;"><strong style="color: #00ff00;">مكتبات Python:</strong></li>
+                            <li class="hidden" style="display: none;">التعرف على مكتبات Python الأساسية.</li>
+                            <li class="hidden" style="display: none;">استخدام مكتبات مثل NumPy وPandas لتحليل البيانات.</li>
+                            <li class="hidden" style="display: none;">استخدام مكتبات مثل Matplotlib وSeaborn للتصور البياني.</li>
+                    
+                            <!-- تطوير تطبيقات باستخدام Python -->
+                            <li class="hidden" style="display: none;"><strong style="color: #00ff00;">تطوير تطبيقات باستخدام Python:</strong></li>
+                            <li class="hidden" style="display: none;">إنشاء تطبيقات ويب باستخدام Flask أو Django.</li>
+                            <li class="hidden" style="display: none;">تطوير تطبيقات سطح المكتب باستخدام Tkinter.</li>
+                            <li class="hidden" style="display: none;">نشر التطبيقات وصيانتها.</li>
+                            <li class="show-more" onclick="toggleLearningPoints(this)" style="cursor: pointer;">إظهار الباقي</li>
+                        </ul>
+                    </div>
+                    
+                    
+                    <a href="file:///C:/Users/PCD/Documents/my_web_design_tool/web/python_course.html">
+                        <span class="cert-icon">🎓</span>
+                        الانتقال إلى الدورة
+                    </a>
+                </div>
+            </div>
+            <div class="section-title soon">
+                <h2>دورات قريبا</h2>
+            </div>
+            <div class="course-grid" id="course-grid-soon">
+                <div class="course" data-date="2024-07-01" data-rating="4.7">
+                    <h3>دورة اختبار اختراق المتقدمة</h3>
+                    <div class="info">
+                        <div class="rating">★★★★★</div>
+                        <div class="difficulty hard">صعب</div>
+                        <div class="time">🕒 12</div>
+                    </div>
+                    <div class="details">
+                        <span class="title">ماذا سوف تتعلم</span>
+                    </div>
+                    <div class="learning-points">
+                        <ul>
+                            <li>مفاهيم اختبار الاختراق الأساسية.</li>
+                            <li>استخدام أدوات متقدمة.</li>
+                            <li class="hidden">تقنيات الهجوم والدفاع.</li>
+                            <li class="show-more" onclick="toggleLearningPoints(this)">إظهار الباقي</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="course" data-date="2024-07-10" data-rating="4.3">
+                    <h3>دورة تطوير التطبيقات</h3>
+                    <div class="info">
+                        <div class="rating">★★★★☆</div>
+                        <div class="difficulty medium">متوسط</div>
+                        <div class="time">🕒 10</div>
+                    </div>
+                    <div class="details">
+                        <span class="title">ماذا سوف تتعلم</span>
+                    </div>
+                    <div class="learning-points">
+                        <ul>
+                            <li>أساسيات تطوير التطبيقات.</li>
+                            <li>إطار العمل والتقنيات الحديثة.</li>
+                            <li class="hidden">نشر التطبيقات وصيانتها.</li>
+                            <li class="show-more" onclick="toggleLearningPoints(this)">إظهار الباقي</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="course" data-date="2024-07-20" data-rating="4.5">
+                    <h3>دورة تطوير الألعاب</h3>
+                    <div class="info">
+                        <div class="rating">★★★★☆</div>
+                        <div class="difficulty medium">متوسط</div>
+                        <div class="time">🕒 15</div>
+                    </div>
+                    <div class="details">
+                        <span class="title">ماذا سوف تتعلم</span>
+                    </div>
+                    <div class="learning-points">
+                        <ul>
+                            <li>أساسيات تطوير الألعاب.</li>
+                            <li>استخدام محركات الألعاب.</li>
+                            <li class="hidden">تصميم الألعاب والنشر.</li>
+                            <li class="show-more" onclick="toggleLearningPoints(this)">إظهار الباقي</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="about">
+                <h2>من نحن</h2>
+                <p>
+                    نحن فريق متخصص في مجال التكنولوجيا والتعليم الإلكتروني، نهدف إلى توفير دورات تدريبية عالية الجودة لمساعدة الأفراد في تطوير مهاراتهم وتحقيق أهدافهم المهنية. نحن ملتزمون بتقديم أفضل محتوى تعليمي وتوفير تجربة تعلم تفاعلية وممتعة.
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 ياسر الحربي بالتعاون مع الكلية التقنية ببدر</p>
+    </footer>
+    <script>
+        function sortCourses(criteria) {
+            const availableCourses = Array.from(document.querySelectorAll('#course-grid .course'));
+            const soonCourses = Array.from(document.querySelectorAll('#course-grid-soon .course'));
+            
+            let sortedAvailableCourses;
+            let sortedSoonCourses;
+
+            if (criteria === 'newest') {
+                sortedAvailableCourses = availableCourses.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+                sortedSoonCourses = soonCourses.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+            } else if (criteria === 'rating-high') {
+                sortedAvailableCourses = availableCourses.sort((a, b) => b.dataset.rating - a.dataset.rating);
+                sortedSoonCourses = soonCourses.sort((a, b) => b.dataset.rating - a.dataset.rating);
+            } else if (criteria === 'rating-low') {
+                sortedAvailableCourses = availableCourses.sort((a, b) => a.dataset.rating - b.dataset.rating);
+                sortedSoonCourses = soonCourses.sort((a, b) => a.dataset.rating - b.dataset.rating);
+            }
+
+            const courseGrid = document.getElementById('course-grid');
+            const courseGridSoon = document.getElementById('course-grid-soon');
+            courseGrid.innerHTML = '';
+            courseGridSoon.innerHTML = '';
+            sortedAvailableCourses.forEach(course => courseGrid.appendChild(course));
+            sortedSoonCourses.forEach(course => courseGridSoon.appendChild(course));
+        }
+
+        function toggleLearningPoints(element) {
+            const hiddenItems = element.parentElement.querySelectorAll('.hidden');
+            hiddenItems.forEach(item => {
+                item.style.display = item.style.display === 'list-item' ? 'none' : 'list-item';
+            });
+            element.innerText = element.innerText === 'إظهار الباقي' ? 'إخفاء الباقي' : 'إظهار الباقي';
+            if (element.innerText === 'إظهار الباقي') {
+                hiddenItems.forEach(item => {
+                    item.style.display = 'none';
+                });
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const allCourses = document.querySelectorAll('.course .learning-points ul');
+            allCourses.forEach(course => {
+                const items = course.querySelectorAll('li');
+                if (items.length > 3) {
+                    for (let i = 2; i < items.length - 1; i++) {
+                        items[i].classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+
+
+</body></html>
