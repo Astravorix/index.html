@@ -5,7 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astravorix team</title>
     <link rel="icon"  href="logo s .png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+        /* تحسين متغيرات CSS */
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #9b59b6;
+            --accent-color: #d6b5e7;
+            --text-color: #ffffff;
+            --bg-dark: #0a0a1a;
+            --bg-gradient: linear-gradient(135deg, #0a0a1a, #1a1a3a);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --nav-bg: rgba(10, 10, 26, 0.95);
+            --transition-speed: 0.3s;
+            --border-radius: 20px;
+        }
+
+        /* إضافة دعم Dark/Light mode */
+        [data-theme="light"] {
+            --bg-dark: #ffffff;
+            --bg-gradient: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            --text-color: #333333;
+            --card-bg: rgba(0, 0, 0, 0.05);
+            --nav-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        /* تحسين الأداء باستخدام will-change */
+        .animated {
+            will-change: transform, opacity;
+        }
+
+        /* إضافة مفتاح تبديل اللغات */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            display: flex;
+            gap: 10px;
+            background: var(--card-bg);
+            padding: 10px;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+        }
+
+        .language-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: var(--transition-speed);
+        }
+
+        .language-btn.active {
+            background: var(--secondary-color);
+        }
+
+        /* تحسين الأنيميشن */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* تحسين التنقل */
+        html {
+            scroll-padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* تحسين الأداء للأجهزة المحمولة */
+        @media (max-width: 768px) {
+            .disable-animation-mobile {
+                animation: none !important;
+                transform: none !important;
+            }
+        }
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
@@ -726,14 +814,19 @@
                 <span class="logo-icon"></span>
                 Astravorix team
             </a>
+            <div class="language-switcher">
+                <button class="language-btn active" data-lang="ar">عربي</button>
+                <button class="language-btn" data-lang="en">English</button>
+                
+            </div>
+        
             <div class="nav-links">
-                <a href="#home">الرئيسية</a>
-                <a href="#features">المميزات</a>
-                <a href="#gallery">معرض الصور</a>
-                <a href="#message">الاخبار</a>
-                <a href="#team">الفريق</a>
-                <a href="#achievements">الإنجازات</a>
-                <a href="#social-links">حساباتنا</a>
+                <a href="#home" data-translate="home">الرئيسية</a>
+                <a href="#features" data-translate="features" >المميزات</a>
+                <a href="#gallery" data-translate="gallery">معرض الصور</a>
+                <a href="#team" data-translate="team">الفريق</a>
+                <a href="#achievements" data-translate="achievements">الإنجازات</a>
+                <a href="#social-links" data-translate="accounts">حساباتنا</a>
 
             </div>
             <div class="mobile-menu">☰</div>
@@ -742,39 +835,43 @@
 
     <section id="home" class="hero">
         <div class="hero-particles"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">الزعيم المصباح</h1>
-            <p class="hero-subtitle">لعبة بسيطة وجميلة ومجانية.</p>
+        <div class="hero-content fade-in-up">
+            <h1 class="hero-title" data-translate="hero-title">الزعيم المصباح</h1>
+            <p class="hero-subtitle" data-translate="hero-subtitle">لعبة بسيطة وجميلة ومجانية.</p>
             <div class="cta-buttons">
-                <a href="https://nymg0.itch.io/the-leader-lamp"  target="_blank" class="cta-button primary-button">تحميل اللعبة</a>
-                <a href="https://youtu.be/YzlfwG-9AVE?si=G4gVKL-WDcChDS2x"  target="_blank" class="cta-button secondary-button">شاهد العرض</a>
+                <a href="https://nymg0.itch.io/the-leader-lamp" target="_blank" class="cta-button primary-button" data-translate="download-game">
+                    تحميل اللعبة
+                </a>
+                <a href="https://youtu.be/YzlfwG-9AVE?si=G4gVKL-WDcChDS2x" target="_blank" class="cta-button secondary-button" data-translate="watch-trailer">
+                    شاهد العرض
+                </a>
             </div>
         </div>
     </section>
 
     <section id="features" class="section">
-        <h2 class="section-title">مميزات اللعبة</h2>
+        <h2 class="section-title" data-translate="features-title" >مميزات اللعبة</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🎮</div>
-                <h3 class="feature-title">نظام قتال </h3>
-                <p class="feature-description">نظام قتال سهل مع حركات قتالية متنوعة ومهارات خاصة</p>
+                <div class="feature-icon" >🎮</div>
+                <h3 class="feature-title" data-translate="features-combat-system" >نظام قتال </h3>
+                <p class="feature-description" data-translate="features-combat-desc" >نظام قتال سهل مع حركات قتالية متنوعة ومهارات خاصة</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🌍</div>
-                <h3 class="feature-title">عالم مفتوح</h3>
-                <p class="feature-description">استكشف عالماً مفتوحاً مليئاً بالتفاصيل</p>
+                <h3 class="feature-title" data-translate="features-open-world" >عالم مفتوح</h3>
+                <p class="feature-description" data-translate="features-open-world-desc" >استكشف عالماً مفتوحاً مليئاً بالتفاصيل</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📜</div>
-                <h3 class="feature-title">قصة ملحمية</h3>
-                <p class="feature-description">تجربة ممتعة ومليئة بالتحديات</p>
+                <h3 class="feature-title" data-translate="features-epic-story" >قصة ملحمية</h3>
+                <p class="feature-description" data-translate="features-epic-story-desc" >تجربة ممتعة ومليئة بالتحديات</p>
             </div>
         </div>
     </section>
 
     <div id="gallery" class="section">
-        <h2 class="section-title">معرض الصور</h2>
+        <h2 class="section-title" data-translate="gallery-title" >معرض الصور</h2>
         <div class="gallery">
             <div class="gallery-item">
                 <div class="gallery-caption"></div>
@@ -796,20 +893,23 @@
         </div>
     </div>
 
+
+    
     <div id = "message" class="team-message-box">
-        <p class="message-text">اللعبة التي في الأعلى قمت بتطويرها بنفسي من جميع النواحي. الآن أطمح للانتقال إلى مستوى مختلف تمامًا وأقدم لعبة كبيرة جدًا مع فريقي الذي سيساعدني في تطويرها.</p>
-        <span class="message-author">- ياسر مقبل</span>
+        <p class="message-text" data-translate="message-text" >اللعبة التي في الأعلى قمت بتطويرها بنفسي من جميع النواحي. الآن أطمح للانتقال إلى مستوى مختلف تمامًا وأقدم لعبة كبيرة جدًا مع فريقي الذي سيساعدني في تطويرها.</p>
+        <span class="message-author" data-translate="message-author" >- ياسر مقبل</span>
     </div>
+    
 
     <section id="team" class="section">
-        <h2 class="section-title">فريق التطوير</h2>
+        <h2 class="section-title" data-translate="team-title" >فريق التطوير</h2>
         <div class="team-grid">
             <div class="team-member">
                 <div class="member-photo">
                     <img src="team1.jpg" alt="صورة " style="object-fit: cover;   width: 100%; height: 100%;">
                 </div>
-                <h3 class="member-name">ياسر مقبل</h3>
-                <p class="member-role">مبرمج، كاتب القصة، وصاحب اللعبة</p>
+                <h3 class="member-name" data-translate="team-member1-name" >ياسر مقبل</h3>
+                <p class="member-role" data-translate="team-member1-role" >مبرمج، كاتب القصة، وصاحب اللعبة</p>
                 <div class="member-social">
                     <a href="#" class="social-link">🌐</a>
                     <a href="#" class="social-link">📱</a>
@@ -820,8 +920,8 @@
                 <div class="member-photo">
                     <img src="team2.jpg" alt="صورة " style="object-fit: cover;   width: 100%; height: 100%;">
                 </div>
-                <h3 class="member-name">يوسف عبدالله</h3>
-                <p class="member-role">مبرمج</p>
+                <h3 class="member-name" data-translate="team-member2-name" >يوسف عبدالله</h3>
+                <p class="member-role" data-translate="team-member2-role" >مبرمج</p>
                 <div class="member-social">
                     <a href="#" class="social-link">🌐</a>
                     <a href="#" class="social-link">📱</a>
@@ -862,37 +962,40 @@
     </section>
 
     <section id="achievements" class="section">
-        <h2 class="section-title">إنجازاتنا</h2>
+        <h2 class="section-title" data-translate="achievements-title" >إنجازاتنا</h2>
         <div class="achievements">
             <div class="achievement-card">
                 <div class="achievement-icon">🏆</div>
-                <div class="achievement-number">10</div>
-                <div class="achievement-text">لاعبين</div>
+                <div class="achievement-number">13</div>
+                <div class="achievement-text" data-translate="achievements-players" >لاعبين</div>
             </div>
             <div class="achievement-card">
                 <div class="achievement-icon">⭐</div>
                 <div class="achievement-number">؟؟؟</div>
-                <div class="achievement-text">تقييم اللعبة</div>
+                <div class="achievement-text" data-translate="achievements-rating" >تقييم اللعبة</div>
             </div>
             <div class="achievement-card">
                 <div class="achievement-icon">🎮</div>
                 <div class="achievement-number">0</div>
-                <div class="achievement-text">جوائز أفضل لعبة</div>
+                <div class="achievement-text" data-translate="achievements-awards" >جوائز أفضل لعبة</div>
             </div>
         </div>
     </section>
-
-    <div id = "social-links" class="social-links">
-        <a href="https://twitter.com/Astravorix" target="_blank" aria-label="Twitter">
-            <img src="logo_x.png" alt="Twitter">
-        </a>
-        <a href="https://instagram.com/Astravorix" target="_blank" aria-label="Instagram">
-            <img src="logo_Instagram.png" alt="Instagram" >
-        </a>
-        <a href="https://youtube.com/@Astravorix" target="_blank" aria-label="YouTube">
-            <img src="logo_Youtube.png" alt="YouTube">
-        </a>
+    <h2 class="section-title" data-translate="accounts">حساباتنا</h2>
+    <div id="social-links" class="social-links">
+            <a href="https://twitter.com/Astravorix" target="_blank" aria-label="Twitter" class="social-link">
+                <img src="logo_x.png" alt="Twitter Logo" class="social-icon">
+            </a>
+            <!-- Instagram Link -->
+            <a href="https://instagram.com/Astravorix" target="_blank" aria-label="Instagram" class="social-link">
+                <img src="logo_Instagram.png" alt="Instagram Logo" class="social-icon">
+            </a>
+            <!-- YouTube Link -->
+            <a href="https://youtube.com/@Astravorix" target="_blank" aria-label="YouTube" class="social-link">
+                <img src="logo_Youtube.png" alt="YouTube Logo" class="social-icon">
+            </a>
     </div>
+    
     
     <style>
         .social-media {
@@ -918,6 +1021,118 @@
     <div class="scroll-to-top">↑</div>
 
     <script>
+        // نظام تعدد اللغات
+        const translations = {
+    ar: {
+        "brand": "فريق أسترافوركس",
+        "home": "الرئيسية",
+        "features": "المميزات",
+        "gallery": "معرض الصور",
+        "news": "الأخبار",
+        "team": "الفريق",
+        "achievements": "الإنجازات",
+        "accounts": "حساباتنا",
+        "hero-title": "الزعيم المصباح",
+        "hero-subtitle": "لعبة بسيطة وجميلة ومجانية",
+        "download-game": "تحميل اللعبة",
+        "watch-trailer": "شاهد العرض",
+        "features-title": "مميزات اللعبة",
+        "features-combat-system": "نظام قتال ",
+        "features-combat-desc": "نظام قتال سهل مع حركات قتالية متنوعة ومهارات خاصة",
+        "features-open-world": "عالم مفتوح",
+        "features-open-world-desc": "استكشف عالماً مفتوحاً مليئاً بالتفاصيل",
+        "features-epic-story": "قصة ملحمية",
+        "features-epic-story-desc": "تجربة ممتعة ومليئة بالتحديات",
+        "gallery-title": "معرض الصور",
+        "message-text": "اللعبة التي في الأعلى قمت بتطويرها بنفسي من جميع النواحي. الآن أطمح للانتقال إلى مستوى مختلف تمامًا وأقدم لعبة كبيرة جدًا مع فريقي الذي سيساعدني في تطويرها.",
+        "message-author": "- ياسر مقبل",
+        "team-title": "فريق التطوير",
+        "team-member1-name": "ياسر مقبل",
+        "team-member1-role": "مبرمج، كاتب القصة، وصاحب اللعبة",
+        "team-member2-name": "يوسف عبدالله",
+        "team-member2-role": "مبرمج",
+        "achievements-title": "إنجازاتنا",
+        "achievements-players": "لاعبين",
+        "achievements-rating": "تقييم اللعبة",
+        "achievements-awards": "جوائز أفضل لعبة"
+    },
+    en: {
+        "brand": "Astravorix Team",
+        "home": "Home",
+        "features": "Features",
+        "gallery": "Gallery",
+        "news": "News",
+        "team": "Team",
+        "achievements": "Achievements",
+        "accounts": "Our Accounts",
+        "hero-title": "The Leader Lamp",
+        "hero-subtitle": "A Simple, Beautiful and Free Game",
+        "download-game": "Download Game",
+        "watch-trailer": "Watch Trailer",
+        "features-title": "Game Features",
+        "features-combat-system": "Combat System",
+        "features-combat-desc": "Simple combat system with diverse moves and special skills.",
+        "features-open-world": "Open World",
+        "features-open-world-desc": "Explore a detailed open world.",
+        "features-epic-story": "Epic Story",
+        "features-epic-story-desc": "Fun and challenging experience.",
+        "gallery-title": "Gallery",
+        "message-text": "The game above was entirely developed by me. Now, I aspire to reach a completely different level and present a very large game with my team who will assist in its development.",
+        "message-author": "- Yasser Moqbel",
+        "team-title": "Development Team",
+        "team-member1-name": "Yasser Moqbel",
+        "team-member1-role": "Programmer, Story Writer, and Game Owner",
+        "team-member2-name": "Yousef Abdullah",
+        "team-member2-role": "Programmer",
+        "achievements-title": "Our Achievements",
+        "achievements-players": "Players",
+        "achievements-rating": "Game Rating",
+        "achievements-awards": "Best Game Awards"
+        }   
+    };
+
+    
+        // تحسين وظيفة تغيير اللغة
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+    
+            // تحديث الأنماط حسب اتجاه اللغة
+            const style = document.documentElement.style;
+            if (lang === 'ar') {
+                style.setProperty('--text-align', 'right');
+                style.setProperty('--float-direction', 'right');
+            } else {
+                style.setProperty('--text-align', 'left');
+                style.setProperty('--float-direction', 'left');
+            }
+    
+            // حفظ اللغة المفضلة
+            localStorage.setItem('preferredLanguage', lang);
+        }
+    
+        // إضافة مستمع الأحداث لأزرار تغيير اللغة
+        document.querySelectorAll('.language-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.language-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                changeLanguage(btn.getAttribute('data-lang'));
+            });
+        });
+    
+        // تحميل اللغة المفضلة عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'ar';
+            changeLanguage(savedLang);
+            document.querySelector(`[data-lang="${savedLang}"]`).classList.add('active');
+        });
         // Loading Screen
         window.addEventListener('load', () => {
             document.querySelector('.loader').classList.add('hidden');
