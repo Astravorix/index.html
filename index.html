@@ -40,7 +40,7 @@
         /* إضافة مفتاح تبديل اللغات */
         .language-switcher {
             position: fixed;
-            top: 20px;
+            bottom: 20px;
             left: 20px;
             z-index: 1001;
             display: flex;
@@ -814,11 +814,7 @@
                 <span class="logo-icon"></span>
                 Astravorix team
             </a>
-            <div class="language-switcher">
-                <button class="language-btn active" data-lang="ar">عربي</button>
-                <button class="language-btn" data-lang="en">English</button>
-                
-            </div>
+            
         
             <div class="nav-links">
                 <a href="#home" data-translate="home">الرئيسية</a>
@@ -1016,8 +1012,11 @@
     </style>
     
     
-    
-
+    <div class="language-switcher">
+        <button class="language-btn active" data-lang="ar">عربي</button>
+        <button class="language-btn" data-lang="en">English</button>
+        
+    </div>
     <div class="scroll-to-top">↑</div>
 
     <script>
