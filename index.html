@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* تحسين متغيرات CSS */
+        
         :root {
             --primary-color: #8e44ad;
             --secondary-color: #9b59b6;
@@ -23,7 +23,7 @@
             --border-radius: 20px;
         }
 
-        /* إضافة دعم Dark/Light mode */
+       
         [data-theme="light"] {
             --bg-dark: #ffffff;
             --bg-gradient: linear-gradient(135deg, #f5f5f5, #e0e0e0);
@@ -32,12 +32,12 @@
             --nav-bg: rgba(255, 255, 255, 0.95);
         }
 
-        /* تحسين الأداء باستخدام will-change */
+        
         .animated {
             will-change: transform, opacity;
         }
 
-        /* إضافة مفتاح تبديل اللغات */
+       
         .language-switcher {
             position: fixed;
             bottom: 20px;
@@ -75,7 +75,7 @@
             background: var(--secondary-color);
         }
 
-        /* تحسين الأنيميشن */
+     
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -91,13 +91,13 @@
             animation: fadeInUp 0.6s ease forwards;
         }
 
-        /* تحسين التنقل */
+
         html {
             scroll-padding-top: 80px;
             scroll-behavior: smooth;
         }
 
-        /* تحسين الأداء للأجهزة المحمولة */
+
         @media (max-width: 768px) {
             .disable-animation-mobile {
                 animation: none !important;
@@ -781,8 +781,6 @@
         }
 
 
-
-
         .team-message-box {
             background: var(--card-bg);
             border-radius: 15px;
@@ -811,6 +809,8 @@
             font-size: 1rem;
             font-style: italic;
         }
+
+
     </style>
 </head>
 <body>
@@ -995,15 +995,16 @@
             <a href="https://twitter.com/Astravorix" target="_blank" aria-label="Twitter" class="social-link">
                 <img src="logo_x.png" alt="Twitter Logo" class="social-icon">
             </a>
-            <!-- Instagram Link -->
             <a href="https://instagram.com/Astravorix" target="_blank" aria-label="Instagram" class="social-link">
                 <img src="logo_Instagram.png" alt="Instagram Logo" class="social-icon">
             </a>
-            <!-- YouTube Link -->
             <a href="https://youtube.com/@Astravorix" target="_blank" aria-label="YouTube" class="social-link">
                 <img src="logo_Youtube.png" alt="YouTube Logo" class="social-icon">
             </a>
+            <a href="to support.html"   data-translate="support-btn-text">$</a>
     </div>
+    
+
     
     
     <style>
@@ -1033,7 +1034,6 @@
     <div class="scroll-to-top">↑</div>
 
     <script>
-        // نظام تعدد اللغات
         const translations = {
     ar: {
         "brand": "فريق أسترافوركس",
@@ -1070,7 +1070,6 @@
         "Join-the-Team": "انضم إلى الفريق"
     },
     en: {
-        "brand": "Astravorix Team",
         "home": "Home",
         "features": "Features",
         "gallery": "Gallery",
@@ -1101,12 +1100,10 @@
         "achievements-players": "Players",
         "achievements-rating": "Game Rating",
         "achievements-awards": "Best Game Awards",
-        "Join-the-Team": "Join the Team"
+        "Join-the-Team": "Join the Team",
+        "support-btn-text": "Material Support"
         }   
     };
-
-    
-        // تحسين وظيفة تغيير اللغة
         function changeLanguage(lang) {
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -1117,8 +1114,7 @@
                     element.textContent = translations[lang][key];
                 }
             });
-    
-            // تحديث الأنماط حسب اتجاه اللغة
+
             const style = document.documentElement.style;
             if (lang === 'ar') {
                 style.setProperty('--text-align', 'right');
@@ -1128,11 +1124,9 @@
                 style.setProperty('--float-direction', 'left');
             }
     
-            // حفظ اللغة المفضلة
             localStorage.setItem('preferredLanguage', lang);
         }
     
-        // إضافة مستمع الأحداث لأزرار تغيير اللغة
         document.querySelectorAll('.language-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.language-btn').forEach(b => b.classList.remove('active'));
@@ -1141,18 +1135,16 @@
             });
         });
     
-        // تحميل اللغة المفضلة عند تحميل الصفحة
+
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLanguage') || 'ar';
             changeLanguage(savedLang);
             document.querySelector(`[data-lang="${savedLang}"]`).classList.add('active');
         });
-        // Loading Screen
         window.addEventListener('load', () => {
             document.querySelector('.loader').classList.add('hidden');
         });
 
-        // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -1162,7 +1154,6 @@
             }
         });
 
-        // Section Visibility
         const sections = document.querySelectorAll('.section');
         const observerOptions = {
             threshold: 0.1
@@ -1180,7 +1171,6 @@
             observer.observe(section);
         });
 
-        // Particle Effect
         function createParticles() {
             const particlesContainer = document.querySelector('.hero-particles');
             const particleCount = 50;
@@ -1220,7 +1210,6 @@
 
         createParticles();
 
-        // Scroll to Top
         const scrollToTop = document.querySelector('.scroll-to-top');
         
         window.addEventListener('scroll', () => {
@@ -1238,7 +1227,6 @@
             });
         });
 
-        // Modal Gallery
         const galleryItems = document.querySelectorAll('.gallery-item');
         
         galleryItems.forEach(item => {
