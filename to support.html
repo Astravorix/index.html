@@ -361,7 +361,7 @@
     <header class="header">
         <div class="container">
             <div >
-                <img src="logo s.png" alt="Logo" width="150">
+                <img src="logo s .png" alt="Logo" width="150">
             </div>
             <h1 class="ar" data-translate="team-title">فريق Astravorix</h1>
             <p class="ar" data-translate="team-desc">نطور ألعاباً استثنائية لتجارب لا تُنسى</p>
@@ -450,7 +450,7 @@
     
 
     <script>
-        // نظام تعدد اللغات
+
         const translations = {
     ar: {
         "team-title": "فريق Astravorix",
@@ -538,7 +538,7 @@
 
 
     
-        // تحسين وظيفة تغيير اللغة
+
         function changeLanguage(lang) {
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -550,7 +550,6 @@
                 }
             });
     
-            // تحديث الأنماط حسب اتجاه اللغة
             const style = document.documentElement.style;
             if (lang === 'ar') {
                 style.setProperty('--text-align', 'right');
@@ -560,11 +559,9 @@
                 style.setProperty('--float-direction', 'left');
             }
     
-            // حفظ اللغة المفضلة
             localStorage.setItem('preferredLanguage', lang);
         }
     
-        // إضافة مستمع الأحداث لأزرار تغيير اللغة
         document.querySelectorAll('.language-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.language-btn').forEach(b => b.classList.remove('active'));
@@ -573,7 +570,6 @@
             });
         });
     
-        // تحميل اللغة المفضلة عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLanguage') || 'ar';
             changeLanguage(savedLang);
