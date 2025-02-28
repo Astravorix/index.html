@@ -1,1266 +1,2516 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="ar" >
+<html lang="ar" dir="rtl" data-lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astravorix team</title>
-    <link rel="icon"  href="logo s .png">
-
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
+    <title>Astravorix - استوديو ألعاب سعودي مبتكر</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        
         :root {
-            --primary-color: #8e44ad;
-            --secondary-color: #9b59b6;
-            --accent-color: #d6b5e7;
-            --text-color: #ffffff;
-            --bg-dark: #0a0a1a;
-            --bg-gradient: linear-gradient(135deg, #0a0a1a, #1a1a3a);
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --nav-bg: rgba(10, 10, 26, 0.95);
-            --transition-speed: 0.3s;
-            --border-radius: 20px;
+            /* Primary Colors */
+            --primary-color: #1e3a8a;        /* أزرق داكن */
+            --secondary-color: #006466;      /* أزرق مخضر */
+            --accent-color: #00b4d8;         /* أزرق فاتح */
+            --highlight-color: #ffd500;      /* ذهبي */
+            
+            /* Background Colors */
+            --dark-color: #0f172a;           /* أزرق داكن جداً */
+            --darker-color: #080f1a;         /* أسود مائل للأزرق */
+            --light-color: #f8fafc;          /* أبيض مزرق */
+            --gray-color: #64748b;           /* رمادي */
+            
+            /* Status Colors */
+            --success-color: #10b981;        /* أخضر */
+            --error-color: #ef4444;          /* أحمر */
+            --warning-color: #f59e0b;        /* برتقالي */
+            --info-color: #3b82f6;           /* أزرق */
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
+            --gradient-dark: linear-gradient(135deg, var(--dark-color), var(--darker-color));
+            
+            /* Typography Scales */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            --text-6xl: 3.75rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+            
+            /* Spacing */
+            --spacing-1: 0.25rem;
+            --spacing-2: 0.5rem;
+            --spacing-3: 0.75rem;
+            --spacing-4: 1rem;
+            --spacing-5: 1.25rem;
+            --spacing-6: 1.5rem;
+            --spacing-8: 2rem;
+            --spacing-10: 2.5rem;
+            --spacing-12: 3rem;
+            --spacing-16: 4rem;
+            --spacing-20: 5rem;
+            
+            /* Layout */
+            --container-padding: 1.5rem;
+            --section-spacing: 6rem;
+            --border-radius-sm: 0.25rem;
+            --border-radius: 0.375rem;
+            --border-radius-md: 0.5rem;
+            --border-radius-lg: 0.75rem;
+            --border-radius-xl: 1rem;
+            --border-radius-2xl: 1.5rem;
+            --border-radius-full: 9999px;
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            
+            /* Z-index layers */
+            --z-0: 0;
+            --z-10: 10;
+            --z-20: 20;
+            --z-30: 30;
+            --z-40: 40;
+            --z-50: 50;
+            --z-100: 100;
+            
+            /* Fonts */
+            --font-ar: 'Tajawal', sans-serif;
+            --font-en: 'Poppins', sans-serif;
         }
-
-       
-        [data-theme="light"] {
-            --bg-dark: #ffffff;
-            --bg-gradient: linear-gradient(135deg, #f5f5f5, #e0e0e0);
-            --text-color: #333333;
-            --card-bg: rgba(0, 0, 0, 0.05);
-            --nav-bg: rgba(255, 255, 255, 0.95);
-        }
-
         
-        .animated {
-            will-change: transform, opacity;
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-       
-        .language-switcher {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1001;
-            display: flex;
-            gap: 10px;
-            background: var(--card-bg);
-            padding: 10px;
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        body {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+            transition: all var(--transition-normal);
+        }
+        
+        /* Language Direction Styles */
+        [lang="ar"] {
+            font-family: var(--font-ar);
+        }
+        
+        [lang="en"] {
+            font-family: var(--font-en);
+        }
+        
+        html[dir="rtl"] {
+            text-align: right;
+        }
+        
+        html[dir="ltr"] {
+            text-align: left;
+        }
+        
+        /* ===== Scrollbar ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--darker-color);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
             border-radius: var(--border-radius);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
+        }
+        
+        /* ===== Selection ===== */
+        ::selection {
+            background-color: var(--accent-color);
+            color: var(--darker-color);
+        }
+        
+        /* ===== Utilities ===== */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .section {
+            padding: var(--section-spacing) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-sm {
+            padding: calc(var(--section-spacing) / 2) 0;
+        }
+        
+        .section-title {
+            font-size: var(--text-4xl);
+            font-weight: 800;
+            margin-bottom: var(--spacing-6);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: calc(-1 * var(--spacing-3));
+            right: 0;
+            left: auto;
+            width: 50%;
+            height: 4px;
+            background: var(--highlight-color);
+            border-radius: 2px;
+        }
+        
+        html[dir="ltr"] .section-title::after {
+            right: auto;
+            left: 0;
+        }
+        
+        .section-subtitle {
+            font-size: var(--text-xl);
+            color: var(--gray-color);
+            margin-bottom: var(--spacing-12);
+            max-width: 800px;
+        }
+        
+        .text-gradient {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .bg-gradient {
+            background: var(--gradient-primary);
+        }
+        
+        .grid {
+            display: grid;
+            gap: var(--spacing-8);
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .items-center {
+            align-items: center;
+        }
+        
+        .justify-between {
+            justify-content: space-between;
+        }
+        
+        .justify-center {
+            justify-content: center;
+        }
+        
+        .flex-col {
+            flex-direction: column;
+        }
+        
+        .gap-2 {
+            gap: var(--spacing-2);
+        }
+        
+        .gap-4 {
+            gap: var(--spacing-4);
+        }
+        
+        .gap-8 {
+            gap: var(--spacing-8);
+        }
+        
+        .rounded {
+            border-radius: var(--border-radius);
+        }
+        
+        .rounded-lg {
+            border-radius: var(--border-radius-lg);
+        }
+        
+        .rounded-xl {
+            border-radius: var(--border-radius-xl);
+        }
+        
+        .rounded-2xl {
+            border-radius: var(--border-radius-2xl);
+        }
+        
+        .rounded-full {
+            border-radius: var(--border-radius-full);
+        }
+        
+        .overflow-hidden {
+            overflow: hidden;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .relative {
+            position: relative;
+        }
+        
+        .absolute {
+            position: absolute;
+        }
+        
+        .w-full {
+            width: 100%;
+        }
+        
+        .h-full {
+            height: 100%;
+        }
+        
+        .mt-4 {
+            margin-top: var(--spacing-4);
+        }
+        
+        .mt-8 {
+            margin-top: var(--spacing-8);
+        }
+        
+        .mb-4 {
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .mb-8 {
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .py-2 {
+            padding-top: var(--spacing-2);
+            padding-bottom: var(--spacing-2);
+        }
+        
+        .px-4 {
+            padding-right: var(--spacing-4);
+            padding-left: var(--spacing-4);
+        }
+        
+        .py-4 {
+            padding-top: var(--spacing-4);
+            padding-bottom: var(--spacing-4);
+        }
+        
+        .px-8 {
+            padding-right: var(--spacing-8);
+            padding-left: var(--spacing-8);
+        }
+        
+        .p-4 {
+            padding: var(--spacing-4);
+        }
+        
+        .p-8 {
+            padding: var(--spacing-8);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        /* ===== Components ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.75rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            font-size: var(--text-base);
+            gap: var(--spacing-2);
+            z-index: var(--z-10);
+            min-width: 140px;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: width var(--transition-normal);
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            box-shadow: 0 4px 14px rgba(30, 58, 138, 0.4);
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+            box-shadow: 0 4px 14px rgba(0, 100, 102, 0.4);
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 6px 20px rgba(0, 100, 102, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: var(--darker-color);
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(0, 180, 216, 0.4);
+        }
+        
+        .btn-accent:hover {
+            box-shadow: 0 6px 20px rgba(0, 180, 216, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--light-color);
+            border: 2px solid var(--accent-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-highlight {
+            background-color: var(--highlight-color);
+            color: var(--dark-color);
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(255, 213, 0, 0.4);
+        }
+        
+        .btn-highlight:hover {
+            box-shadow: 0 6px 20px rgba(255, 213, 0, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .card {
+            background-color: rgba(15, 23, 42, 0.7);
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            transition: all var(--transition-slow);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(100, 116, 139, 0.1);
+            box-shadow: var(--shadow-lg);
+            height: 100%;
         }
-
-        .language-btn {
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            background: var(--primary-color);
-            color: white;
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(0, 180, 216, 0.3);
+        }
+        
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(100, 116, 139, 0.1);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 0.7rem;
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: var(--border-radius-full);
+            background-color: var(--accent-color);
+            color: var(--darker-color);
+        }
+        
+        .badge-outline {
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        /* Language Selector */
+        .lang-selector {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-1);
             cursor: pointer;
-            transition: var(--transition-speed);
+            padding: var(--spacing-2);
+            border-radius: var(--border-radius);
+            transition: all var(--transition-normal);
+            z-index: var(--z-50);
         }
-        .language-a {
-            padding: 5px 20px;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            background: var(--primary-color);
-            color: white;
+        
+        .lang-selector:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .lang-icon {
+            font-size: var(--text-lg);
+        }
+        
+        .current-lang {
+            font-size: var(--text-sm);
+            font-weight: 500;
+            margin-right: var(--spacing-1);
+            margin-left: var(--spacing-1);
+        }
+        
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--darker-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-2);
+            min-width: 120px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(100, 116, 139, 0.1);
+            z-index: var(--z-50);
+            transform: translateY(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+        }
+        
+        html[dir="ltr"] .lang-dropdown {
+            right: auto;
+            left: 0;
+        }
+        
+        .lang-selector:hover .lang-dropdown {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lang-option {
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-2) var(--spacing-3);
+            border-radius: var(--border-radius);
+            transition: all var(--transition-fast);
+            gap: var(--spacing-2);
             cursor: pointer;
-            transition: var(--transition-speed);
         }
-
-        .language-btn.active {
-            background: var(--secondary-color);
+        
+        .lang-option:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
+        
+        .lang-option.active {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+        
+        .lang-flag {
+            font-size: var(--text-lg);
+            margin-right: var(--spacing-1);
+        }
+        
+        .lang-name {
+            font-size: var(--text-sm);
+        }
+        
+        /* ===== Header & Navigation ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: var(--z-100);
+            transition: all var(--transition-normal);
+        }
+        
+        .header.scrolled {
+            background-color: rgba(8, 15, 26, 0.9);
 
-     
-        @keyframes fadeInUp {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .scrolled .navbar {
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: var(--text-2xl);
+            font-weight: 800;
+            color: var(--light-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            position: relative;
+            transition: all var(--transition-normal);
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-icon {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.8em;
+            display: inline-block;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-link {
+            color: var(--light-color);
+            text-decoration: none;
+            font-size: var(--text-base);
+            font-weight: 500;
+            position: relative;
+            transition: all var(--transition-normal);
+            padding: var(--spacing-2) 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--highlight-color);
+            transition: width var(--transition-normal);
+        }
+        
+        html[dir="ltr"] .nav-link::after {
+            right: auto;
+            left: 0;
+        }
+        
+        .nav-link:hover {
+            color: var(--highlight-color);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: var(--z-100);
+            width: 30px;
+            height: 24px;
+            padding: 0;
+            background: transparent;
+            border: none;
+            position: relative;
+        }
+        
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            transition: all var(--transition-normal);
+            display: block;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+        
+        /* ===== Hero Section ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to bottom, var(--darker-color), var(--dark-color));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 35%, rgba(0, 100, 102, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 85% 15%, rgba(30, 58, 138, 0.15) 0%, transparent 55%);
+            z-index: var(--z-0);
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, var(--dark-color), transparent);
+            z-index: var(--z-10);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: var(--z-20);
+        }
+        
+        .hero-tagline {
+            font-size: var(--text-lg);
+            color: var(--highlight-color);
+            margin-bottom: var(--spacing-4);
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-4);
+            border-radius: var(--border-radius-full);
+            background-color: rgba(255, 213, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 213, 0, 0.2);
+        }
+        
+        .hero-title {
+            font-size: var(--text-6xl);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-6);
+            max-width: 800px;
+        }
+        
+        .hero-description {
+            font-size: var(--text-xl);
+            color: var(--gray-color);
+            margin-bottom: var(--spacing-10);
+            max-width: 600px;
+            font-weight: 400;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: var(--spacing-4);
+            flex-wrap: wrap;
+        }
+        
+        .hero-stats {
+            margin-top: var(--spacing-16);
+            display: flex;
+            gap: var(--spacing-12);
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        
+        html[dir="rtl"] .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: calc(-1 * var(--spacing-6));
+            height: 80%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--accent-color), transparent);
+        }
+        
+        html[dir="ltr"] .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: calc(-1 * var(--spacing-6));
+            height: 80%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--accent-color), transparent);
+        }
+        
+        .stat-number {
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            color: var(--highlight-color);
+            margin-bottom: var(--spacing-2);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .stat-number::after {
+            content: '+';
+            position: absolute;
+            top: 0;
+            right: -15px;
+            font-size: 0.7em;
+            color: var(--accent-color);
+        }
+        
+        html[dir="ltr"] .stat-number::after {
+            right: auto;
+            left: -15px;
+        }
+        
+        .stat-label {
+            font-size: var(--text-sm);
+            color: var(--gray-color);
+            font-weight: 500;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .floating {
+            animation: floating 5s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(1deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+        
+        /* ===== Games Section ===== */
+        .games-section {
+            position: relative;
+            background-color: var(--dark-color);
+        }
+        
+        .games-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 100, 102, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(30, 58, 138, 0.08) 0%, transparent 50%);
+            z-index: var(--z-0);
+        }
+        
+        .games-grid {
+            position: relative;
+            z-index: var(--z-10);
+        }
+        
+        .game-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-image {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+            border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+        }
+        
+        .game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .game-card:hover .game-image img {
+            transform: scale(1.05);
+        }
+        
+        .game-badge {
+            position: absolute;
+            top: var(--spacing-4);
+            right: var(--spacing-4);
+            z-index: var(--z-10);
+        }
+        
+        html[dir="ltr"] .game-badge {
+            right: auto;
+            left: var(--spacing-4);
+        }
+        
+        .game-content {
+            flex: 1;
+            padding: var(--spacing-6);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-4);
+            color: var(--light-color);
+        }
+        
+        .game-description {
+            color: var(--gray-color);
+            margin-bottom: var(--spacing-6);
+            flex: 1;
+        }
+        
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--spacing-4);
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+            font-size: var(--text-sm);
+            color: var(--gray-color);
+        }
+        
+        /* ===== About Section ===== */
+        .about-section {
+            position: relative;
+            background-color: rgba(8, 15, 26, 0.7);
+        }
+        
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(0, 180, 216, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(255, 213, 0, 0.08) 0%, transparent 50%);
+            z-index: var(--z-0);
+        }
+        
+        .about-content {
+            position: relative;
+            z-index: var(--z-10);
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            height: 100%;
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: var(--z-10);
+        }
+        
+        .about-image img {
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .about-image-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.15);
+            z-index: var(--z-20);
+        }
+        
+        .about-text {
+            padding: var(--spacing-8);
+        }
+        
+        .about-text p {
+            margin-bottom: var(--spacing-6);
+            color: var(--gray-color);
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-6);
+            margin-top: var(--spacing-10);
+        }
+        
+        .about-stat-item {
+            padding: var(--spacing-6);
+            border-radius: var(--border-radius-lg);
+            background-color: rgba(15, 23, 42, 0.6);
+            text-align: center;
+            transition: all var(--transition-normal);
+            border: 1px solid rgba(100, 116, 139, 0.1);
+        }
+        
+        .about-stat-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 180, 216, 0.3);
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+        
+        .about-stat-number {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--highlight-color);
+            margin-bottom: var(--spacing-2);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-stat-number::after {
+            content: '+';
+            position: absolute;
+            top: 0;
+            right: -15px;
+            font-size: 0.7em;
+            color: var(--accent-color);
+        }
+        
+        html[dir="ltr"] .about-stat-number::after {
+            right: auto;
+            left: -15px;
+        }
+        
+        .about-stat-label {
+            font-size: var(--text-sm);
+            color: var(--gray-color);
+        }
+        
+        /* ===== Team Section ===== */
+        .team-section {
+            position: relative;
+            background-color: var(--dark-color);
+        }
+        
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 85% 15%, rgba(0, 100, 102, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 15% 85%, rgba(30, 58, 138, 0.08) 0%, transparent 50%);
+            z-index: var(--z-0);
+        }
+        
+        .team-grid {
+            position: relative;
+            z-index: var(--z-10);
+        }
+        
+        .team-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .team-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto var(--spacing-6);
+            overflow: hidden;
+            background: var(--gradient-primary);
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.2);
+            transition: all var(--transition-normal);
+        }
+        
+        .team-card:hover .team-avatar {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.3), var(--shadow-xl);
+        }
+        
+        .team-name {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .team-role {
+            color: var(--accent-color);
+            font-size: var(--text-base);
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .team-bio {
+            color: var(--gray-color);
+            margin-bottom: var(--spacing-6);
+            flex: 1;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-4);
+            margin-top: auto;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light-color);
+            text-decoration: none;
+            font-size: var(--text-lg);
+            transition: all var(--transition-normal);
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        /* ===== Contact Section ===== */
+        .contact-section {
+            position: relative;
+            background-color: rgba(8, 15, 26, 0.7);
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 180, 216, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(255, 213, 0, 0.08) 0%, transparent 50%);
+            z-index: var(--z-0);
+        }
+        
+        .contact-content {
+            position: relative;
+            z-index: var(--z-10);
+        }
+        
+        .contact-info-card {
+            padding: var(--spacing-8);
+            height: 100%;
+        }
+        
+        .contact-info-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-6);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-info-title::after {
+            content: '';
+            position: absolute;
+            bottom: calc(-1 * var(--spacing-2));
+            right: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--highlight-color);
+            border-radius: 1.5px;
+        }
+        
+        html[dir="ltr"] .contact-info-title::after {
+            right: auto;
+            left: 0;
+        }
+        
+        .contact-description {
+            color: var(--gray-color);
+            margin-bottom: var(--spacing-8);
+            line-height: 1.8;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+            margin-bottom: var(--spacing-6);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(30, 58, 138, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-xl);
+            color: var(--accent-color);
+            transition: all var(--transition-normal);
+        }
+        
+        .contact-method:hover .contact-icon {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            transform: scale(1.1);
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-label {
+            font-size: var(--text-sm);
+            color: var(--gray-color);
+            margin-bottom: var(--spacing-1);
+        }
+        
+        .contact-value {
+            font-size: var(--text-base);
+            color: var(--light-color);
+            word-break: break-word;
+        }
+        
+        .contact-form-card {
+            padding: var(--spacing-8);
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-6);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--spacing-2);
+            font-size: var(--text-sm);
+            color: var(--gray-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            border-radius: var(--border-radius);
+            background-color: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            color: var(--light-color);
+            font-size: var(--text-base);
+            transition: all var(--transition-normal);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.2);
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+        
+        .form-control::placeholder {
+            color: rgba(100, 116, 139, 0.5);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* ===== Footer ===== */
+        .footer {
+            background-color: var(--darker-color);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), var(--accent-color), var(--highlight-color), transparent);
+        }
+        
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-12);
+            margin-bottom: var(--spacing-16);
+        }
+        
+        .footer-logo {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--light-color);
+            margin-bottom: var(--spacing-4);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .footer-description {
+            color: var(--gray-color);
+            margin-bottom: var(--spacing-6);
+            max-width: 300px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-4);
+        }
+        
+        .footer-heading {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            margin-bottom: var(--spacing-6);
+            color: var(--light-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: calc(-1 * var(--spacing-2));
+            right: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--highlight-color);
+        }
+        
+        html[dir="ltr"] .footer-heading::after {
+            right: auto;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-link {
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .footer-link a {
+            color: var(--gray-color);
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            font-size: var(--text-base);
+            display: inline-block;
+        }
+        
+        html[dir="rtl"] .footer-link a:hover {
+            color: var(--highlight-color);
+            transform: translateX(-5px);
+        }
+        
+        html[dir="ltr"] .footer-link a:hover {
+            color: var(--highlight-color);
+            transform: translateX(5px);
+        }
+        
+        .footer-contact {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-4);
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .footer-contact-icon {
+            color: var(--accent-color);
+            font-size: var(--text-lg);
+        }
+        
+        .footer-contact-text {
+            color: var(--gray-color);
+            font-size: var(--text-base);
+        }
+        
+        .footer-bottom {
+            padding-top: var(--spacing-8);
+            border-top: 1px solid rgba(100, 116, 139, 0.1);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--gray-color);
+            font-size: var(--text-sm);
+        }
+        
+        .lang-footer {
+            display: flex;
+            justify-content: center;
+            margin-top: var(--spacing-4);
+        }
+        
+        /* Animated background */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: var(--z-0);
+        }
+        
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.03);
+            animation: float 18s infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Utility Animations */
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease forwards;
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
         }
-
-
-        html {
-            scroll-padding-top: 80px;
-            scroll-behavior: smooth;
+        
+        .delay-1 {
+            animation-delay: 0.1s;
         }
-
-
-        @media (max-width: 768px) {
-            .disable-animation-mobile {
-                animation: none !important;
-                transform: none !important;
+        
+        .delay-2 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.5s;
+        }
+        
+        .delay-4 {
+            animation-delay: 0.7s;
+        }
+        
+        .delay-5 {
+            animation-delay: 0.9s;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 180, 216, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 180, 216, 0);
             }
         }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px var(--primary-color); }
-            50% { box-shadow: 0 0 20px var(--primary-color); }
-            100% { box-shadow: 0 0 5px var(--primary-color); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        :root {
-            --primary-color: #8e44ad;
-            --secondary-color: #9b59b6;
-            --accent-color: #d6b5e7;
-            --text-color: #ffffff;
-            --bg-dark: #0a0a1a;
-            --bg-gradient: linear-gradient(135deg, #0a0a1a, #1a1a3a);
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --nav-bg: rgba(10, 10, 26, 0.95);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--bg-gradient);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-dark);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s;
-        }
-
-        .loader.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loader-icon {
-            width: 50px;
-            height: 50px;
-            border: 5px solid var(--primary-color);
-            border-top-color: transparent;
-            border-radius: 50%;
-            animation: rotate 1s linear infinite;
-        }
-
-        .navbar {
-            background: var(--nav-bg);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s;
-        }
-
-        .navbar.scrolled {
-            padding: 0.5rem 0;
-            background: var(--nav-bg);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-icon {
-            font-size: 2rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            position: relative;
-            padding: 0.5rem 1rem;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: var(--bg-dark);
-        }
-
-        .hero-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            background: var(--primary-color);
-            border-radius: 50%;
-            pointer-events: none;
-            opacity: 0.5;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1000px;
-            padding: 2rem;
-            text-align: center;
-            animation: fadeIn 1s ease-out;
-        }
-
-        .hero-title {
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(142, 68, 173, 0.3);
-        }
-
-        .hero-subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: var(--accent-color);
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-
-        .cta-button {
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .primary-button {
-            background: var(--primary-color);
-            color: white;
+        
+        .pulse {
             animation: pulse 2s infinite;
         }
-
-        .primary-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .primary-button:hover::before {
-            left: 100%;
-        }
-
-        .secondary-button {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .secondary-button:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .section {
-            padding: 8rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 4rem;
-            color: var(--accent-color);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: var(--primary-color);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            padding: 3rem;
-            border-radius: 20px;
-            transition: all 0.3s;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .feature-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-        }
-
-        .feature-description {
-            color: var(--text-color);
-            line-height: 1.8;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            aspect-ratio: 16/9;
-            cursor: pointer;
-        }
-
-        .gallery-item::before {
-            content: '';
-            position: absolute;
+        
+        /* Loader */
+        .loader-container {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .gallery-item:hover::before {
-            opacity: 1;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1rem;
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover .gallery-caption {
-            transform: translateY(0);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .team-member {
-            text-align: center;
-            padding: 3rem;
-            background: var(--card-bg);
-            border-radius: 20px;
-            transition: all 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .member-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            background: var(--primary-color);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .member-photo::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
-            animation: rotate 4s linear infinite;
-        }
-
-        .member-name {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
-
-        .member-role {
-            color: var(--text-color);
-            margin-bottom: 1rem;
-        }
-
-        .member-social {
+            background-color: var(--darker-color);
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            align-items: center;
+            z-index: var(--z-100);
+            transition: opacity 0.5s ease, visibility 0.5s ease;
         }
-
-        .social-link {
-            color: var(--text-color);
-            font-size: 1.2rem;
-            transition: color 0.3s;
+        
+        .loader {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            border-top-color: var(--primary-color);
+            border-bottom-color: var(--accent-color);
+            animation: spin 1.2s linear infinite;
         }
-
-        .social-link:hover {
-            color: var(--primary-color);
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
-
+        
+        /* Responsive Design */
+        @media (max-width: 1280px) {
+            :root {
+                --text-6xl: 3.25rem;
+                --text-5xl: 2.75rem;
+                --text-4xl: 2rem;
+                --section-spacing: 5rem;
+            }
+            
+            .hero-title {
+                font-size: var(--text-5xl);
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .grid-3, .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero-stats {
+                margin-top: var(--spacing-12);
+                gap: var(--spacing-8);
+            }
+        }
+        
         @media (max-width: 768px) {
+            :root {
+                --text-6xl: 2.75rem;
+                --text-5xl: 2.5rem;
+                --text-4xl: 1.875rem;
+                --text-3xl: 1.75rem;
+                --text-2xl: 1.5rem;
+                --text-xl: 1.125rem;
+                --section-spacing: 4rem;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
             .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 75%;
+                max-width: 300px;
+                background-color: var(--darker-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: var(--spacing-8);
+                transform: translateX(100%);
+                transition: transform 0.4s ease;
+                z-index: var(--z-50);
+            }
+            
+            html[dir="ltr"] .nav-links {
+                right: auto;
+                left: 0;
+                transform: translateX(-100%);
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+            }
+            
+            .nav-link {
+                font-size: var(--text-xl);
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: var(--spacing-6);
+                align-items: flex-start;
+            }
+            
+            .stat-item {
+                align-items: flex-start;
+            }
+            
+            html[dir="rtl"] .stat-item:not(:last-child)::after,
+            html[dir="ltr"] .stat-item:not(:last-child)::after {
                 display: none;
             }
-
-            .mobile-menu {
-                display: block;
+            
+            .section-title, .section-subtitle, .hero-title, .hero-description {
+                text-align: center;
             }
-
-            .hero-title {
-                font-size: 2.5rem;
+            
+            .hero-buttons {
+                justify-content: center;
             }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
+            
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
-
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            :root {
+                --text-6xl: 2.25rem;
+                --text-5xl: 2rem;
+                --text-4xl: 1.75rem;
+                --container-padding: 1rem;
+                --section-spacing: 3rem;
+            }
+            
             .section {
-                padding: 4rem 1rem;
+                padding: var(--section-spacing) 0;
             }
-
-            .feature-card {
-                padding: 2rem;
+            
+            .hero-title {
+                font-size: var(--text-4xl);
+            }
+            
+            .hero-description {
+                font-size: var(--text-base);
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .team-avatar {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin: 0 auto var(--spacing-2);
+            }
+            
+            .contact-info {
+                text-align: center;
+                width: 100%;
             }
         }
-
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-        }
-
-        .modal.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        .modal img {
-            max-width: 100%;
-            max-height: 90vh;
-            border-radius: 10px;
-        }
-
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary-color);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            opacity: 0;
-            transition: all 0.3s;
-            z-index: 999;
-        }
-
-        .scroll-to-top.visible {
-            opacity: 1;
-        }
-
-        .achievements {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .achievement-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .achievement-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .achievement-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .achievement-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
-
-        .achievement-text {
-            color: var(--text-color);
-        }
-
-        .video-section {
-            position: relative;
-            padding-top: 56.25%;
-            margin: 4rem 0;
-        }
-
-        .video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .newsletter {
-            background: var(--card-bg);
-            padding: 4rem;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 600px;
-            margin: 2rem auto 0;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 1rem;
-            border: none;
-            border-radius: 50px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-        }
-
-        .newsletter-button {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            background: var(--primary-color);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .newsletter-button:hover {
-            background: var(--secondary-color);
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-links a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: linear-gradient(145deg, #38458c, #30376b);
-            color: #ffffff;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .social-links a img {
-            width: 50%;
-            height: 50%;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:nth-child(2) img, .social-links a:nth-child(3) img {
-            width: 45%;
-            height: 45%;
-        }
-
-        .social-links a:hover {
-            transform: scale(1.2);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-        }
-
-        .social-links a:hover img {
-            transform: scale(1.2);
-        }
-
-
-        .team-message-box {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 2rem;
-            max-width: 500px;
-            margin: 2rem auto;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .team-message-box:hover {
-            transform: translateY(-5px);
-        }
-
-        .message-text {
-            color: var(--text-color);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .message-author {
-            color: var(--accent-color);
-            font-size: 1rem;
-            font-style: italic;
-        }
-
-
     </style>
 </head>
 <body>
-    <div class="loader">
-        <div class="loader-icon"></div>
+    <!-- Preloader -->
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
     </div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-icon"></span>
-                Astravorix team
-            </a>
-            
-        
-            <div class="nav-links">
-                <a href="#home" data-translate="home">الرئيسية</a>
-                <a href="#features" data-translate="features" >المميزات</a>
-                <a href="#gallery" data-translate="gallery">معرض الصور</a>
-                <a href="#team" data-translate="team">الفريق</a>
-                <a href="#achievements" data-translate="achievements">الإنجازات</a>
-                <a href="#social-links" data-translate="accounts">حساباتنا</a>
-                
-            </div>
-            
-        </div>
-    </nav>
-
-    <section id="home" class="hero">
-        <div class="hero-particles"></div>
-        <div class="hero-content fade-in-up">
-            <h1 class="hero-title" data-translate="hero-title">الزعيم المصباح</h1>
-            <p class="hero-subtitle" data-translate="hero-subtitle">لعبة بسيطة وجميلة ومجانية.</p>
-            <div class="cta-buttons">
-                <a href="https://nymg0.itch.io/the-leader-lamp" target="_blank" class="cta-button primary-button" data-translate="download-game">
-                    تحميل اللعبة
-                </a>
-                <a href="https://youtu.be/YzlfwG-9AVE?si=G4gVKL-WDcChDS2x" target="_blank" class="cta-button secondary-button" data-translate="watch-trailer">
-                    شاهد العرض
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="#" class="logo">
+                    <img src="logo s .png" alt="Logo" width="50">
+                    
+                    <span>Astravorix</span>
                 </a>
                 
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#hero" class="nav-link active" data-lang-key="nav_home">الرئيسية</a></li>
+                    <li><a href="#games" class="nav-link" data-lang-key="nav_games">الألعاب</a></li>
+                    <li><a href="#about" class="nav-link" data-lang-key="nav_about">عن الفريق</a></li>
+                    <li><a href="#team" class="nav-link" data-lang-key="nav_team">فريق العمل</a></li>
+                    <li><a href="#contact" class="nav-link" data-lang-key="nav_contact">تواصل معنا</a></li>
+                    <li><a href="#" class="btn btn-highlight py-2 px-4" data-lang-key="nav_try">تجربة ألعابنا</a></li>
+                </ul>
+                
+                <div class="nav-right">
+                    <div class="lang-selector" id="langSelector">
+                        <span class="lang-icon">🌐</span>
+                        <span class="current-lang" id="currentLang">العربية</span>
+                        <div class="lang-dropdown">
+                            <div class="lang-option active" data-lang="ar">
+                                <span class="lang-flag">🇸🇦</span>
+                                <span class="lang-name">العربية</span>
+                            </div>
+                            <div class="lang-option" data-lang="en">
+                                <span class="lang-flag">🇬🇧</span>
+                                <span class="lang-name">English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section" id="hero">
+        <div class="animated-bg" id="animatedBg"></div>
+        <div class="container">
+            <div class="grid grid-2 items-center">
+                <div class="hero-content">
+                    <p class="hero-tagline fade-in" data-lang-key="hero_tagline">استوديو ألعاب سعودي</p>
+                    <h1 class="hero-title fade-in delay-1" data-lang-key="hero_title">نصنع <span class="text-gradient">عوالم مذهلة</span> بأيدٍ سعودية</h1>
+                    <p class="hero-description fade-in delay-2" data-lang-key="hero_description">Astravorix استوديو مبتكر لتطوير الألعاب، نمزج بين التقنيات الحديثة والهوية العربية لنقدم تجارب فريدة غير مسبوقة</p>
+                    
+                    <div class="hero-buttons fade-in delay-3">
+                        <a href="#games" class="btn btn-primary" data-lang-key="hero_btn_explore">استكشف ألعابنا</a>
+                        <a href="#about" class="btn btn-outline" data-lang-key="hero_btn_about">تعرف علينا</a>
+                    </div>
+                    
+                    <div class="hero-stats fade-in delay-4">
+                        <div class="stat-item">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label" data-lang-key="hero_stat_months">أشهر منذ التأسيس</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1</div>
+                            <div class="stat-label" data-lang-key="hero_stat_games">ألعاب قيد التطوير</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label" data-lang-key="hero_stat_team">أعضاء فريق العمل</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image fade-in delay-5">
+                    
+                    <div class="floating" style="width: 100%; height: 450px; background: var(--gradient-primary); border-radius: var(--border-radius-2xl); position: relative; overflow: hidden; box-shadow: var(--shadow-2xl);">
+                            
+                            <img src="R.jpg" alt="Logo" height="450px">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games-section section" id="games">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="games_title">ألعابنا القادمة</h2>
+            <p class="section-subtitle" data-lang-key="games_subtitle">نعمل حاليًا على مجموعة من الألعاب المبتكرة التي ستنطلق قريبًا، كل لعبة تعكس رؤيتنا وهويتنا السعودية</p>
+            
+            <div class="games-grid grid grid-3">
+                <div class="game-card card fade-in delay-2">
+                    <div class="game-image">
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #0369a1, #14b8a6); display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 5rem;">
+                                <img src="logo game.png" alt="Logo" height="10px">
+                            </span>
+                        </div>
+                        <div class="game-badge badge">2028</div>
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title" data-lang-key="game1_name">الزعيم المصباح</h3>
+                        <p class="game-description" data-lang-key="game1_desc">لعبة قتالية تركز على مواجهة الزعماء، في عالم واسع ومترابط، تنتمي إلى تصنيف المترويدفانيا، مع إضافة تصنيف جديد يُدعى داركفانيا، والذي يقدم تجربة أكثر تحديًا وظلامًا.</p>
+                        <div class="game-meta">
+                            <span data-lang-key="game1_genre">قتال / مترويدفانيا / داركفانيا</span>
+                            <a href="#" class="badge badge-outline" data-lang-key="game_more">معرفة المزيد</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-        </div>
-    </section>
-
-    <section id="features" class="section">
-        <h2 class="section-title" data-translate="features-title" >مميزات اللعبة</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon" >🎮</div>
-                <h3 class="feature-title" data-translate="features-combat-system" >نظام قتال </h3>
-                <p class="feature-description" data-translate="features-combat-desc" >نظام قتال سهل مع حركات قتالية متنوعة ومهارات خاصة</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌍</div>
-                <h3 class="feature-title" data-translate="features-open-world" >عالم مفتوح</h3>
-                <p class="feature-description" data-translate="features-open-world-desc" >استكشف عالماً مفتوحاً مليئاً بالتفاصيل</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📜</div>
-                <h3 class="feature-title" data-translate="features-epic-story" >قصة ملحمية</h3>
-                <p class="feature-description" data-translate="features-epic-story-desc" >تجربة ممتعة ومليئة بالتحديات</p>
+            <div class="text-center mt-8 fade-in delay-3">
+                <a href="#" class="btn btn-accent" data-lang-key="games_view_all">مشاهدة كل الألعاب</a>
             </div>
         </div>
     </section>
 
-    <div id="gallery" class="section">
-        <h2 class="section-title" data-translate="gallery-title" >معرض الصور</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <div class="gallery-caption"></div>
-                <img src="logo game.png" alt="صورة " style="max-width:100%; height:auto;">
+    <!-- About Section -->
+    <section class="about-section section" id="about">
+        <div class="container">
+            <div class="about-content grid grid-2 items-center">
+                <div class="about-image fade-in">
+                    <div style="width: 100%; height: 600px; border-radius: var(--border-radius-xl); overflow: hidden; position: relative;">
+                        <img src="logo s.png" alt="Logo" >
+                    </div>
+                </div>
+                
+                <div class="about-text fade-in delay-1">
+                    <h2 class="section-title" data-lang-key="about_title">من نحن</h2>
+                    <p data-lang-key="about_p1">Astravorix هو فريق تطوير ألعاب سعودي شاب تأسس في نوفمبر 2024، بدأنا مع رؤية واضحة: تقديم تجارب ألعاب فريدة تجمع بين التقنيات الحديثة والهوية العربية.</p>
+                    <p data-lang-key="about_p2">رغم أننا فريق صغير، إلا أن طموحاتنا كبيرة. نحن نؤمن بأن صناعة الألعاب في المملكة العربية السعودية لديها إمكانات هائلة، ونتطلع لأن نكون جزءًا من هذه النهضة الرقمية.</p>
+                    <p data-lang-key="about_p3">يضم فريقنا مجموعة من المواهب الشغوفة بتطوير الألعاب، من مصممين مبدعين إلى مبرمجين محترفين، وجميعهم يعملون معًا لتحقيق حلمنا المشترك في صناعة ألعاب ذات مستوى عالمي.</p>
+                    
+                    <div class="about-stats fade-in delay-2">
+                        <div class="about-stat-item">
+                            <div class="about-stat-number">2</div>
+                            <div class="about-stat-label" data-lang-key="about_stat_months">أشهر منذ التأسيس</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="about-stat-number">1</div>
+                            <div class="about-stat-label" data-lang-key="about_stat_games">ألعاب قيد التطوير</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="about-stat-number">3</div>
+                            <div class="about-stat-label" data-lang-key="about_stat_team">أعضاء الفريق</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 fade-in delay-3">
+                        <a href="#contact" class="btn btn-primary" data-lang-key="about_join_btn">انضم إلينا</a>
+                    </div>
+                </div>
             </div>
-            <div class="gallery-item">
-                <div class="gallery-caption"></div>
-                <img src="p_g1.png" alt="صورة " style="max-width:100%; height:auto;">
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-caption"></div>
-                <img src="p_g2.png" alt="صورة " style="max-width:100%; height:auto;">
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-caption"></div>
-                <img src="p_g3.png" alt="صورة " style="max-width:100%; height:auto;">
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section section" id="team">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="team_title">فريق العمل</h2>
+            <p class="section-subtitle" data-lang-key="team_subtitle">نفخر بفريقنا المتميز الذي يجمع بين الشغف والإبداع والمهارة في صناعة الألعاب</p>
+            
+            <div class="team-grid grid grid-3">
+                <div class="team-card card fade-in">
+                    <div class="team-avatar">
+                        <img src="team1.jpg" alt="Logo" width="300">
+                    </div>
+                    <div class="team-content p-4">
+                        <h3 class="team-name" data-lang-key="team1_name" >ياسر مقبل الحربي</h3>
+                        <div class="team-role" data-lang-key="team1_role">مبرمج، رسام، وصاحب الفريق</div>
+                        <p class="team-bio" data-lang-key="team1_bio">مبرمج ورسّام، لدي خبرة في مجال تطوير الألعاب لمدة سنة ونصف، ورئيس فريق Astravorix</p>
+                        <div class="team-social">
+                            <a href="#" class="social-link">🐦</a>
+                            <a href="#" class="social-link">🌐</a>
+                            <a href="#" class="social-link">📱</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card card fade-in delay-1">
+                    <div class="team-avatar">
+                        <img src="team2.jpg" alt="Logo" width="300">
+                    </div>
+                    <div class="team-content p-4">
+                        <h3 class="team-name" data-lang-key="team2_name" >يوسف</h3>
+                        <div class="team-role" data-lang-key="team2_role">؟؟؟</div>
+                        <p class="team-bio" data-lang-key="team2_bio">؟؟؟</p>
+                        <div class="team-social">
+                            <a href="#" class="social-link">🐦</a>
+                            <a href="#" class="social-link">🌐</a>
+                            <a href="#" class="social-link">📱</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card card fade-in delay-2">
+                    <div class="team-avatar">
+                        <img src="team3.jpg" alt="Logo" width="300">
+                    </div>
+                    <div class="team-content p-4">
+                        <h3 class="team-name" data-lang-key="team3_name" >بكسل</h3>
+                        <div class="team-role" data-lang-key="team3_role">؟؟؟</div>
+                        <p class="team-bio" data-lang-key="team3_bio">؟؟؟</p>
+                        <div class="team-social">
+                            <a href="#" class="social-link">🐦</a>
+                            <a href="#" class="social-link">🌐</a>
+                            <a href="#" class="social-link">📱</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-        </div>
-    </div>
-
-
-    
-    <div id = "message" class="team-message-box">
-        <p class="message-text" data-translate="message-text" >اللعبة التي في الأعلى قمت بتطويرها بنفسي من جميع النواحي. الآن أطمح للانتقال إلى مستوى مختلف تمامًا وأقدم لعبة كبيرة جدًا مع فريقي الذي سيساعدني في تطويرها.</p>
-        <span class="message-author" data-translate="message-author" >- ياسر مقبل</span>
-    </div>
-    
-
-    <section id="team" class="section">
-        <h2 class="section-title" data-translate="team-title" >فريق التطوير</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="member-photo">
-                    <img src="team1.jpg" alt="صورة " style="object-fit: cover;   width: 100%; height: 100%;">
-                </div>
-                <h3 class="member-name" data-translate="team-member1-name" >ياسر مقبل</h3>
-                <p class="member-role" data-translate="team-member1-role" >مبرمج، كاتب القصة، وصاحب اللعبة</p>
-                <div class="member-social">
-                    <a href="#" class="social-link">🌐</a>
-                    <a href="#" class="social-link">📱</a>
-                    <a href="#" class="social-link">📧</a>
-                </div>
-            </div>
-            <div class="team-member">
-                <div class="member-photo">
-                    <img src="team2.jpg" alt="صورة " style="object-fit: cover;   width: 100%; height: 100%;">
-                </div>
-                <h3 class="member-name" data-translate="team-member2-name" >يوسف عبدالله</h3>
-                <p class="member-role" data-translate="team-member2-role" >مبرمج</p>
-                <div class="member-social">
-                    <a href="#" class="social-link">🌐</a>
-                    <a href="#" class="social-link">📱</a>
-                    <a href="#" class="social-link">📧</a>
-                </div>
-            </div>
-            <div class="team-member">
-                <div class="member-photo">
-                    <img src="team3.jpg" alt="صورة " style="object-fit: cover;   width: 100%; height: 100%;">
-                </div>
-                <h3 class="member-name" data-translate="team-member3-name" >بكسل</h3>
-                <p class="member-role" data-translate="team-member3-role" >مبرمج ومصمم مراحل/p>
-                <div class="member-social">
-                    <a href="https://theyoungpixel.itch.io/cabin-freakout" class="social-link">🌐</a>
-                    <a href="#" class="social-link">📱</a>
-                    <a href="#" class="social-link">📧</a>
-                </div>
-            </div>
-            <div class="team-member">
-                <div class="member-photo"></div>
-                <h3 class="member-name">؟؟؟</h3>
-                <p class="member-role">؟؟؟</p>
-                <div class="member-social">
-                    <a href="#" class="social-link">🌐</a>
-                    <a href="#" class="social-link">📱</a>
-                    <a href="#" class="social-link">📧</a>
-                </div>
-            </div>
-            <div class="team-member">
-                <div class="member-photo"></div>
-                <h3 class="member-name">؟؟؟</h3>
-                <p class="member-role">؟؟؟</p>
-                <div class="member-social">
-                    <a href="#" class="social-link">🌐</a>
-                    <a href="#" class="social-link">📱</a>
-                    <a href="#" class="social-link">📧</a>
-                </div>
-            </div>
-            <button class="language-a" data-translate="Join-the-Team" >انضم إلى الفريق</button>
-        </div>
-    </section>
-
-    <section id="achievements" class="section">
-        <h2 class="section-title" data-translate="achievements-title" >إنجازاتنا</h2>
-        <div class="achievements">
-            <div class="achievement-card">
-                <div class="achievement-icon">🏆</div>
-                <div class="achievement-number">49</div>
-                <div class="achievement-text" data-translate="achievements-players" >لاعب</div>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-icon">⭐</div>
-                <div class="achievement-number">؟؟؟</div>
-                <div class="achievement-text" data-translate="achievements-rating" >تقييم اللعبة</div>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-icon">🎮</div>
-                <div class="achievement-number">0</div>
-                <div class="achievement-text" data-translate="achievements-awards" >جوائز أفضل لعبة</div>
+            <div class="text-center mt-8 fade-in delay-3">
+                <a href="#contact" class="btn btn-outline" data-lang-key="team_join_btn">انضم إلى فريقنا</a>
             </div>
         </div>
     </section>
-    <h2 class="section-title" data-translate="accounts">حساباتنا</h2>
-    <div id="social-links" class="social-links">
-            <a href="https://twitter.com/Astravorix" target="_blank" aria-label="Twitter" class="social-link">
-                <img src="logo_x.png" alt="Twitter Logo" class="social-icon">
-            </a>
-            <a href="https://instagram.com/Astravorix" target="_blank" aria-label="Instagram" class="social-link">
-                <img src="logo_Instagram.png" alt="Instagram Logo" class="social-icon">
-            </a>
-            <a href="https://youtube.com/@Astravorix" target="_blank" aria-label="YouTube" class="social-link">
-                <img src="logo_Youtube.png" alt="YouTube Logo" class="social-icon">
-            </a>
-            <a href="https://discord.gg/BMuquxDJre" target="_blank" aria-label="discord" class="social-link">
-                <img src="logo_discord.png" alt="discord Logo" class="social-icon">
-            </a>
-            <a href="to support.html"   >$</a>
 
-    </div>
-    
+    <!-- Contact Section -->
+    <section class="contact-section section" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="contact_title">تواصل معنا</h2>
+            <p class="section-subtitle" data-lang-key="contact_subtitle">نتطلع للتواصل معك! سواء كنت مهتمًا بألعابنا، تبحث عن شراكة، أو ترغب في الانضمام إلى فريقنا</p>
+            
+            <div class="contact-content grid grid-2">
+                <div class="contact-info-card card fade-in">
+                    <h3 class="contact-info-title" data-lang-key="contact_info_title">لنبقى على تواصل</h3>
+                    <p class="contact-description" data-lang-key="contact_description">نحن نؤمن بقوة المجتمع والتعاون. سواء كنت لاعبًا متحمسًا، مطورًا يبحث عن فرص، أو شريكًا محتملًا، نود التواصل معك!</p>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-info">
+                            <div class="contact-label" data-lang-key="contact_email">البريد الإلكتروني</div>
+                            <div class="contact-value">info@astravorix.com</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-info">
+                            <div class="contact-label" data-lang-key="contact_phone">الهاتف</div>
+                            <div class="contact-value">+966 5X XXX XXXX</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-info">
+                            <div class="contact-label" data-lang-key="contact_location">الموقع</div>
+                            <div class="contact-value" data-lang-key="contact_address">الرياض، المملكة العربية السعودية</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <div class="footer-social">
+                            <a href="https://discord.gg/BMuquxDJre" class="social-link">
+                                <img src="logo_discord.png" alt="Logo" width="25">
+                            </a>
+                            <a href="https://instagram.com/Astravorix" class="social-link">
+                                <img src="logo_Instagram.png" alt="Logo" width="25">
+                            </a>
+                            <a href="https://youtube.com/@Astravorix" class="social-link">
+                                <img src="logo_Youtube.png" alt="Logo" width="25">
+                            </a>
+                            <a href="https://twitter.com/Astravorix" class="social-link">
+                                <img src="logo_x.png" alt="Logo" width="25">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-card card fade-in delay-1">
+                    <form
+                    action="https://formspree.io/f/myzkrzvl"
+                    method="POST"
+                  >
+                        <div class="grid grid-2 gap-4">
+                            <div class="form-group">
+                                <label for="name" class="form-label" data-lang-key="form_name">الاسم</label>
+                                <input name="name" type="text" id="name" class="form-control" data-lang-key="form_name_placeholder" placeholder="أدخل اسمك" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label" data-lang-key="form_email">البريد الإلكتروني</label>
+                                <input name="email" type="email" id="email" class="form-control" placeholder="example@domain.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label" data-lang-key="form_subject">الموضوع</label>
+                            <input name="Subject" type="text" id="subject" class="form-control" data-lang-key="form_subject_placeholder" placeholder="موضوع رسالتك" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label" data-lang-key="form_message">الرسالة</label>
+                            <textarea name="message" id="message" class="form-control" data-lang-key="form_message_placeholder" placeholder="اكتب رسالتك هنا..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-full" data-lang-key="form_submit">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    
-    
-    <style>
-        .social-media {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .social-links {
-            display: flex;
-            gap: 20px;
-        }
-        .social-logo {
-            width: 40px;
-            height: 40px;
-        }
-    </style>
-    
-    
-    <div class="language-switcher">
-        <button class="language-btn active" data-lang="ar">عربي</button>
-        <button class="language-btn" data-lang="en">English</button>
-        
-    </div>
-    <div class="scroll-to-top">↑</div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <div class="footer-logo">
+                        <img src="logo s .png" alt="Logo" width="50">
+                        <span>Astravorix</span>
+                    </div>
+                    <p class="footer-description" data-lang-key="footer_description">نصنع عوالم مذهلة بأيدٍ سعودية - استوديو تطوير ألعاب طموح يجمع بين الإبداع والتقنية</p>
+                    <div class="footer-social">
+                        <a href="https://discord.gg/BMuquxDJre" class="social-link">
+                            <img src="logo_discord.png" alt="Logo" width="25">
+                        </a>
+                        <a href="https://instagram.com/Astravorix" class="social-link">
+                            <img src="logo_Instagram.png" alt="Logo" width="25">
+                        </a>
+                        <a href="https://youtube.com/@Astravorix" class="social-link">
+                            <img src="logo_Youtube.png" alt="Logo" width="25">
+                        </a>
+                        <a href="https://twitter.com/Astravorix" class="social-link">
+                            <img src="logo_x.png" alt="Logo" width="25">
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading" data-lang-key="footer_quick_links">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#hero" data-lang-key="footer_home">الرئيسية</a></li>
+                        <li class="footer-link"><a href="#games" data-lang-key="footer_games">الألعاب</a></li>
+                        <li class="footer-link"><a href="#about" data-lang-key="footer_about">عن الفريق</a></li>
+                        <li class="footer-link"><a href="#team" data-lang-key="footer_team">فريق العمل</a></li>
+                        <li class="footer-link"><a href="#contact" data-lang-key="footer_contact">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading" data-lang-key="footer_our_games">ألعابنا</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">****** ******</a></li>
+                        <li class="footer-link"><a href="#">****** ******</a></li>
+                        <li class="footer-link"><a href="#" data-lang-key="footer_upcoming">الألعاب القادمة</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading" data-lang-key="footer_contact_us">تواصل معنا</h4>
+                    <div class="footer-contact">
+                        <span class="footer-contact-icon">📧</span>
+                        <span class="footer-contact-text">info@astravorix.com</span>
+                    </div>
+                    <div class="footer-contact">
+                        <span class="footer-contact-icon">📱</span>
+                        <span class="footer-contact-text">+966 5X XXX XXXX</span>
+                    </div>
+                    <div class="footer-contact">
+                        <span class="footer-contact-icon">📍</span>
+                        <span class="footer-contact-text" data-lang-key="footer_address">الرياض، المملكة العربية السعودية</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright" data-lang-key="footer_copyright">جميع الحقوق محفوظة Astravorix</p>
+                <div class="lang-footer">
+                    <div class="lang-selector">
+                        <span class="lang-icon">🌐</span>
+                        <span class="current-lang" id="currentLangFooter">العربية</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        const translations = {
-    ar: {
-        "brand": "فريق أسترافوركس",
-        "home": "الرئيسية",
-        "features": "المميزات",
-        "gallery": "معرض الصور",
-        "news": "الأخبار",
-        "team": "الفريق",
-        "achievements": "الإنجازات",
-        "accounts": "حساباتنا",
-        "hero-title": "الزعيم المصباح",
-        "hero-subtitle": "لعبة بسيطة وجميلة ومجانية",
-        "download-game": "تحميل اللعبة",
-        "watch-trailer": "شاهد العرض",
-        "features-title": "مميزات اللعبة",
-        "features-combat-system": "نظام قتال ",
-        "features-combat-desc": "نظام قتال سهل مع حركات قتالية متنوعة ومهارات خاصة",
-        "features-open-world": "عالم مفتوح",
-        "features-open-world-desc": "استكشف عالماً مفتوحاً مليئاً بالتفاصيل",
-        "features-epic-story": "قصة ملحمية",
-        "features-epic-story-desc": "تجربة ممتعة ومليئة بالتحديات",
-        "gallery-title": "معرض الصور",
-        "message-text": "اللعبة التي في الأعلى قمت بتطويرها بنفسي من جميع النواحي. الآن أطمح للانتقال إلى مستوى مختلف تمامًا وأقدم لعبة كبيرة جدًا مع فريقي الذي سيساعدني في تطويرها.",
-        "message-author": "- ياسر مقبل",
-        "team-title": "فريق التطوير",
-        "team-member1-name": "ياسر مقبل",
-        "team-member1-role": "مبرمج، كاتب القصة، وصاحب اللعبة",
-        "team-member2-name": "يوسف عبدالله",
-        "team-member2-role": "مبرمج",
-        "team-member3-name": "بكسل",
-        "team-member3-role": "مبرمج ومصمم مراحل",
-        "achievements-title": "إنجازاتنا",
-        "achievements-players": "لاعب",
-        "achievements-rating": "تقييم اللعبة",
-        "achievements-awards": "جوائز أفضل لعبة",
-        "Join-the-Team": "انضم إلى الفريق"
-    },
-    en: {
-        "home": "Home",
-        "features": "Features",
-        "gallery": "Gallery",
-        "news": "News",
-        "team": "Team",
-        "achievements": "Achievements",
-        "accounts": "Our Accounts",
-        "hero-title": "The Leader Lamp",
-        "hero-subtitle": "A Simple, Beautiful and Free Game",
-        "download-game": "Download Game",
-        "watch-trailer": "Watch Trailer",
-        "features-title": "Game Features",
-        "features-combat-system": "Combat System",
-        "features-combat-desc": "Simple combat system with diverse moves and special skills.",
-        "features-open-world": "Open World",
-        "features-open-world-desc": "Explore a detailed open world.",
-        "features-epic-story": "Epic Story",
-        "features-epic-story-desc": "Fun and challenging experience.",
-        "gallery-title": "Gallery",
-        "message-text": "The game above was entirely developed by me. Now, I aspire to reach a completely different level and present a very large game with my team who will assist in its development.",
-        "message-author": "- Yasser Moqbel",
-        "team-title": "Development Team",
-        "team-member1-name": "Yasser Moqbel",
-        "team-member1-role": "Programmer, Story Writer, and Game Owner",
-        "team-member2-name": "Yousef Abdullah",
-        "team-member2-role": "Programmer",
-        "team-member3-name": "Pixel",
-        "team-member3-role": "Programmer and Level Designer",
-        "achievements-title": "Our Achievements",
-        "achievements-players": "Players",
-        "achievements-rating": "Game Rating",
-        "achievements-awards": "Best Game Awards",
-        "Join-the-Team": "Join the Team",
-        "support-btn-text": "Material Support"
-        }   
-    };
-        function changeLanguage(lang) {
-            document.documentElement.lang = lang;
-            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.addEventListener('DOMContentLoaded', function() {
+            // Preloader
+            const loader = document.getElementById('loader');
+            setTimeout(function() {
+                loader.style.opacity = '0';
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1000);
             
-            document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-
-            const style = document.documentElement.style;
-            if (lang === 'ar') {
-                style.setProperty('--text-align', 'right');
-                style.setProperty('--float-direction', 'right');
-            } else {
-                style.setProperty('--text-align', 'left');
-                style.setProperty('--float-direction', 'left');
-            }
-    
-            localStorage.setItem('preferredLanguage', lang);
-        }
-    
-        document.querySelectorAll('.language-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.language-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                changeLanguage(btn.getAttribute('data-lang'));
-            });
-        });
-    
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLanguage') || 'ar';
-            changeLanguage(savedLang);
-            document.querySelector(`[data-lang="${savedLang}"]`).classList.add('active');
-        });
-        window.addEventListener('load', () => {
-            document.querySelector('.loader').classList.add('hidden');
-        });
-
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        const sections = document.querySelectorAll('.section');
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-        function createParticles() {
-            const particlesContainer = document.querySelector('.hero-particles');
-            const particleCount = 50;
-
-            for (let i = 0; i < particleCount; i++) {
+            // Create animated background
+            const animatedBg = document.getElementById('animatedBg');
+            for (let i = 0; i < 30; i++) {
                 const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                const size = Math.random() * 3 + 1;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                
+                particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
-                
-                particlesContainer.appendChild(particle);
-                
-                animateParticle(particle);
+                particle.style.width = (Math.random() * 10 + 5) + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
+                particle.style.animationDelay = (Math.random() * 5) + 's';
+                animatedBg.appendChild(particle);
             }
-        }
-
-        function animateParticle(particle) {
-            const duration = Math.random() * 3 + 2;
-            const targetX = parseInt(particle.style.left) + (Math.random() * 100 - 50);
-            const targetY = parseInt(particle.style.top) + (Math.random() * 100 - 50);
-
-            particle.animate([
-                { transform: 'translate(0, 0)' },
-                { transform: `translate(${targetX}px, ${targetY}px)` }
-            ], {
-                duration: duration * 1000,
-                iterations: Infinity,
-                direction: 'alternate',
-                easing: 'ease-in-out'
+            
+            // Header Scroll Effect
+            const header = document.getElementById('header');
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            const navLinksItems = document.querySelectorAll('.nav-link');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
             });
-        }
-
-        createParticles();
-
-        const scrollToTop = document.querySelector('.scroll-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                scrollToTop.classList.add('visible');
-            } else {
-                scrollToTop.classList.remove('visible');
-            }
-        });
-
-        scrollToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            
+            // Mobile Navigation
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
             });
-        });
-
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const modal = document.createElement('div');
-                modal.classList.add('modal');
-                
-                modal.innerHTML = `
-                    <div class="modal-content">
-                        <span class="modal-close">&times;</span>
-                        <img src="${item.querySelector('img')?.src || '#'}">
-                    </div>
-                `;
-                
-                document.body.appendChild(modal);
-                
-                setTimeout(() => modal.classList.add('active'), 10);
-                
-                modal.querySelector('.modal-close').addEventListener('click', () => {
-                    modal.classList.remove('active');
-                    setTimeout(() => modal.remove(), 300);
+            
+            // Close mobile menu when clicking on links
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
                 });
             });
+            
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Active Navigation Link on Scroll
+            function updateActiveLink() {
+                const sections = document.querySelectorAll('section');
+                let scrollPosition = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinksItems.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveLink);
+            
+            // Intersection Observer for Animation
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        fadeObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+            
+            // Contact Form Submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple form validation
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    if (name && email && subject && message) {
+                        // Get current language
+                        const currentLang = document.documentElement.getAttribute('data-lang');
+                        
+                        // Success message based on language
+                        if (currentLang === 'ar') {
+                            alert('شكرًا لتواصلك معنا! سنرد عليك في أقرب وقت ممكن.');
+                        } else {
+                            alert('Thank you for contacting us! We will get back to you as soon as possible.');
+                        }
+                        
+                        contactForm.reset();
+                    } else {
+                        // Error message based on language
+                        if (currentLang === 'ar') {
+                            alert('الرجاء تعبئة جميع الحقول المطلوبة.');
+                        } else {
+                            alert('Please fill in all required fields.');
+                        }
+                    }
+                });
+            }
+            
+            // Multi-language Support
+            const translations = {
+                'ar': {
+                    'nav_home': 'الرئيسية',
+                    'nav_games': 'الألعاب',
+                    'nav_about': 'عن الفريق',
+                    'nav_team': 'فريق العمل',
+                    'nav_contact': 'تواصل معنا',
+                    'nav_try': 'تجربة ألعابنا',
+                    
+                    'hero_tagline': 'استوديو ألعاب سعودي',
+                    'hero_title': 'نصنع <span class="text-gradient">عوالم مذهلة</span> بأيدٍ سعودية',
+                    'hero_description': 'فريق صغير بطموحات كبيرة، نسعى لتطوير ألعاب مميزة ونستمر في التعلم والتقدم مع كل خطوة.',
+                    'hero_btn_explore': 'استكشف ألعابنا',
+                    'hero_btn_about': 'تعرف علينا',
+                    'hero_stat_months': 'أشهر منذ التأسيس',
+                    'hero_stat_games': 'ألعاب قيد التطوير',
+                    'hero_stat_team': 'أعضاء فريق العمل',
+                    
+                    'games_title': 'ألعابنا القادمة',
+                    'games_subtitle': 'نعمل حاليًا على مجموعة من الألعاب المبتكرة التي ستنطلق قريبًا، كل لعبة تعكس رؤيتنا وهويتنا السعودية',
+                    'game1_name' : 'الزعيم المصباح',
+                    'game1_desc': 'لعبة قتالية تركز على مواجهة الزعماء، في عالم واسع ومترابط، تنتمي إلى تصنيف المترويدفانيا، مع إضافة تصنيف جديد يُدعى داركفانيا، والذي يقدم تجربة أكثر تحديًا وظلامًا.',
+                    'game1_genre': 'مترويد / داركفانيا',
+                    'game2_desc': 'انغمس في قصة مستوحاة من التراث العربي في عالم مفتوح يمزج بين الأساطير القديمة والخيال. اكتشف كنوز الصحراء وحل ألغازها الغامضة.',
+                    'game2_genre': 'عالم مفتوح/مغامرة',
+                    'game3_desc': 'لعبة قتالية سريعة الإيقاع مع عناصر لعب أدوار، حيث تقود فريقًا من الأبطال لإنقاذ عالمهم من ظلام قادم. طور أسلوب لعبك الفريد وأتقن قدرات فريقك.',
+                    'game3_genre': 'قتال / مترويد ',
+                    'game_more': 'معرفة المزيد',
+                    'games_view_all': 'مشاهدة كل الألعاب',
+                    
+                    'about_title': 'من نحن',
+                    'about_p1': 'بدأت رحلتنا من مشروع التخرج، حيث كان مشروعنا هو تطوير لعبة "الزعيم المصباح". خلال العمل على اللعبة، لفتت الفكرة انتباه بعض الزملاء، وبدأنا في مناقشة إمكانية التوسع في تطوير الألعاب خارج إطار الدراسة. كانت مجرد فكرة في البداية، لكنها أثارت اهتمامنا جميعًا، مما دفعنا للتفكير في العمل كفريق.',
+                    'about_p2': 'مع مرور الوقت، أصبح واضحًا أننا نرغب في الاستمرار وتطوير أنفسنا في هذا المجال. لم يكن الهدف فقط صنع الألعاب، بل أيضًا التعلم من التجربة وتحسين مهاراتنا في كل جانب من جوانب التطوير. من هنا، قررنا تأسيس فريق Astravorix ليكون مساحة تجمعنا للعمل والتطوير المشترك، مع التركيز على تقديم تجارب لعب ممتعة.',
+                    'about_p3': 'بحلول نهاية عام 2024، بدأنا فعليًا في بناء الفريق، واضعين أولى خطواتنا في عالم تطوير الألعاب. لا تزال رحلتنا في بدايتها، وندرك أن الطريق طويل، لكننا ملتزمون بالتعلم والتطور مع كل مشروع جديد. هذه هي قصتنا حتى الآن، وما زلنا نكتب فصولها القادمة.',
+                    'about_stat_months': 'أشهر منذ التأسيس',
+                    'about_stat_games': 'ألعاب قيد التطوير',
+                    'about_stat_team': 'أعضاء الفريق',
+                    'about_join_btn': 'انضم إلينا',
+                    
+                    'team_title': 'فريق العمل',
+                    'team_subtitle': 'نفخر بفريقنا المتميز الذي يجمع بين الشغف والإبداع والمهارة في صناعة الألعاب',
+                    'team1_name': 'ياسر مقبل',
+                    'team1_role': 'مبرمج، رسام، وصاحب الفريق',
+                    'team1_bio': 'مبرمج ورسّام، أمتلك خبرة تمتد لسنة ونصف في مجال تطوير الألعاب، حيث عملت على تصميم وبرمجة العديد من المشاريع. أشغل حاليًا منصب رئيس فريق Astravorix، وأطمح إلى تطوير ألعاب مبتكرة تجمع بين الإبداع والتقنية.',
+                    'team2_name': 'يوسف عبدالله',
+                    'team2_role':  'خبير اختبار الألعاب واكتشاف الأخطاء',
+                    'team2_bio': 'جزء من فريق اختبار الألعاب، يركز على تجربة اللعبة واكتشاف أي مشكلات قد تؤثر على سلاستها. يعمل على فحص التفاصيل والتأكد من أن كل شيء يعمل كما ينبغي، مما يساعد الفريق في تحسين الأداء قبل الإطلاق.',
+                    'team3_name': 'بكسل',
+                    'team3_role': 'مبرمج ألعاب بخبرة سنة ونصف',
+                    'team3_bio': 'يملك خبرة في تطوير الألعاب لمدة سنة ونصف، حيث عمل على برمجة وتحسين آليات اللعب، واكتشاف الأخطاء، وتحسين الأداء لضمان تجربة سلسة. من أعماله لعبة "خرشة إيميلي"، التي تعكس شغفه بتصميم وتطوير تجارب تفاعلية فريدة.',
+                    'team_join_btn': 'انضم إلى فريقنا',
+                    
+                    'contact_title': 'تواصل معنا',
+                    'contact_subtitle': 'نتطلع للتواصل معك! سواء كنت مهتمًا بألعابنا، تبحث عن شراكة، أو ترغب في الانضمام إلى فريقنا',
+                    'contact_info_title': 'لنبقى على تواصل',
+                    'contact_description': 'نحن نؤمن بقوة المجتمع والتعاون. سواء كنت لاعبًا متحمسًا، مطورًا يبحث عن فرص، أو شريكًا محتملًا، نود التواصل معك!',
+                    'contact_email': 'البريد الإلكتروني',
+                    'contact_phone': 'الهاتف',
+                    'contact_location': 'الموقع',
+                    'contact_address': 'الرياض، المملكة العربية السعودية',
+                    'form_name': 'الاسم',
+                    'form_name_placeholder': 'أدخل اسمك',
+                    'form_email': 'البريد الإلكتروني',
+                    'form_subject': 'الموضوع',
+                    'form_subject_placeholder': 'موضوع رسالتك',
+                    'form_message': 'الرسالة',
+                    'form_message_placeholder': 'اكتب رسالتك هنا...',
+                    'form_submit': 'إرسال الرسالة',
+                    
+                    'footer_description': 'نصنع عوالم مذهلة بأيدٍ سعودية – استوديو تطوير ألعاب يسعى للإبداع',
+                    'footer_quick_links': 'روابط سريعة',
+                    'footer_home': 'الرئيسية',
+                    'footer_games': 'الألعاب',
+                    'footer_about': 'عن الفريق',
+                    'footer_team': 'فريق العمل',
+                    'footer_contact': 'تواصل معنا',
+                    'footer_our_games': 'ألعابنا',
+                    'footer_upcoming': 'الألعاب القادمة',
+                    'footer_contact_us': 'تواصل معنا',
+                    'footer_address': 'الرياض، المملكة العربية السعودية',
+                    'footer_copyright': 'جميع الحقوق محفوظة Astravorix'
+                },
+                'en': {
+                    'nav_home': 'Home',
+                    'nav_games': 'Games',
+                    'nav_about': 'About Us',
+                    'nav_team': 'Our Team',
+                    'nav_contact': 'Contact Us',
+                    'nav_try': 'Try Our Games',
+                    
+                    'hero_tagline': 'A Saudi Game Studio',
+                    'hero_title': 'We Create <span class="text-gradient">Incredible Worlds</span> with Saudi Hands',
+                    'hero_description': 'A small team with big ambitions, striving to develop unique games while continuously learning and improving.',
+                    'hero_btn_explore': 'Explore Our Games',
+                    'hero_btn_about': 'Learn More About Us',
+                    'hero_stat_months': 'Months Since Establishment',
+                    'hero_stat_games': 'Games in Development',
+                    'hero_stat_team': 'Team Members',
+                    
+                    'games_title': 'Our Upcoming Games',
+                    'games_subtitle': 'We are currently working on a collection of innovative games launching soon, each reflecting our vision and Saudi identity.',
+                    'game1_name' : 'the leader lamp',
+                    'game1_desc': 'A boss fight-focused game set in a vast, interconnected world. It belongs to the Metroidvania genre while introducing a new category called Darkvania, offering a more challenging and darker experience.',
+                    'game1_genre': 'Metroid/Darkvania',
+                    'game2_desc': 'Immerse yourself in a story inspired by Arab heritage in an open world that blends ancient legends with fantasy. Discover desert treasures and solve its mysterious puzzles.',
+                    'game2_genre': 'Open World/Adventure',
+                    'game3_desc': 'A fast-paced combat game with RPG elements, where you lead a team of heroes to save their world from an impending darkness. Develop your unique playstyle and master your team’s abilities.',
+                    'game3_genre': 'Combat/Metroid',
+                    'game_more': 'Learn More',
+                    'games_view_all': 'View All Games',
+                    
+                    'about_title': 'About Us',
+                    'about_p1': 'Our journey began as a graduation project, where we developed a game called "The Lamp Boss." While working on the game, some colleagues took an interest in the idea, and we started discussing the possibility of expanding into game development beyond our studies. Initially, it was just an idea, but it sparked our passion, leading us to consider forming a team.',
+                    'about_p2': 'Over time, it became clear that we wanted to continue and grow in this field. Our goal was not just to create games but also to learn from the experience and enhance our skills in all aspects of development. This led to the founding of **Astravorix**, a team dedicated to working and learning together while focusing on delivering enjoyable gaming experiences.',
+                    'about_p3': 'By the end of 2024, we officially began building the team, taking our first steps into the world of game development. Our journey is still in its early stages, and we know the road ahead is long, but we are committed to learning and evolving with every new project. This is our story so far, and we are excited to write the next chapters.',
+                    'about_stat_months': 'Months Since Establishment',
+                    'about_stat_games': 'Games in Development',
+                    'about_stat_team': 'Team Members',
+                    'about_join_btn': 'Join Us',
+                    
+                    'team_title': 'Our Team',
+                    'team_subtitle': 'We take pride in our exceptional team, combining passion, creativity, and skill in game development.',
+                    'team1_name': 'Yasser Moqbel',
+                    'team1_role': 'Programmer, Artist, and Team Founder',
+                    'team1_bio': 'A programmer and artist with one and a half years of experience in game development. I have worked on designing and programming multiple projects. Currently, I serve as the leader of Astravorix, aspiring to develop innovative games that blend creativity and technology.',
+                    'team2_name': 'Yousef Abdullah',
+                    'team2_role': 'Game Tester & Bug Finder',
+                    'team2_bio': 'Part of the game testing team, focusing on gameplay experience and identifying any issues that may affect smoothness. Works on examining details and ensuring everything functions as it should, helping the team improve performance before release.',
+                    'team3_name': 'Pixel',
+                    'team3_role': 'Game Programmer with 1.5 Years of Experience',
+                    'team3_bio': 'With one and a half years of experience in game development, I have worked on programming and refining gameplay mechanics, identifying bugs, and improving performance to ensure a seamless experience. One of my projects includes "Emily’s Scratch," which reflects my passion for designing and developing unique interactive experiences.',
+                    'team_join_btn': 'Join Our Team',
+
+                    
+                    'contact_title': 'Contact Us',
+                    'contact_subtitle': 'We look forward to connecting with you! Whether you’re interested in our games, looking for a partnership, or want to join our team.',
+                    'contact_info_title': 'Stay Connected',
+                    'contact_description': 'We believe in the power of community and collaboration. Whether you are a passionate gamer, a developer seeking opportunities, or a potential partner, we would love to hear from you!',
+                    'contact_email': 'Email',
+                    'contact_phone': 'Phone',
+                    'contact_location': 'Location',
+                    'contact_address': 'Riyadh, Saudi Arabia',
+                    'form_name': 'Name',
+                    'form_name_placeholder': 'Enter your name',
+                    'form_email': 'Email',
+                    'form_subject': 'Subject',
+                    'form_subject_placeholder': 'Enter the subject of your message',
+                    'form_message': 'Message',
+                    'form_message_placeholder': 'Write your message here...',
+                    'form_submit': 'Send Message',
+                    
+                    'footer_description': 'We create incredible worlds with Saudi hands – a game development studio striving for creativity',
+                    'footer_quick_links': 'Quick Links',
+                    'footer_home': 'Home',
+                    'footer_games': 'Games',
+                    'footer_about': 'About Us',
+                    'footer_team': 'Our Team',
+                    'footer_contact': 'Contact Us',
+                    'footer_our_games': 'Our Games',
+                    'footer_upcoming': 'Upcoming Games',
+                    'footer_contact_us': 'Contact Us',
+                    'footer_address': 'Riyadh, Saudi Arabia',
+                    'footer_copyright': 'All rights reserved © Astravorix'
+                }
+
+            };
+            
+            // Function to change language
+            function changeLanguage(lang) {
+                document.documentElement.setAttribute('lang', lang);
+                document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                document.documentElement.setAttribute('data-lang', lang);
+                
+                // Update UI elements with language selector
+                document.getElementById('currentLang').textContent = lang === 'ar' ? 'العربية' : 'English';
+                document.getElementById('currentLangFooter').textContent = lang === 'ar' ? 'العربية' : 'English';
+                
+                // Update active language option
+                document.querySelectorAll('.lang-option').forEach(option => {
+                    if (option.getAttribute('data-lang') === lang) {
+                        option.classList.add('active');
+                    } else {
+                        option.classList.remove('active');
+                    }
+                });
+                
+                // Update all translatable elements
+                document.querySelectorAll('[data-lang-key]').forEach(element => {
+                    const key = element.getAttribute('data-lang-key');
+                    if (translations[lang][key]) {
+                        // Check if the content contains HTML
+                        if (translations[lang][key].includes('<')) {
+                            element.innerHTML = translations[lang][key];
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
+                    }
+                });
+                
+                // Update placeholders
+                document.querySelectorAll('input[data-lang-key], textarea[data-lang-key]').forEach(element => {
+                    const key = element.getAttribute('data-lang-key');
+                    if (translations[lang][key]) {
+                        element.setAttribute('placeholder', translations[lang][key]);
+                    }
+                });
+                
+                // Save language preference
+                localStorage.setItem('preferredLanguage', lang);
+            }
+            
+            // Add event listeners to language options
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    changeLanguage(lang);
+                });
+            });
+            
+            // Load saved language or default to Arabic
+            const savedLang = localStorage.getItem('preferredLanguage') || 'ar';
+            changeLanguage(savedLang);
         });
     </script>
 </body>
-</html>
+</html>   
