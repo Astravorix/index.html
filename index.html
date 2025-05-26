@@ -12,11 +12,11 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Astravorix - Saudi Game Development Studio</title>
-    <link rel="icon" href="astravorix.ico" type="logo s .png">
+    <!-- Fixed icon type attribute -->
+    <link rel="icon" href="astravorix.ico" type="image/x-icon">
+    
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" as="style">
-    
-    <!-- Favicon -->
     
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -660,6 +660,12 @@
             color: #ef4444;
             margin-top: 0.25rem;
         }
+
+        /* Social icons fix for consistent sizing */
+        .social-icon {
+            display: inline-block;
+            object-fit: contain;
+        }
     </style>
 </head>
 
@@ -679,8 +685,6 @@
         </svg>
     </button>
 
-
-
     <!-- Toast notification -->
     <div id="toastNotification" class="toast-notification">
         <div class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -697,7 +701,8 @@
             <div class="w-24 h-24 border-4 border-t-primary-700 border-r-transparent border-b-accent border-l-transparent rounded-full animate-spin"></div>
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
                 <div class="text-5xl font-bold bg-gradient-to-br from-primary-700 via-accent to-highlight text-transparent bg-clip-text animate-pulse">
-                    <img src="logo s .png"  class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Fixed image name by removing spaces -->
+                    <img src="logo_s.png" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 </div>
             </div>
         </div>
@@ -709,7 +714,8 @@
             <nav class="flex items-center justify-between py-4">
                 <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse text-dark-50 font-bold text-2xl group" aria-label="Astravorix logo, go to homepage">
                     <span class="text-3xl font-extrabold text-white">
-                        <img src="logo s .png"  class="w-12 h-12 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <!-- Fixed image name by removing spaces -->
+                        <img src="logo_s.png" class="w-12 h-12 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     </span>
                     
                     <span class="group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary-700 group-hover:via-accent group-hover:to-highlight transition-all duration-300">Astravorix</span>
@@ -777,16 +783,16 @@
             <div class="mt-auto pt-8 relative z-10">
                 <div class="flex justify-center space-x-6 rtl:space-x-reverse mb-8">
                     <a href="https://discord.gg/BMuquxDJre" aria-label="Discord" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-colors duration-300 transform hover:scale-110">
-                        <span aria-hidden="true">🎮</span>
+                        <img src="logo_discord.png" alt="Discord Logo" class="w-6 h-6 social-icon">
                     </a>
                     <a href="https://instagram.com/Astravorix" aria-label="Instagram" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-colors duration-300 transform hover:scale-110">
-                        <span aria-hidden="true">📸</span>
+                        <img src="logo_Instagram.png" alt="Instagram Logo" class="w-6 h-6 social-icon">
                     </a>
                     <a href="https://youtube.com/@Astravorix" aria-label="YouTube" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-colors duration-300 transform hover:scale-110">
-                        <span aria-hidden="true">📺</span>
+                        <img src="logo_Youtube.png" alt="YouTube Logo" class="w-6 h-6 social-icon">
                     </a>
                     <a href="https://twitter.com/Astravorix" aria-label="Twitter" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-colors duration-300 transform hover:scale-110">
-                        <span aria-hidden="true">🐦</span>
+                        <img src="logo_x.png" alt="X (Twitter) Logo" class="w-6 h-6 social-icon">
                     </a>
                 </div>
                 
@@ -897,8 +903,9 @@
                                                 </div>
                                                 <div class="h-full w-full flex items-center justify-center">
                                                     <div class="text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-accent to-highlight animate-pulse">
-                                                        <img src="logo s .png"  class="w-full h-full object-cover" 
-                                                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                                        <!-- Fixed image name by removing spaces -->
+                                                        <img src="logo_s.png" class="w-full h-full object-cover" 
+                                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                                     </div>
                                                 </div>
                                             </div>
@@ -943,16 +950,13 @@
                 </div>
                 
                 <div class="relative">
-                    
-                    
                     <!-- Game carousel wrapper - simplified for better performance -->
                     <div class="game-carousel overflow-x-auto flex snap-x snap-mandatory -mx-4 px-4 pb-8 gap-6">
                         <!-- Game 1 -->
                         <div class="game-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0">
                             <div class="h-full dark-glass rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-xl relative group">
-                                
                                 <div class="relative h-48 sm:h-56 overflow-hidden rounded-t-2xl bg-gradient-to-br from-primary-700 to-accent flex items-center justify-center">
-                                    <img src="Main Menu.png"  class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <img src="Main_Menu.png" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                    
                                     <div class="text-6xl font-bold text-white animate-pulse"></div>
                                     <div class="absolute top-4 right-4 rtl:right-auto rtl:left-4 bg-highlight text-dark-950 text-xs font-bold px-3 py-1 rounded-full shadow-lg">2028</div>
@@ -1032,30 +1036,25 @@
                                     <div class="grid grid-cols-2 gap-3">
                                         <a href="https://discord.gg/BMuquxDJre" target="_blank" rel="noopener" class="flex items-center justify-center space-x-2 rtl:space-x-reverse px-3 py-2 bg-dark-800/80 hover:bg-dark-700/80 rounded-lg text-sm transition-colors">
                                             <span>Discord</span>
-                                            <span aria-hidden="true">🎮</span>
+                                            <img src="logo_discord.png" alt="Discord Logo" class="w-5 h-5 social-icon">
                                         </a>
                                         <a href="https://twitter.com/Astravorix" target="_blank" rel="noopener" class="flex items-center justify-center space-x-2 rtl:space-x-reverse px-3 py-2 bg-dark-800/80 hover:bg-dark-700/80 rounded-lg text-sm transition-colors">
                                             <span>Twitter</span>
-                                            <span aria-hidden="true">🐦</span>
+                                            <img src="logo_x.png" alt="X (Twitter) Logo" class="w-5 h-5 social-icon">
                                         </a>
                                         <a href="https://instagram.com/Astravorix" target="_blank" rel="noopener" class="flex items-center justify-center space-x-2 rtl:space-x-reverse px-3 py-2 bg-dark-800/80 hover:bg-dark-700/80 rounded-lg text-sm transition-colors">
                                             <span>Instagram</span>
-                                            <span aria-hidden="true">📸</span>
+                                            <img src="logo_Instagram.png" alt="Instagram Logo" class="w-5 h-5 social-icon">
                                         </a>
                                         <a href="https://youtube.com/@Astravorix" target="_blank" rel="noopener" class="flex items-center justify-center space-x-2 rtl:space-x-reverse px-3 py-2 bg-dark-800/80 hover:bg-dark-700/80 rounded-lg text-sm transition-colors">
                                             <span>YouTube</span>
-                                            <span aria-hidden="true">📺</span>
+                                            <img src="logo_Youtube.png" alt="YouTube Logo" class="w-5 h-5 social-icon">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- New Game 4 - Development Updates -->
-                        
                     </div>
-                    
-                    
                 </div>
                 
                 <div class="text-center mt-12">
@@ -1069,7 +1068,7 @@
             </div>
         </section>
 
-   
+        <!-- Learning Section -->
         <section id="learning" class="relative py-20 bg-dark-950/70">
             <!-- Background elements -->
             <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,rgba(0,180,216,0.10),transparent_50%),radial-gradient(circle_at_20%_70%,rgba(255,213,0,0.10),transparent_50%)] -z-10"></div>
@@ -1350,7 +1349,8 @@
                                             <!-- Center element -->
                                             <div class="absolute inset-0 flex items-center justify-center">
                                                 <div class="relative w-32 h-32 rounded-full bg-gradient-to-br from-primary-700 to-accent flex items-center justify-center z-20">
-                                                    <img src="logo s .png" alt="يوسف عبدالله" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                                    <!-- Fixed image name by removing spaces -->
+                                                    <img src="logo_s.png" alt="Astravorix Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                                 </div>
                                                 <!-- Glow effect -->
                                                 <div class="absolute inset-0 rounded-full bg-accent/20 blur-xl animate-pulse"></div>
@@ -1443,305 +1443,292 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                        <!-- Team Member 1 -->
-                                        <div>
-                                            <div class="h-full dark-glass rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-xl relative group">
-                                                <div class="p-8 flex flex-col items-center">
-                                                    <div class="relative w-40 h-40 mb-6">
-                                                        <!-- Avatar container with simplified gradient -->
-                                                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary-700 via-accent to-highlight p-1"></div>
-                                                        <div class="absolute inset-1 rounded-full bg-dark-950 flex items-center justify-center overflow-hidden">
-                                                            <img src="team1.jpg" alt="ياسر مقبل" class="w-full h-full object-cover" 
-                                                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                                            <div class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-accent to-highlight hidden">Y</div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <h3 class="text-2xl font-bold mb-2" data-lang-key="team1_name">ياسر مقبل</h3>
-                                                    <div class="text-accent mb-4" data-lang-key="team1_role">مبرمج، رسام، وصاحب الفريق</div>
-                                                    <p class="text-dark-400 text-center mb-8 flex-grow" data-lang-key="team1_bio">مبرمج ورسّام، أمتلك خبرة تمتد لسنة ونصف في مجال تطوير الألعاب، حيث عملت على تصميم وبرمجة العديد من المشاريع. أشغل حاليًا منصب رئيس فريق Astravorix، وأطمح إلى تطوير ألعاب مبتكرة تجمع بين الإبداع والتقنية.</p>
-                                                    
-                                                    
-                                                </div>
-                                                
-                                                <!-- Learning score badge -->
-                                                <div class="absolute top-4 right-4 rtl:right-auto rtl:left-4 bg-primary-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                                                    <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                                                        <span>🏆</span>
-                                                        <span data-lang-key="learning_score">درجة التعلم: 90</span>
-                                                    </div>
-                                                </div>
-                                                
-                                                <!-- Simplified gradient border -->
-                                                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-700 via-accent to-highlight"></div>
-                                                
-                                                <!-- Hover overlay with skills -->
-                                                <div class="absolute inset-0 bg-dark-900/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6">
-                                                    <h4 class="text-xl font-bold mb-4 text-white" data-lang-key="skills_specialization">التخصصات والمهارات</h4>
-                                                    <div class="space-y-3 w-full">
-                                                        <div>
-                                                            <div class="flex justify-between mb-1">
-                                                                <span class="text-sm text-dark-300">C#</span>
-                                                                <span class="text-sm text-accent">90%</span>
-                                                            </div>
-                                                            <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
-                                                                <div class="h-full bg-accent w-[90%]"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="flex justify-between mb-1">
-                                                                <span class="text-sm text-dark-300">Unity</span>
-                                                                <span class="text-sm text-accent">90%</span>
-                                                            </div>
-                                                            <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
-                                                                <div class="h-full bg-accent w-[90%]"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="flex justify-between mb-1">
-                                                                <span class="text-sm text-dark-300">Game Design</span>
-                                                                <span class="text-sm text-accent">75%</span>
-                                                            </div>
-                                                            <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
-                                                                <div class="h-full bg-accent w-[75%]"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="flex justify-between mb-1">
-                                                                <span class="text-sm text-dark-300">Digital Art</span>
-                                                                <span class="text-sm text-accent">60%</span>
-                                                            </div>
-                                                            <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
-                                                                <div class="h-full bg-accent w-[60%]"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                    <!-- Team Member 1 -->
+                    <div>
+                        <div class="h-full dark-glass rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-xl relative group">
+                            <div class="p-8 flex flex-col items-center">
+                                <div class="relative w-40 h-40 mb-6">
+                                    <!-- Avatar container with simplified gradient -->
+                                    <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary-700 via-accent to-highlight p-1"></div>
+                                    <div class="absolute inset-1 rounded-full bg-dark-950 flex items-center justify-center overflow-hidden">
+                                        <img src="team1.jpg" alt="ياسر مقبل" class="w-full h-full object-cover" 
+                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                        <div class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-accent to-highlight hidden">Y</div>
+                                    </div>
+                                </div>
+                                
+                                <h3 class="text-2xl font-bold mb-2" data-lang-key="team1_name">ياسر مقبل</h3>
+                                <div class="text-accent mb-4" data-lang-key="team1_role">مبرمج، رسام، وصاحب الفريق</div>
+                                <p class="text-dark-400 text-center mb-8 flex-grow" data-lang-key="team1_bio">مبرمج ورسّام، أمتلك خبرة تمتد لسنة ونصف في مجال تطوير الألعاب، حيث عملت على تصميم وبرمجة العديد من المشاريع. أشغل حاليًا منصب رئيس فريق Astravorix، وأطمح إلى تطوير ألعاب مبتكرة تجمع بين الإبداع والتقنية.</p>
+                            </div>
+                            
+                            <!-- Learning score badge -->
+                            <div class="absolute top-4 right-4 rtl:right-auto rtl:left-4 bg-primary-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                    <span>🏆</span>
+                                    <span data-lang-key="learning_score">درجة التعلم: 90</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Simplified gradient border -->
+                            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-700 via-accent to-highlight"></div>
+                            
+                            <!-- Hover overlay with skills -->
+                            <div class="absolute inset-0 bg-dark-900/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6">
+                                <h4 class="text-xl font-bold mb-4 text-white" data-lang-key="skills_specialization">التخصصات والمهارات</h4>
+                                <div class="space-y-3 w-full">
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm text-dark-300">C#</span>
+                                            <span class="text-sm text-accent">90%</span>
                                         </div>
-                                        
-                                        <!-- Team Member 2 -->
-                                        <div>
-                                            <div class="h-full dark-glass rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-xl relative group">
-                                                <div class="p-8 flex flex-col items-center">
-                                                    <div class="relative w-40 h-40 mb-6">
-                                                        <!-- Avatar container with simplified gradient -->
-                                                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary-700 via-accent to-highlight p-1"></div>
-                                                        <div class="absolute inset-1 rounded-full bg-dark-950 flex items-center justify-center overflow-hidden">
-                                                            <img src="team2.jpg" alt="يوسف عبدالله" class="w-full h-full object-cover" 
-                                                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                                            <div class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-accent to-highlight hidden">Y</div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <h3 class="text-2xl font-bold mb-2" data-lang-key="team2_name">يوسف عبدالله</h3>
-                                                    <div class="text-accent mb-4" data-lang-key="team2_role">خبير اختبار الألعاب واكتشاف الأخطاء</div>
-                                                    <p class="text-dark-400 text-center mb-8 flex-grow" data-lang-key="team2_bio">جزء من فريق اختبار الألعاب، يركز على تجربة اللعبة واكتشاف أي مشكلات قد تؤثر على سلاستها. يعمل على فحص التفاصيل والتأكد من أن كل شيء يعمل كما ينبغي، مما يساعد الفريق في تحسين الأداء قبل الإطلاق.</p>
-                                                    
-                                                    
-                                                </div>
-                                                
-                                                <!-- Learning score badge -->
-                                                <div class="absolute top-4 right-4 rtl:right-auto rtl:left-4 bg-primary-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                                                    <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                                                        <span>🏆</span>
-                                                        <span data-lang-key="learning_score">درجة التعلم: 78</span>
-                                                    </div>
-                                                </div>
-                                                
-                                                <!-- Simplified gradient border -->
-                                                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-700 via-accent to-highlight"></div>
-                                                
-                                                <!-- Hover overlay with skills -->
-                                                <div class="absolute inset-0 bg-dark-900/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6">
-                                                    <h4 class="text-xl font-bold mb-4 text-white" data-lang-key="skills_specialization">التخصصات والمهارات</h4>
-                                                    <div class="space-y-3 w-full">
-                                                        <div>
-                                                            <div class="flex justify-between mb-1">
-                                                                <span class="text-sm text-dark-300">Game Testing</span>
-                                                                <span class="text-sm text-accent">92%</span>
-                                                            </div>
-                                                            <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
-                                                                <div class="h-full bg-accent w-[92%]"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="flex justify-between mb-1">
-                                                                <span class="text-sm text-dark-300">Bug Finding</span>
-                                                                <span class="text-sm text-accent">88%</span>
-                                                            </div>
-                                                            <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
-                                                                <div class="h-full bg-accent w-[88%]"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="flex justify-between mb-1">
-                                                                <span class="text-sm text-dark-300">User Experience</span>
-                                                                <span class="text-sm text-accent">80%</span>
-                                                            </div>
-                                                            <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
-                                                                <div class="h-full bg-accent w-[80%]"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="flex justify-between mb-1">
-                                                                <span class="text-sm text-dark-300">Game Design</span>
-                                                                <span class="text-sm text-accent">65%</span>
-                                                            </div>
-                                                            <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
-                                                                <div class="h-full bg-accent w-[65%]"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
+                                            <div class="h-full bg-accent w-[90%]"></div>
                                         </div>
-                                        
-                                        <!-- Join Our Team Card -->
-                                        <div>
-                                            <div class="h-full dark-glass bg-dark-900/30 rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-xl relative border border-dashed border-accent/30">
-                                                <div class="p-8 flex flex-col items-center justify-center h-full text-center">
-                                                    <div class="relative w-28 h-28 mb-6">
-                                                        <!-- Animated plus icon -->
-                                                        <div class="absolute inset-0 bg-dark-800/60 rounded-full flex items-center justify-center text-5xl text-dark-400 transition-colors duration-300 overflow-hidden group-hover:bg-accent">
-                                                            <span class="relative animate-pulse">+</span>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <h3 class="text-2xl font-bold mb-4">
-                                                        <span data-lang-key="join_team_title">انضم إلى فريقنا</span>
-                                                    </h3>
-                                                    
-                                                    <p class="text-dark-400 mb-8" data-lang-key="join_team_desc">هل لديك شغف بتطوير الألعاب وترغب في أن تكون جزءًا من فريق طموح؟ نحن نبحث دائمًا عن مواهب جديدة للانضمام إلى مغامرتنا.</p>
-                                                    
-                                                    <div class="space-y-4 mb-8 w-full">
-                                                        <div class="flex items-start space-x-3 rtl:space-x-reverse">
-                                                            <div class="w-8 h-8 bg-primary-700/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                                                <span>🎮</span>
-                                                            </div>
-                                                            <div class="text-left rtl:text-right">
-                                                                <h4 class="font-bold text-white mb-1" data-lang-key="open_position_1">مطوّر ألعاب (Unity)</h4>
-                                                                <p class="text-sm text-dark-400" data-lang-key="open_position_1_desc">خبرة في C# و Unity، قادر على تطوير ميكانيكا اللعب</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="flex items-start space-x-3 rtl:space-x-reverse">
-                                                            <div class="w-8 h-8 bg-primary-700/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                                                <span>🎨</span>
-                                                            </div>
-                                                            <div class="text-left rtl:text-right">
-                                                                <h4 class="font-bold text-white mb-1" data-lang-key="open_position_2">فنان ألعاب 2D/3D</h4>
-                                                                <p class="text-sm text-dark-400" data-lang-key="open_position_2_desc">خبرة في التصميم الفني للألعاب وتصميم الشخصيات</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <a href="#contact" class="inline-flex items-center space-x-2 rtl:space-x-reverse px-6 py-3 rounded-full bg-accent text-dark-950 font-semibold hover:bg-accent/90 transform hover:scale-105 transition-all duration-300">
-                                                        <span data-lang-key="team_join_btn">انضم إلى فريقنا</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                                
-                                                <!-- Simplified gradient border -->
-                                                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-700 via-accent to-highlight"></div>
-                                            </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm text-dark-300">Unity</span>
+                                            <span class="text-sm text-accent">90%</span>
+                                        </div>
+                                        <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
+                                            <div class="h-full bg-accent w-[90%]"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm text-dark-300">Game Design</span>
+                                            <span class="text-sm text-accent">75%</span>
+                                        </div>
+                                        <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
+                                            <div class="h-full bg-accent w-[75%]"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm text-dark-300">Digital Art</span>
+                                            <span class="text-sm text-accent">60%</span>
+                                        </div>
+                                        <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
+                                            <div class="h-full bg-accent w-[60%]"></div>
                                         </div>
                                     </div>
                                 </div>
-                            </section>
+                            </div>
+                        </div>
+                    </div>
                     
-                            <!-- Contact Section -->
-                            <section id="contact" class="relative py-20 bg-dark-900">
-                                <!-- Background radial gradients - simplified for better performance -->
-                                <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(0,180,216,0.08),transparent_50%),radial-gradient(circle_at_85%_85%,rgba(255,213,0,0.08),transparent_50%)] -z-10"></div>
-                                
-                                <div class="container mx-auto px-4 md:px-6">
-                                    <div class="flex flex-col items-center mb-16 text-center">
-                                        <div class="inline-block mb-4">
-                                            <div class="flex items-center space-x-2 rtl:space-x-reverse px-4 py-1.5 bg-dark-800/60 rounded-full">
-                                                <div class="w-3 h-3 rounded-full bg-accent animate-pulse"></div>
-                                                <span class="text-sm font-medium text-dark-300" data-lang-key="contact_us">تواصل معنا</span>
-                                            </div>
-                                        </div>
-                                        
-                                        <h2 class="text-3xl md:text-4xl font-extrabold mb-6 inline-block relative">
-                                            <span class="relative z-10" data-lang-key="contact_title">تواصل معنا</span>
-                                            <span class="absolute bottom-0 left-0 w-full h-2 bg-accent/30 -z-10 skew-x-12"></span>
-                                        </h2>
-                                        
-                                        <p class="max-w-3xl text-dark-400" data-lang-key="contact_subtitle">نتطلع للتواصل معك! سواء كنت مهتمًا بألعابنا، تبحث عن شراكة، أو ترغب في الانضمام إلى فريقنا</p>
+                    <!-- Team Member 2 -->
+                    <div>
+                        <div class="h-full dark-glass rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-xl relative group">
+                            <div class="p-8 flex flex-col items-center">
+                                <div class="relative w-40 h-40 mb-6">
+                                    <!-- Avatar container with simplified gradient -->
+                                    <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary-700 via-accent to-highlight p-1"></div>
+                                    <div class="absolute inset-1 rounded-full bg-dark-950 flex items-center justify-center overflow-hidden">
+                                        <img src="team2.jpg" alt="يوسف عبدالله" class="w-full h-full object-cover" 
+                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                        <div class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary-700 via-accent to-highlight hidden">Y</div>
                                     </div>
-                                    
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                                        <!-- Contact Information -->
-                                        <div class="dark-glass rounded-2xl p-6 sm:p-8 order-2 lg:order-1">
-                                            <h3 class="text-2xl font-bold mb-6 inline-block relative">
-                                                <span class="relative z-10" data-lang-key="contact_info_title">لنبقى على تواصل</span>
-                                                <span class="absolute bottom-0 left-0 w-full h-1 bg-accent -z-10"></span>
-                                            </h3>
-                                            
-                                            <p class="text-dark-400 mb-8" data-lang-key="contact_description">نحن نؤمن بقوة المجتمع والتعاون. سواء كنت لاعبًا متحمسًا، مطورًا يبحث عن فرص، أو شريكًا محتملًا، نود التواصل معك!</p>
-                                            
-                                            <div class="space-y-6 sm:space-y-8">
-                                                <div class="flex items-start space-x-4 rtl:space-x-reverse">
-                                                    <div class="w-12 h-12 rounded-full bg-primary-700/20 flex items-center justify-center text-accent text-2xl flex-shrink-0">📧</div>
-                                                    <div>
-                                                        <div class="text-sm text-dark-400 mb-1" data-lang-key="contact_email">البريد الإلكتروني</div>
-                                                        <div class="font-medium">info@astravorix.team</div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="flex items-start space-x-4 rtl:space-x-reverse">
-                                                    <div class="w-12 h-12 rounded-full bg-primary-700/20 flex items-center justify-center text-accent text-2xl flex-shrink-0">📱</div>
-                                                    <div>
-                                                        <div class="text-sm text-dark-400 mb-1" data-lang-key="contact_phone">الهاتف</div>
-                                                        <div class="font-medium">+966 5X XXX XXXX</div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="flex items-start space-x-4 rtl:space-x-reverse">
-                                                    <div class="w-12 h-12 rounded-full bg-primary-700/20 flex items-center justify-center text-accent text-2xl flex-shrink-0">📍</div>
-                                                    <div>
-                                                        <div class="text-sm text-dark-400 mb-1" data-lang-key="contact_location">الموقع</div>
-                                                        <div class="font-medium" data-lang-key="contact_address">الرياض، المملكة العربية السعودية</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="mt-10 pt-6 border-t border-dark-800/30">
-                                                <h4 class="font-bold mb-4 text-lg" data-lang-key="social_media">تابعنا على منصات التواصل</h4>
-                                                <div class="flex flex-wrap items-center gap-4">
-                                                    <a href="https://discord.gg/BMuquxDJre" aria-label="Discord" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-all duration-300 transform hover:scale-110">
-                                                        <span aria-hidden="true">
-                                                            <img src="logo_discord.png" alt="Twitter Logo" class="w-9 h-7 social-icon">
-                                                        </span>
-                                                    </a>
-                                                    <a href="https://instagram.com/Astravorix" aria-label="Instagram" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-all duration-300 transform hover:scale-110">
-                                                        <span aria-hidden="true">
-                                                            <img src="logo_Instagram.png" alt="Twitter Logo" class="w-7 h-7 social-icon">
-                                                        </span>
-                                                    </a>
-                                                    <a href="https://youtube.com/@Astravorix" aria-label="YouTube" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-all duration-300 transform hover:scale-110">
-                                                        <span aria-hidden="true">
-                                                            <img src="logo_Youtube.png" alt="Twitter Logo" class="w-9 h-7 social-icon">
-                                                        </span>
-                                                    </a>
-                                                    <a href="https://twitter.com/Astravorix" aria-label="Twitter" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-all duration-300 transform hover:scale-110">
-                                                        <span aria-hidden="true">
-                                                            <img src="logo_x.png" alt="Twitter Logo" class="w-7 h-7 social-icon">
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            
-                                            <!-- NEW: Astravorix Events -->
-                                            <div class="mt-10 pt-6 border-t border-dark-800/30">
-                                                <h4 class="font-bold mb-4 text-lg" data-lang-key="upcoming_events">الفعاليات القادمة</h4>
-                                                
-                                            </div>
+                                </div>
+                                
+                                <h3 class="text-2xl font-bold mb-2" data-lang-key="team2_name">يوسف عبدالله</h3>
+                                <div class="text-accent mb-4" data-lang-key="team2_role">خبير اختبار الألعاب واكتشاف الأخطاء</div>
+                                <p class="text-dark-400 text-center mb-8 flex-grow" data-lang-key="team2_bio">جزء من فريق اختبار الألعاب، يركز على تجربة اللعبة واكتشاف أي مشكلات قد تؤثر على سلاستها. يعمل على فحص التفاصيل والتأكد من أن كل شيء يعمل كما ينبغي، مما يساعد الفريق في تحسين الأداء قبل الإطلاق.</p>
+                            </div>
+                            
+                            <!-- Learning score badge -->
+                            <div class="absolute top-4 right-4 rtl:right-auto rtl:left-4 bg-primary-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                    <span>🏆</span>
+                                    <span data-lang-key="learning_score">درجة التعلم: 78</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Simplified gradient border -->
+                            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-700 via-accent to-highlight"></div>
+                            
+                            <!-- Hover overlay with skills -->
+                            <div class="absolute inset-0 bg-dark-900/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6">
+                                <h4 class="text-xl font-bold mb-4 text-white" data-lang-key="skills_specialization">التخصصات والمهارات</h4>
+                                <div class="space-y-3 w-full">
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm text-dark-300">Game Testing</span>
+                                            <span class="text-sm text-accent">92%</span>
                                         </div>
+                                        <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
+                                            <div class="h-full bg-accent w-[92%]"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm text-dark-300">Bug Finding</span>
+                                            <span class="text-sm text-accent">88%</span>
+                                        </div>
+                                        <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
+                                            <div class="h-full bg-accent w-[88%]"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm text-dark-300">User Experience</span>
+                                            <span class="text-sm text-accent">80%</span>
+                                        </div>
+                                        <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
+                                            <div class="h-full bg-accent w-[80%]"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm text-dark-300">Game Design</span>
+                                            <span class="text-sm text-accent">65%</span>
+                                        </div>
+                                        <div class="h-2 bg-dark-800 rounded-full overflow-hidden">
+                                            <div class="h-full bg-accent w-[65%]"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
+                    <!-- Join Our Team Card -->
+                    <div>
+                        <div class="h-full dark-glass bg-dark-900/30 rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-xl relative border border-dashed border-accent/30">
+                            <div class="p-8 flex flex-col items-center justify-center h-full text-center">
+                                <div class="relative w-28 h-28 mb-6">
+                                    <!-- Animated plus icon -->
+                                    <div class="absolute inset-0 bg-dark-800/60 rounded-full flex items-center justify-center text-5xl text-dark-400 transition-colors duration-300 overflow-hidden group-hover:bg-accent">
+                                        <span class="relative animate-pulse">+</span>
+                                    </div>
+                                </div>
+                                
+                                <h3 class="text-2xl font-bold mb-4">
+                                    <span data-lang-key="join_team_title">انضم إلى فريقنا</span>
+                                </h3>
+                                
+                                <p class="text-dark-400 mb-8" data-lang-key="join_team_desc">هل لديك شغف بتطوير الألعاب وترغب في أن تكون جزءًا من فريق طموح؟ نحن نبحث دائمًا عن مواهب جديدة للانضمام إلى مغامرتنا.</p>
+                                
+                                <div class="space-y-4 mb-8 w-full">
+                                    <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                        <div class="w-8 h-8 bg-primary-700/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <span>🎮</span>
+                                        </div>
+                                        <div class="text-left rtl:text-right">
+                                            <h4 class="font-bold text-white mb-1" data-lang-key="open_position_1">مطوّر ألعاب (Unity)</h4>
+                                            <p class="text-sm text-dark-400" data-lang-key="open_position_1_desc">خبرة في C# و Unity، قادر على تطوير ميكانيكا اللعب</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                        <div class="w-8 h-8 bg-primary-700/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <span>🎨</span>
+                                        </div>
+                                        <div class="text-left rtl:text-right">
+                                            <h4 class="font-bold text-white mb-1" data-lang-key="open_position_2">فنان ألعاب 2D/3D</h4>
+                                            <p class="text-sm text-dark-400" data-lang-key="open_position_2_desc">خبرة في التصميم الفني للألعاب وتصميم الشخصيات</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <a href="#contact" class="inline-flex items-center space-x-2 rtl:space-x-reverse px-6 py-3 rounded-full bg-accent text-dark-950 font-semibold hover:bg-accent/90 transform hover:scale-105 transition-all duration-300">
+                                    <span data-lang-key="team_join_btn">انضم إلى فريقنا</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                            
+                            <!-- Simplified gradient border -->
+                            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-700 via-accent to-highlight"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                    
+        <!-- Contact Section -->
+        <section id="contact" class="relative py-20 bg-dark-900">
+            <!-- Background radial gradients - simplified for better performance -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(0,180,216,0.08),transparent_50%),radial-gradient(circle_at_85%_85%,rgba(255,213,0,0.08),transparent_50%)] -z-10"></div>
+            
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="flex flex-col items-center mb-16 text-center">
+                    <div class="inline-block mb-4">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse px-4 py-1.5 bg-dark-800/60 rounded-full">
+                            <div class="w-3 h-3 rounded-full bg-accent animate-pulse"></div>
+                            <span class="text-sm font-medium text-dark-300" data-lang-key="contact_us">تواصل معنا</span>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-6 inline-block relative">
+                        <span class="relative z-10" data-lang-key="contact_title">تواصل معنا</span>
+                        <span class="absolute bottom-0 left-0 w-full h-2 bg-accent/30 -z-10 skew-x-12"></span>
+                    </h2>
+                    
+                    <p class="max-w-3xl text-dark-400" data-lang-key="contact_subtitle">نتطلع للتواصل معك! سواء كنت مهتمًا بألعابنا، تبحث عن شراكة، أو ترغب في الانضمام إلى فريقنا</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Contact Information -->
+                    <div class="dark-glass rounded-2xl p-6 sm:p-8 order-2 lg:order-1">
+                        <h3 class="text-2xl font-bold mb-6 inline-block relative">
+                            <span class="relative z-10" data-lang-key="contact_info_title">لنبقى على تواصل</span>
+                            <span class="absolute bottom-0 left-0 w-full h-1 bg-accent -z-10"></span>
+                        </h3>
+                        
+                        <p class="text-dark-400 mb-8" data-lang-key="contact_description">نحن نؤمن بقوة المجتمع والتعاون. سواء كنت لاعبًا متحمسًا، مطورًا يبحث عن فرص، أو شريكًا محتملًا، نود التواصل معك!</p>
+                        
+                        <div class="space-y-6 sm:space-y-8">
+                            <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                <div class="w-12 h-12 rounded-full bg-primary-700/20 flex items-center justify-center text-accent text-2xl flex-shrink-0">📧</div>
+                                <div>
+                                    <div class="text-sm text-dark-400 mb-1" data-lang-key="contact_email">البريد الإلكتروني</div>
+                                    <div class="font-medium">info@astravorix.team</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                <div class="w-12 h-12 rounded-full bg-primary-700/20 flex items-center justify-center text-accent text-2xl flex-shrink-0">📱</div>
+                                <div>
+                                    <div class="text-sm text-dark-400 mb-1" data-lang-key="contact_phone">الهاتف</div>
+                                    <div class="font-medium">+966 5X XXX XXXX</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                <div class="w-12 h-12 rounded-full bg-primary-700/20 flex items-center justify-center text-accent text-2xl flex-shrink-0">📍</div>
+                                <div>
+                                    <div class="text-sm text-dark-400 mb-1" data-lang-key="contact_location">الموقع</div>
+                                    <div class="font-medium" data-lang-key="contact_address">الرياض، المملكة العربية السعودية</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 pt-6 border-t border-dark-800/30">
+                            <h4 class="font-bold mb-4 text-lg" data-lang-key="social_media">تابعنا على منصات التواصل</h4>
+                            <div class="flex flex-wrap items-center gap-4">
+                                <a href="https://discord.gg/BMuquxDJre" aria-label="Discord" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-all duration-300 transform hover:scale-110">
+                                    <img src="logo_discord.png" alt="Discord Logo" class="w-6 h-6 social-icon">
+                                </a>
+                                <a href="https://instagram.com/Astravorix" aria-label="Instagram" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-all duration-300 transform hover:scale-110">
+                                    <img src="logo_Instagram.png" alt="Instagram Logo" class="w-6 h-6 social-icon">
+                                </a>
+                                <a href="https://youtube.com/@Astravorix" aria-label="YouTube" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-all duration-300 transform hover:scale-110">
+                                    <img src="logo_Youtube.png" alt="YouTube Logo" class="w-6 h-6 social-icon">
+                                </a>
+                                <a href="https://twitter.com/Astravorix" aria-label="Twitter" class="w-12 h-12 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-all duration-300 transform hover:scale-110">
+                                    <img src="logo_x.png" alt="X (Twitter) Logo" class="w-6 h-6 social-icon">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- NEW: Astravorix Events -->
+                        <div class="mt-10 pt-6 border-t border-dark-800/30">
+                            <h4 class="font-bold mb-4 text-lg" data-lang-key="upcoming_events">الفعاليات القادمة</h4>
+                        </div>
+                    </div>
+            
                     <!-- Contact Form -->
                     <div class="dark-glass rounded-2xl p-6 sm:p-8 order-1 lg:order-2">
                         <form action="https://formspree.io/f/myzkrzvl" method="POST" id="contactForm" class="contact-form">
@@ -1910,8 +1897,6 @@
                                 <p class="text-dark-400" data-lang-key="faq_a4">يمكنك متابعتنا على منصات التواصل الاجتماعي خاصةً Discord و Twitter للحصول على آخر التحديثات والأخبار عن مشاريعنا. كما يمكنك الاشتراك في نشرتنا البريدية من خلال نموذج التواصل لتصلك التحديثات مباشرة عبر البريد الإلكتروني.</p>
                             </div>
                         </div>
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1926,23 +1911,23 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-10">
                 <div>
                     <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse text-dark-50 font-bold text-2xl mb-6" aria-label="Astravorix">
-                            
-                        <img src="logo s .png"  class="w-12 h-12 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <!-- Fixed image name by removing spaces -->
+                        <img src="logo_s.png" class="w-12 h-12 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <span>Astravorix</span>
                     </a>
                     <p class="text-dark-400 mb-6 max-w-md" data-lang-key="footer_description">نصنع عوالم مذهلة بأيدٍ سعودية – استوديو تطوير ألعاب يسعى للإبداع</p>
                     <div class="flex items-center space-x-4 rtl:space-x-reverse">
                         <a href="https://discord.gg/BMuquxDJre" aria-label="Discord" class="w-10 h-10 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-colors duration-300 transform hover:scale-110">
-                            <span aria-hidden="true">🎮</span>
+                            <img src="logo_discord.png" alt="Discord Logo" class="w-5 h-5 social-icon">
                         </a>
                         <a href="https://instagram.com/Astravorix" aria-label="Instagram" class="w-10 h-10 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-colors duration-300 transform hover:scale-110">
-                            <span aria-hidden="true">📸</span>
+                            <img src="logo_Instagram.png" alt="Instagram Logo" class="w-5 h-5 social-icon">
                         </a>
                         <a href="https://youtube.com/@Astravorix" aria-label="YouTube" class="w-10 h-10 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-colors duration-300 transform hover:scale-110">
-                            <span aria-hidden="true">📺</span>
+                            <img src="logo_Youtube.png" alt="YouTube Logo" class="w-5 h-5 social-icon">
                         </a>
                         <a href="https://twitter.com/Astravorix" aria-label="Twitter" class="w-10 h-10 rounded-full bg-dark-800/50 flex items-center justify-center hover:bg-accent hover:text-dark-950 transition-colors duration-300 transform hover:scale-110">
-                            <span aria-hidden="true">🐦</span>
+                            <img src="logo_x.png" alt="X (Twitter) Logo" class="w-5 h-5 social-icon">
                         </a>
                     </div>
                 </div>
@@ -2051,7 +2036,7 @@
             <div class="dark-glass rounded-2xl overflow-hidden shadow-2xl">
                 <div class="relative">
                     <div class="aspect-video bg-gradient-to-br from-primary-800 to-dark-900 flex items-center justify-center">
-                        <img src="Main Menu.png"  class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="Main_Menu.png" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     </div>
                     <button id="closeGamePreview" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-dark-800/80 text-white flex items-center justify-center hover:bg-accent transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -2061,7 +2046,7 @@
                 </div>
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4" data-lang-key="the_leader_lamp">الزعيم المصباح</h3>
-                    <p class="text-dark-400 mb-6" data-lang-key="join_team_title">لعبة قتالية تركز على مواجهة الزعماء، في عالم واسع ومترابط، تنتمي إلى تصنيف المترويدفانيا، مع إضافة تصنيف جديد يُدعى داركفانيا، والذي يقدم تجربة أكثر تحديًا وظلامًا.</p>
+                    <p class="text-dark-400 mb-6" data-lang-key="game1_desc">لعبة قتالية تركز على مواجهة الزعماء، في عالم واسع ومترابط، تنتمي إلى تصنيف المترويدفانيا، مع إضافة تصنيف جديد يُدعى داركفانيا، والذي يقدم تجربة أكثر تحديًا وظلامًا.</p>
                     
                     <div class="grid grid-cols-2 gap-4 mb-6">
                         <div class="bg-dark-800/40 p-3 rounded-lg">
@@ -2081,8 +2066,6 @@
                             <span class="font-medium" data-lang-key="early_development">Early Development</span>
                         </div>
                     </div>
-                    
-                    
                 </div>
             </div>
         </div>
@@ -2107,9 +2090,6 @@
             const mobileLinks = document.querySelectorAll('.nav-link-mobile');
             const faqQuestions = document.querySelectorAll('.faq-question');
             const langOptions = document.querySelectorAll('.lang-option');
-            const themeToggle = document.getElementById('themeToggle');
-            const sunIcon = document.getElementById('sunIcon');
-            const moonIcon = document.getElementById('moonIcon');
             const formControls = document.querySelectorAll('input, textarea, select');
             const skillTabs = document.querySelectorAll('.skill-tab');
             const fileUpload = document.getElementById('fileUpload');
@@ -2406,533 +2386,8 @@
                 });
             }
             
-            // Skill tabs functionality with improved data handling
-            if (skillTabs.length > 0) {
-                skillTabs.forEach(tab => {
-                    tab.addEventListener('click', function() {
-                        // Get the skill category from data attribute
-                        const skillCategory = this.getAttribute('data-skill') || this.textContent.toLowerCase().trim();
-                        
-                        // Reset all tabs
-                        skillTabs.forEach(t => {
-                            t.classList.remove('bg-primary-700', 'text-white');
-                            t.classList.add('bg-dark-800/60', 'text-dark-300', 'hover:bg-dark-700/60', 'hover:text-white');
-                        });
-                        
-                        // Set active tab
-                        this.classList.remove('bg-dark-800/60', 'text-dark-300', 'hover:bg-dark-700/60', 'hover:text-white');
-                        this.classList.add('bg-primary-700', 'text-white');
-                        
-                        // Update skill data based on the selected tab
-                        updateSkillData(skillCategory);
-                    });
-                });
-            }
-            
-            // Theme management
-            function initializeTheme() {
-                const savedTheme = localStorage.getItem('theme');
-                const htmlElement = document.documentElement;
-                
-                // Check user's system preference if no saved theme
-                if (!savedTheme) {
-                    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    if (!prefersDark) {
-                        htmlElement.classList.add('light');
-                        if (sunIcon) sunIcon.classList.add('hidden');
-                        if (moonIcon) moonIcon.classList.remove('hidden');
-                    } else {
-                        if (sunIcon) sunIcon.classList.remove('hidden');
-                        if (moonIcon) moonIcon.classList.add('hidden');
-                    }
-                } else {
-                    if (savedTheme === 'light') {
-                        htmlElement.classList.add('light');
-                        if (sunIcon) sunIcon.classList.add('hidden');
-                        if (moonIcon) moonIcon.classList.remove('hidden');
-                    } else {
-                        if (sunIcon) sunIcon.classList.remove('hidden');
-                        if (moonIcon) moonIcon.classList.add('hidden');
-                    }
-                }
-            }
-            
-            // Initialize theme
-            initializeTheme();
-            
-            // Listen for system theme changes
-            if (window.matchMedia) {
-                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-                    if (!localStorage.getItem('theme')) {
-                        if (!event.matches) {
-                            document.documentElement.classList.add('light');
-                            if (sunIcon) sunIcon.classList.add('hidden');
-                            if (moonIcon) moonIcon.classList.remove('hidden');
-                        } else {
-                            document.documentElement.classList.remove('light');
-                            if (sunIcon) sunIcon.classList.remove('hidden');
-                            if (moonIcon) moonIcon.classList.add('hidden');
-                        }
-                    }
-                });
-            }
-            
-            // Theme toggle button
-            if (themeToggle) {
-                themeToggle.addEventListener('click', function() {
-                    const htmlElement = document.documentElement;
-                    const isLight = htmlElement.classList.contains('light');
-                    
-                    // Toggle classes
-                    if (isLight) {
-                        htmlElement.classList.remove('light');
-                        if (sunIcon) sunIcon.classList.remove('hidden');
-                        if (moonIcon) moonIcon.classList.add('hidden');
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        htmlElement.classList.add('light');
-                        if (sunIcon) sunIcon.classList.add('hidden');
-                        if (moonIcon) moonIcon.classList.remove('hidden');
-                        localStorage.setItem('theme', 'light');
-                    }
-                });
-            }
-            
-            // Header scroll effect - optimized for performance
-            function updateHeader() {
-                if (header) {
-                    if (window.scrollY > 50) {
-                        header.classList.add('bg-dark-950/90', 'backdrop-blur-md', 'shadow-lg');
-                    } else {
-                        header.classList.remove('bg-dark-950/90', 'backdrop-blur-md', 'shadow-lg');
-                    }
-                }
-            }
-            
-            // Add passive: true for better scroll performance
-            window.addEventListener('scroll', updateHeader, { passive: true });
-            updateHeader(); // Initial check
-            
-            // Mobile menu toggle with ARIA support
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    isMobileMenuOpen = !isMobileMenuOpen;
-                    mobileMenuBtn.classList.toggle('active');
-                    mobileMenuBtn.setAttribute('aria-expanded', isMobileMenuOpen);
-                    mobileMenu.style.transform = isMobileMenuOpen ? 'translateX(0)' : '';
-                    mobileMenu.setAttribute('aria-hidden', !isMobileMenuOpen);
-                    document.body.classList.toggle('no-scroll', isMobileMenuOpen);
-                });
-                
-                
-            }
-            
-            // Language selector with ARIA support
-            if (langSelector && langDropdown) {
-                const langSelectorBtn = langSelector.querySelector('button');
-                
-                langSelector.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    isLangDropdownOpen = !isLangDropdownOpen;
-                    langDropdown.style.opacity = isLangDropdownOpen ? '1' : '0';
-                    langDropdown.style.visibility = isLangDropdownOpen ? 'visible' : 'hidden';
-                    langDropdown.style.transform = isLangDropdownOpen ? 'scale(1)' : 'scale(0.95)';
-                    
-                    if (langSelectorBtn) {
-                        langSelectorBtn.setAttribute('aria-expanded', isLangDropdownOpen);
-                    }
-                });
-                
-                document.addEventListener('click', function() {
-                    if (isLangDropdownOpen) {
-                        isLangDropdownOpen = false;
-                        langDropdown.style.opacity = '0';
-                        langDropdown.style.visibility = 'hidden';
-                        langDropdown.style.transform = 'scale(0.95)';
-                        
-                        if (langSelectorBtn) {
-                            langSelectorBtn.setAttribute('aria-expanded', false);
-                        }
-                    }
-                });
-            }
-            
-            // Scroll progress bar - throttled for performance
-            let lastScrollPosition = 0;
-            let ticking = false;
-            
-            function updateProgressBar() {
-                const windowHeight = window.innerHeight;
-                const fullHeight = document.body.scrollHeight - windowHeight;
-                const scrolled = window.scrollY;
-                const progress = Math.min(100, Math.max(0, (scrolled / fullHeight) * 100));
-                
-                if (progressBar) {
-                    progressBar.style.width = progress + '%';
-                }
-                
-                ticking = false;
-            }
-            
-            window.addEventListener('scroll', function() {
-                lastScrollPosition = window.scrollY;
-                
-                if (!ticking) {
-                    window.requestAnimationFrame(function() {
-                        updateProgressBar();
-                        ticking = false;
-                    });
-                    
-                    ticking = true;
-                }
-            }, { passive: true });
-            
-            // Back to top button
-            function toggleBackToTopBtn() {
-                if (backToTopBtn) {
-                    if (window.scrollY > 300) {
-                        backToTopBtn.style.opacity = '1';
-                    } else {
-                        backToTopBtn.style.opacity = '0';
-                    }
-                }
-            }
-            
-            window.addEventListener('scroll', toggleBackToTopBtn, { passive: true });
-            
-            if (backToTopBtn) {
-                backToTopBtn.addEventListener('click', function() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
-            
-            if (scrollTopBtn) {
-                scrollTopBtn.addEventListener('click', function() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
-            
-            // Smooth scrolling with polyfill for Safari
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const headerHeight = header ? header.offsetHeight : 0;
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
-                        
-                        // Smooth scroll with fallback
-                        try {
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                        } catch (error) {
-                            // Fallback for browsers that don't support smooth scrolling
-                            window.scrollTo(0, targetPosition);
-                        }
-                    }
-                });
-            });
-            
-            // Active navigation link on scroll - throttled for performance
-            let activeNavTicking = false;
-            
-            function updateActiveNav() {
-                const sections = document.querySelectorAll('section');
-                let current = '';
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 200;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
-                    
-                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                        current = sectionId;
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('text-white', 'after:w-full');
-                    
-                    const href = link.getAttribute('href');
-                    if (href === `#${current}`) {
-                        link.classList.add('text-white', 'after:w-full');
-                    }
-                });
-                
-                activeNavTicking = false;
-            }
-            
-            window.addEventListener('scroll', function() {
-                if (!activeNavTicking) {
-                    window.requestAnimationFrame(function() {
-                        updateActiveNav();
-                    });
-                    
-                    activeNavTicking = true;
-                }
-            }, { passive: true });
-            
-            // Game carousel with touch support
-            const prevBtn = document.getElementById('prevGame');
-            const nextBtn = document.getElementById('nextGame');
-            const carouselIndicators = document.querySelectorAll('.flex.justify-center.space-x-2.mt-8 button');
-            const gameCarousel = document.querySelector('.game-carousel');
-            
-            if (prevBtn && nextBtn && gameCarousel) {
-                let activeIndex = 0;
-                const slides = document.querySelectorAll('.game-slide');
-                let startX, endX;
-                
-                function updateCarousel() {
-                    if (slides.length === 0) return;
-                    
-                    const slideWidth = slides[0].offsetWidth;
-                    const gap = 24; // gap-6 in Tailwind equals to 1.5rem or 24px
-                    
-                    // Use scrollTo with fallback
-                    try {
-                        gameCarousel.scrollTo({
-                            left: activeIndex * (slideWidth + gap),
-                            behavior: 'smooth'
-                        });
-                    } catch (error) {
-                        gameCarousel.scrollLeft = activeIndex * (slideWidth + gap);
-                    }
-                    
-                    // Update indicators
-                    carouselIndicators.forEach((indicator, index) => {
-                        if (index === activeIndex) {
-                            indicator.classList.remove('w-2', 'bg-dark-700');
-                            indicator.classList.add('w-8', 'bg-accent');
-                        } else {
-                            indicator.classList.remove('w-8', 'bg-accent');
-                            indicator.classList.add('w-2', 'bg-dark-700');
-                        }
-                    });
-                }
-                
-                prevBtn.addEventListener('click', function() {
-                    activeIndex = (activeIndex - 1 + slides.length) % slides.length;
-                    updateCarousel();
-                });
-                
-                nextBtn.addEventListener('click', function() {
-                    activeIndex = (activeIndex + 1) % slides.length;
-                    updateCarousel();
-                });
-                
-                carouselIndicators.forEach((indicator, index) => {
-                    indicator.addEventListener('click', function() {
-                        activeIndex = index;
-                        updateCarousel();
-                    });
-                });
-                
-                // Add touch swipe support
-                gameCarousel.addEventListener('touchstart', function(e) {
-                    startX = e.touches[0].clientX;
-                }, { passive: true });
-                
-                gameCarousel.addEventListener('touchend', function(e) {
-                    endX = e.changedTouches[0].clientX;
-                    handleSwipe();
-                }, { passive: true });
-                
-                function handleSwipe() {
-                    const threshold = 50; // Minimum swipe distance
-                    const swipeDistance = endX - startX;
-                    
-                    if (Math.abs(swipeDistance) > threshold) {
-                        if (swipeDistance > 0) {
-                            // Swiped right - go to previous
-                            prevBtn.click();
-                        } else {
-                            // Swiped left - go to next
-                            nextBtn.click();
-                        }
-                    }
-                }
-            }
-            
-            // FAQ accordion with ARIA support
-            if (faqQuestions.length > 0) {
-                faqQuestions.forEach(question => {
-                    question.addEventListener('click', function() {
-                        const answer = this.nextElementSibling;
-                        const icon = this.querySelector('.faq-icon');
-                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                        
-                        // Close all other answers
-                        document.querySelectorAll('.faq-answer').forEach(item => {
-                            if (item !== answer) {
-                                item.style.maxHeight = '0';
-                                item.style.paddingTop = '0';
-                                
-                                const otherQuestion = item.previousElementSibling;
-                                const otherIcon = otherQuestion.querySelector('.faq-icon');
-                                
-                                if (otherQuestion) {
-                                    otherQuestion.setAttribute('aria-expanded', 'false');
-                                }
-                                
-                                if (otherIcon) {
-                                    otherIcon.style.transform = 'rotate(0deg)';
-                                }
-                            }
-                        });
-                        
-                        // Toggle current answer
-                        if (!isExpanded) {
-                            answer.style.maxHeight = answer.scrollHeight + 'px';
-                            answer.style.paddingTop = '1rem';
-                            icon.style.transform = 'rotate(180deg)';
-                            this.setAttribute('aria-expanded', 'true');
-                        } else {
-                            answer.style.maxHeight = '0';
-                            answer.style.paddingTop = '0';
-                            icon.style.transform = 'rotate(0deg)';
-                            this.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                });
-                
-                // Open first FAQ by default
-                if (faqQuestions[0]) {
-                    const firstAnswer = faqQuestions[0].nextElementSibling;
-                    const firstIcon = faqQuestions[0].querySelector('.faq-icon');
-                    
-                    firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
-                    firstAnswer.style.paddingTop = '1rem';
-                    firstIcon.style.transform = 'rotate(180deg)';
-                    faqQuestions[0].setAttribute('aria-expanded', 'true');
-                }
-            }
-            
-            // Improved form control focus states
-            if (formControls.length > 0) {
-                formControls.forEach(control => {
-                    // Add active class for styling when user interacts
-                    control.addEventListener('focus', function() {
-                        this.classList.add('ring-2', 'ring-accent/20', 'border-accent');
-                    });
-                    
-                    control.addEventListener('blur', function() {
-                        this.classList.remove('ring-2', 'ring-accent/20', 'border-accent');
-                    });
-                });
-            }
-            
-            // Contact form handling with improved validation and error handling
-            if (contactForm && formMessage) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Validate form
-                    if (!validateForm()) {
-                        return;
-                    }
-                    
-                    // Disable submit button and show loading state
-                    if (submitButton) {
-                        submitButton.disabled = true;
-                        submitButton.innerHTML = `
-                            <span class="relative z-10 flex items-center justify-center">
-                                <div class="loading-spinner mr-2"></div>
-                                <span>${document.documentElement.lang === 'ar' ? 'جاري الإرسال...' : 'Sending...'}</span>
-                            </span>
-                        `;
-                    }
-                    
-                    // Show loading message
-                    formMessage.className = 'mt-4 text-center py-2 px-4 bg-dark-800/60 rounded-lg text-accent block';
-                    formMessage.textContent = document.documentElement.lang === 'ar' ? 
-                        'جاري إرسال رسالتك...' : 
-                        'Sending your message...';
-                    
-                    // Get form data
-                    const formData = new FormData(contactForm);
-                    
-                    // Submit form via fetch API
-                    fetch(contactForm.action, {
-                        method: contactForm.method,
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            return response.json();
-                        }
-                        throw new Error(document.documentElement.lang === 'ar' ? 
-                            'حدث خطأ أثناء إرسال النموذج. يرجى المحاولة مرة أخرى.' : 
-                            'There was an error submitting the form. Please try again.');
-                    })
-                    .then(data => {
-                        // Success
-                        formMessage.className = 'mt-4 text-center py-2 px-4 bg-green-950/40 text-green-400 rounded-lg block';
-                        formMessage.innerHTML = document.documentElement.lang === 'ar' ? 
-                            '<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> تم إرسال رسالتك بنجاح! سنرد عليك قريبًا.</span>' : 
-                            '<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> Message sent successfully! We\'ll get back to you soon.</span>';
-                        
-                        // Show toast notification
-                        showToast(document.documentElement.lang === 'ar' ? 'تم إرسال الرسالة بنجاح!' : 'Message sent successfully!');
-                        
-                        // Reset form
-                        contactForm.reset();
-                        
-                        // Clear file list if present
-                        if (fileList) {
-                            fileList.innerHTML = '';
-                        }
-                        
-                        // Reset file label if present
-                        if (fileLabel) {
-                            fileLabel.textContent = document.documentElement.lang === 'ar' ? 
-                                'اضغط لإرفاق ملفات' : 
-                                'Click to upload files';
-                        }
-                        
-                        // Reset submit button
-                        if (submitButton) {
-                            submitButton.disabled = false;
-                            submitButton.innerHTML = `<span class="relative z-10" data-lang-key="form_submit">${document.documentElement.lang === 'ar' ? 'إرسال الرسالة' : 'Send Message'}</span>
-                                <span class="absolute inset-0 bg-gradient-to-r from-accent to-highlight opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>`;
-                        }
-                    })
-                    .catch(error => {
-                        // Error
-                        formMessage.className = 'mt-4 text-center py-2 px-4 bg-red-950/40 text-red-400 rounded-lg block';
-                        formMessage.innerHTML = document.documentElement.lang === 'ar' ? 
-                            `<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg> ${error.message}</span>` : 
-                            `<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg> ${error.message}</span>`;
-                        
-                        // Show toast notification
-                        showToast(document.documentElement.lang === 'ar' ? 'حدث خطأ أثناء إرسال الرسالة!' : 'Error sending message!', 5000);
-                        
-                        // Reset submit button
-                        if (submitButton) {
-                            submitButton.disabled = false;
-                            submitButton.innerHTML = `<span class="relative z-10" data-lang-key="form_submit">${document.documentElement.lang === 'ar' ? 'إرسال الرسالة' : 'Send Message'}</span>
-                                <span class="absolute inset-0 bg-gradient-to-r from-accent to-highlight opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>`;
-                        }
-                    });
-                });
-            }
-            
-            // Multi-language support - optimized for performance
+            // Language handling
+            // Consolidated translations for both Arabic and English
             const translations = {
                 'ar': {
                     'nav_home': 'الرئيسية',
@@ -2946,7 +2401,6 @@
                     'news_1': 'قريباً: إطلاق أول لعبة من استوديو Astravorix!',
                     'news_2': 'انضم إلى مجتمعنا على Discord للحصول على آخر الأخبار والتحديثات',
                     'news_3': 'نبحث عن مواهب جديدة للانضمام إلى فريقنا - تواصل معنا الآن!',
-                    
                     
                     'hero_tagline': 'استوديو ألعاب سعودي',
                     'hero_title_1': 'نصنع',
@@ -3092,9 +2546,9 @@
                     'faq_label': 'أسئلة شائعة',
                     'faq_title': 'الأسئلة الشائعة',
                     "faq_q1": "ما هي الألعاب التي تعملون عليها حاليًا؟",
-                    "faq_a1": "نعمل حالياً على لعبة 'The Leader Lamp'، وهي لعبة من نوع Metroidvania تركز على معارك الزعماء داخل عالم مترابط وواسع. كما نطوّر مفاهيم أولية لمشاريع مستقبلية سيتم الإعلان عنها في الوقت المناسب.",
+                    "faq_a1": "نعمل حالياً على لعبة 'الزعيم المصباح'، وهي لعبة من نوع مترويدفانيا تركز على معارك الزعماء داخل عالم مترابط وواسع. كما نطوّر مفاهيم أولية لمشاريع مستقبلية سيتم الإعلان عنها في الوقت المناسب.",
                     "faq_q2": "متى ستصدر ألعابكم؟",
-                    "faq_a2": "نهدف إلى إصدار لعبتنا الأولى 'The Leader Lamp' في عام 2028. نحن فريق صغير يعمل بشغف لتقديم تجربة عالية الجودة، لذلك نفضل أخذ الوقت اللازم لضمان جودة المنتج النهائي.",
+                    "faq_a2": "نهدف إلى إصدار لعبتنا الأولى 'الزعيم المصباح' في عام 2028. نحن فريق صغير يعمل بشغف لتقديم تجربة عالية الجودة، لذلك نفضل أخذ الوقت اللازم لضمان جودة المنتج النهائي.",
                     "faq_q3": "كيف يمكنني الانضمام إلى فريق أسترافوريكس؟",
                     "faq_a3": "نرحب دائماً بالمواهب الجديدة! يمكنك زيارة قسم الوظائف في موقعنا للاطلاع على الفرص المتاحة، أو التواصل معنا مباشرة عبر نموذج الاتصال وإرسال سيرتك الذاتية ومحفظة أعمالك (إن وجدت).",
                     "faq_q4": "كيف يمكنني متابعة التقدم في تطوير ألعابكم؟",
@@ -3103,20 +2557,25 @@
                     "footer_quick_links": "روابط سريعة",
                     "footer_home": "الرئيسية",
                     "footer_games": "الألعاب",
-                    "footer_about": "من نحن",
-                    "footer_team": "فريقنا",
-                    "footer_careers": "الوظائف",
+                    "footer_learning": "تطوير المهارات",
+                    "footer_about": "عن الفريق",
+                    "footer_team": "فريق العمل",
                     "footer_contact": "تواصل معنا",
                     "footer_our_games": "ألعابنا",
                     "footer_upcoming": "الألعاب القادمة",
+                    "footer_resources": "الموارد",
+                    "footer_learning_resources": "مصادر التعلم",
+                    "footer_workshops": "ورش العمل",
+                    "footer_blog": "المدونة",
                     "footer_legal": "قانوني",
                     "footer_privacy": "سياسة الخصوصية",
                     "footer_terms": "شروط الاستخدام",
+                    "footer_cookies": "سياسة ملفات تعريف الارتباط",
                     "footer_contact_us": "تواصل معنا",
                     "footer_address": "الرياض، المملكة العربية السعودية",
-                    "footer_copyright": "جميع الحقوق محفوظة © أسترافوريكس 2024",
-                    "newsletter_join": "اشترك في النشرة البريدية",
-                    "the_leader_lamp": 'الزعيم المصباح',
+                    "footer_copyright": "جميع الحقوق محفوظة © Astravorix 2024",
+                    "newsletter_join": "انضم للنشرة البريدية",
+                    "the_leader_lamp": "الزعيم المصباح",
                     "follow_us_again": "تابعنا مجددًا",
                     "job_opportunities": "فرص عمل",
                     "follow_us": "تابعنا",
@@ -3127,11 +2586,209 @@
                     "platforms": "المنصات",
                     "development_status": "حالة التطوير",
                     "early_development": "مرحلة التطوير المبكر"
-
-
-                } 
+                },
+                'en': {
+                    'nav_home': 'Home',
+                    'nav_games': 'Games',
+                    'nav_learning': 'Learning',
+                    'nav_about': 'About Us',
+                    'nav_team': 'Team',
+                    'nav_contact': 'Contact',
+                    'nav_try': 'Try Our Games',
+                    
+                    'news_1': 'Coming soon: The first game from Astravorix Studio!',
+                    'news_2': 'Join our Discord community for the latest news and updates',
+                    'news_3': 'Looking for new talents to join our team - Contact us now!',
+                    
+                    'hero_tagline': 'A Saudi Game Studio',
+                    'hero_title_1': 'We Create',
+                    'hero_title_2': 'Incredible Worlds',
+                    'hero_title_3': 'with Saudi Hands',
+                    'hero_description': 'A small team with big ambitions, striving to develop unique games while continuously learning and improving.',
+                    'hero_btn_explore': 'Explore Our Games',
+                    'hero_btn_learning': 'Skill Development',
+                    'hero_stat_months': 'Months Since Founding',
+                    'hero_stat_games': 'Games in Development',
+                    'hero_stat_team': 'Team Members',
+                    'scroll_down': 'Scroll Down',
+                    
+                    'our_games': 'Our Games',
+                    'games_title': 'Our Upcoming Games',
+                    'games_subtitle': 'We are currently working on a collection of innovative games launching soon, each reflecting our vision and Saudi identity.',
+                    'game1_name': 'The Leader Lamp',
+                    'game1_desc': 'A boss fight-focused game set in a vast, interconnected world. It belongs to the Metroidvania genre while introducing a new category called Darkvania, offering a more challenging and darker experience.',
+                    'game1_genre': 'Metroid/Darkvania',
+                    'game_upcoming': 'Coming Soon...',
+                    'game_upcoming_desc': 'Stay tuned for more amazing games coming soon. We are working hard to develop unique and special gaming experiences suitable for all players.',
+                    'game_in_development': 'In Development',
+                    'game_more': 'Learn More',
+                    'games_view_all': 'View All Games',
+                    'game_preview': 'Preview',
+                    'game_details': 'Details',
+                    'coming_soon': 'Coming Soon',
+                    'dev_updates': 'Development Updates',
+                    'dev_updates_title': 'Latest Development News',
+                    'dev_updates_desc': 'Follow the latest updates on our game development process and the progress we\'re making on our various projects.',
+                    'update_1': 'Completed the design of the main boss character in the game',
+                    'update_2': 'Working on improving the combat system and player experience',
+                    'update_3': 'Coming soon: Announcement of a new project!',
+                    'view_all_updates': 'View All Updates',
+                    
+                    'learning_label': 'Learning Score',
+                    'learning_title': 'Skill Development Journey',
+                    'learning_subtitle': 'At Astravorix, we believe in the importance of continuous learning and skill development. We track our progress as a team to enhance our capabilities and achieve our professional goals.',
+                    'skill_programming': 'Programming',
+                    'skill_design': 'Design',
+                    'skill_animation': 'Animation',
+                    'skill_sound': 'Sound',
+                    'skill_story': 'Storytelling',
+                    'skills_progress': 'Skills Progress',
+                    'learning_goals': 'Our Learning Goals',
+                    'goal_1': 'Develop advanced programming skills in C# and Unity',
+                    'goal_2': 'Improve performance optimization techniques and algorithms',
+                    'goal_3': 'Master game AI techniques',
+                    'goal_4': 'Learn animation techniques and 3D design',
+                    'learning_path': 'Learning Path',
+                    'learning_step1': 'Fundamentals',
+                    'learning_step1_desc': 'Learn the basics of game development, C# programming, and introduction to Unity.',
+                    'learning_step2': 'Initial Project',
+                    'learning_step2_desc': 'Apply acquired knowledge to build a simple game and learn teamwork basics.',
+                    'learning_step3': 'Intermediate Development',
+                    'learning_step3_desc': 'Develop "The Leader Lamp" project and learn advanced techniques in Unity and game design.',
+                    'learning_step4': 'Advanced Techniques',
+                    'learning_step4_desc': 'Study advanced algorithms, performance optimization, game AI, and visual design.',
+                    'learning_step5': 'Launch and Continuous Development',
+                    'learning_step5_desc': 'Learn game launch processes, marketing, player analytics, and post-launch development.',
+                    'status_completed': 'Completed',
+                    'status_in_progress': 'In Progress',
+                    'status_upcoming': 'Upcoming',
+                    'learning_resources': 'Learning Resources',
+                    'resource_1': 'Unity Learning',
+                    'resource_1_desc': 'Official platform for learning Unity with interactive lessons and projects',
+                    'resource_2': 'Brackeys',
+                    'resource_2_desc': 'Educational channel offering programming and game development lessons',
+                    'resource_3': 'Game Dev.tv',
+                    'resource_3_desc': 'Professional courses in game development and programming',
+                    'resource_4': 'Unity Forums',
+                    'resource_4_desc': 'Community for discussing and solving game development issues',
+                    'learn_more': 'Learn More',
+                    'view_learning_dashboard': 'View Learning Dashboard',
+                    'learning_score': 'Learning Score: 85',
+                    'skills_specialization': 'Skills & Specializations',
+                    'view_learning_path': 'View Learning Path',
+                    
+                    'join_community': 'Join Our Community',
+                    'community_title': 'Be Part of the Journey',
+                    'community_desc': 'Join our growing community of developers and enthusiastic players. Share your ideas, get exclusive updates, and be part of developing our games.',
+                    
+                    'about_us': 'About Us',
+                    'about_title': 'Who We Are',
+                    'about_p1': 'Our journey began as a graduation project, where we developed a game called "The Leader Lamp." While working on the game, some colleagues took an interest in the idea, and we started discussing the possibility of expanding into game development beyond our studies. Initially, it was just an idea, but it sparked our passion, leading us to consider forming a team.',
+                    'about_p2': 'Over time, it became clear that we wanted to continue and grow in this field. Our goal was not just to create games but also to learn from the experience and enhance our skills in all aspects of development. This led to the founding of Astravorix, a team dedicated to working and learning together while focusing on delivering enjoyable gaming experiences.',
+                    'about_p3': 'By the end of 2024, we officially began building the team, taking our first steps into the world of game development. Our journey is still in its early stages, and we know the road ahead is long, but we are committed to learning and evolving with every new project. This is our story so far, and we are excited to write the next chapters.',
+                    'about_stat_months': 'Months Since Founding',
+                    'about_stat_games': 'Games in Development',
+                    'about_stat_team': 'Team Members',
+                    'about_join_btn': 'Join Us',
+                    
+                    'our_team': 'Our Team',
+                    'team_title': 'The Team',
+                    'team_subtitle': 'We take pride in our exceptional team that combines passion, creativity, and skill in game development',
+                    'team1_name': 'Yasser Moqbel',
+                    'team1_role': 'Programmer, Artist, and Team Founder',
+                    'team1_bio': 'A programmer and artist with one and a half years of experience in game development. I have worked on designing and programming multiple projects. Currently, I serve as the leader of Astravorix, aspiring to develop innovative games that blend creativity and technology.',
+                    'team2_name': 'Yousef Abdullah',
+                    'team2_role': 'Game Tester & Bug Finder',
+                    'team2_bio': 'Part of the game testing team, focusing on gameplay experience and identifying any issues that may affect smoothness. Works on examining details and ensuring everything functions as it should, helping the team improve performance before release.',
+                    'join_team_title': 'Join Our Team',
+                    'join_team_desc': 'Do you have a passion for game development and want to be part of an ambitious team? We are always looking for new talents to join our adventure.',
+                    'team_join_btn': 'Join Our Team',
+                    'open_position_1': 'Game Developer (Unity)',
+                    'open_position_1_desc': 'Experience with C# and Unity, able to develop gameplay mechanics',
+                    'open_position_2': '2D/3D Game Artist',
+                    'open_position_2_desc': 'Experience in game art design and character design',
+                    
+                    'contact_us': 'Contact Us',
+                    'contact_title': 'Contact Us',
+                    'contact_subtitle': 'We look forward to connecting with you! Whether you\'re interested in our games, seeking a partnership, or want to join our team',
+                    'contact_info_title': 'Stay Connected',
+                    'contact_description': 'We believe in the power of community and collaboration. Whether you are a passionate gamer, a developer seeking opportunities, or a potential partner, we would love to hear from you!',
+                    'contact_email': 'Email',
+                    'contact_phone': 'Phone',
+                    'contact_location': 'Location',
+                    'contact_address': 'Riyadh, Saudi Arabia',
+                    'social_media': 'Follow Us on Social Media',
+                    'upcoming_events': 'Upcoming Events',
+                    'event_1': 'Workshop: Game Development for Beginners',
+                    'event_1_details': 'Online | Friday, August 23, 6-8 PM',
+                    'event_2': 'Preview of "The Leader Lamp" Game',
+                    'event_2_details': 'Riyadh | Saturday, September 14, 4-7 PM',
+                    'view_all_events': 'View All Events',
+                    'form_name': 'Name',
+                    'form_email': 'Email',
+                    'form_subject': 'Subject',
+                    'form_message': 'Message',
+                    'form_reason': 'Reason for Contact',
+                    'reason_general': 'General Inquiry',
+                    'reason_business': 'Business Opportunities',
+                    'reason_careers': 'Careers & Joining the Team',
+                    'reason_learning': 'Skills Development & Learning',
+                    'reason_support': 'Technical Support',
+                    'form_file_upload': 'Attach Files (Optional)',
+                    'upload_files': 'Click to upload files',
+                    'file_upload_note': 'Allowed files: PDF, DOC, PNG, JPG (Max 5MB)',
+                    'form_agreement': 'I agree to the privacy policy and terms of use',
+                    'form_newsletter': 'I would like to subscribe to the newsletter to receive updates',
+                    'form_submit': 'Send Message',
+                    
+                    'faq_label': 'FAQ',
+                    'faq_title': 'Frequently Asked Questions',
+                    'faq_q1': 'What games are you currently working on?',
+                    'faq_a1': 'We are currently working on "The Leader Lamp," a Metroidvania game focused on boss battles in a vast, interconnected world. We are also developing initial concepts for future projects that will be announced in due course.',
+                    'faq_q2': 'When will your games be released?',
+                    'faq_a2': 'We aim to release our first game "The Leader Lamp" in 2028. We are a small team working passionately to deliver a high-quality experience, so we prefer to take the time necessary to ensure the quality of the final product.',
+                    'faq_q3': 'How can I join the Astravorix team?',
+                    'faq_a3': 'We always welcome new talents! You can contact us directly through the contact form with your resume and portfolio (if available).',
+                    "faq_q4": "How can I follow the development progress of your games?",
+                    "faq_a4": "You can follow us on social media platforms, especially Discord and Twitter, to get the latest updates and news about our projects. You can also subscribe to our newsletter through the contact form to receive updates directly via email.",
+                    
+                    'footer_description': 'We create incredible worlds with Saudi hands – a game development studio striving for creativity',
+                    'footer_quick_links': 'Quick Links',
+                    'footer_home': 'Home',
+                    'footer_games': 'Games',
+                    'footer_learning': 'Learning',
+                    'footer_about': 'About Us',
+                    'footer_team': 'Our Team',
+                    'footer_contact': 'Contact Us',
+                    'footer_our_games': 'Our Games',
+                    'footer_upcoming': 'Upcoming Games',
+                    'footer_resources': 'Resources',
+                    'footer_learning_resources': 'Learning Resources',
+                    'footer_workshops': 'Workshops',
+                    'footer_blog': 'Blog',
+                    'footer_legal': 'Legal',
+                    'footer_privacy': 'Privacy Policy',
+                    'footer_terms': 'Terms of Use',
+                    'footer_cookies': 'Cookies Policy',
+                    'footer_contact_us': 'Contact Us',
+                    'footer_address': 'Riyadh, Saudi Arabia',
+                    'footer_copyright': 'All rights reserved © Astravorix 2024',
+                    'newsletter_join': 'Join Our Newsletter',
+                    "the_leader_lamp": "The Leader Lamp",
+                    "follow_us_again": "Follow Us Again",
+                    "job_opportunities": "Job Opportunities",
+                    "follow_us": "Follow Us",
+                    "new_tag": "New",
+                    "game_genre_label": "Metroidvania / Darkvania",
+                    "genre": "Genre",
+                    "expected_release_date": "Expected Release Date",
+                    "platforms": "Platforms",
+                    "development_status": "Development Status",
+                    "early_development": "Early Development"
+                }
             };
-            // Apply language to UI elements
+            
+            // Function to change language
             function changeLanguage(lang) {
                 // Update HTML lang and dir attributes
                 document.documentElement.lang = lang;
@@ -3151,29 +2808,31 @@
                 
                 // Apply translations to elements with data-lang-key attribute
                 const elements = document.querySelectorAll('[data-lang-key]');
+                const translationSet = translations[lang];
+                
                 elements.forEach(el => {
                     const key = el.getAttribute('data-lang-key');
-                    if (translations[lang] && translations[lang][key]) {
+                    if (translationSet && translationSet[key]) {
                         // Check if it's an input or textarea
                         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                             // For placeholder
                             if (el.getAttribute('placeholder')) {
-                                el.setAttribute('placeholder', translations[lang][key]);
+                                el.setAttribute('placeholder', translationSet[key]);
                             } 
                             // For value (e.g., submit buttons)
                             else if (el.type === 'submit' || el.type === 'button') {
-                                el.value = translations[lang][key];
+                                el.value = translationSet[key];
                             }
                         } 
                         // Regular elements
                         else {
-                            el.textContent = translations[lang][key];
+                            el.textContent = translationSet[key];
                         }
                     }
                 });
                 
                 // Update language options active state
-                langOptions.forEach(option => {
+                document.querySelectorAll('.lang-option').forEach(option => {
                     const optionLang = option.getAttribute('data-lang');
                     option.classList.toggle('active', optionLang === lang);
                 });
@@ -3182,7 +2841,7 @@
                 localStorage.setItem('language', lang);
             }
             
-            // Language option click handler
+            // Handle language switching when lang-option is clicked
             if (langOptions.length > 0) {
                 langOptions.forEach(option => {
                     option.addEventListener('click', function(e) {
@@ -3201,173 +2860,354 @@
                 changeLanguage(preferredLang);
             }
             
-            // Contact form handling with validation and accessibility
+            // Header scroll effect - optimized for performance
+            function updateHeader() {
+                if (header) {
+                    if (window.scrollY > 50) {
+                        header.classList.add('bg-dark-950/90', 'backdrop-blur-md', 'shadow-lg');
+                    } else {
+                        header.classList.remove('bg-dark-950/90', 'backdrop-blur-md', 'shadow-lg');
+                    }
+                }
+            }
             
+            // Add passive: true for better scroll performance
+            window.addEventListener('scroll', updateHeader, { passive: true });
+            updateHeader(); // Initial check
             
+            // Mobile menu toggle with ARIA support
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    isMobileMenuOpen = !isMobileMenuOpen;
+                    mobileMenuBtn.classList.toggle('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', isMobileMenuOpen);
+                    mobileMenu.style.transform = isMobileMenuOpen ? 'translateX(0)' : '';
+                    mobileMenu.setAttribute('aria-hidden', !isMobileMenuOpen);
+                    document.body.classList.toggle('no-scroll', isMobileMenuOpen);
+                });
+                
+                // Close mobile menu when clicking on a link
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        isMobileMenuOpen = false;
+                        mobileMenuBtn.classList.remove('active');
+                        mobileMenuBtn.setAttribute('aria-expanded', false);
+                        mobileMenu.style.transform = '';
+                        mobileMenu.setAttribute('aria-hidden', true);
+                        document.body.classList.remove('no-scroll');
+                    });
+                });
+            }
+            
+            // Language selector with ARIA support
+            if (langSelector && langDropdown) {
+                const langSelectorBtn = langSelector.querySelector('button');
+                
+                langSelector.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    isLangDropdownOpen = !isLangDropdownOpen;
+                    langDropdown.style.opacity = isLangDropdownOpen ? '1' : '0';
+                    langDropdown.style.visibility = isLangDropdownOpen ? 'visible' : 'hidden';
+                    langDropdown.style.transform = isLangDropdownOpen ? 'scale(1)' : 'scale(0.95)';
+                    
+                    if (langSelectorBtn) {
+                        langSelectorBtn.setAttribute('aria-expanded', isLangDropdownOpen);
+                    }
+                });
+                
+                document.addEventListener('click', function() {
+                    if (isLangDropdownOpen) {
+                        isLangDropdownOpen = false;
+                        langDropdown.style.opacity = '0';
+                        langDropdown.style.visibility = 'hidden';
+                        langDropdown.style.transform = 'scale(0.95)';
+                        
+                        if (langSelectorBtn) {
+                            langSelectorBtn.setAttribute('aria-expanded', false);
+                        }
+                    }
+                });
+            }
+            
+            // Scroll progress bar - throttled for performance
+            let lastScrollPosition = 0;
+            let ticking = false;
+            
+            function updateProgressBar() {
+                const windowHeight = window.innerHeight;
+                const fullHeight = document.body.scrollHeight - windowHeight;
+                const scrolled = window.scrollY;
+                const progress = Math.min(100, Math.max(0, (scrolled / fullHeight) * 100));
+                
+                if (progressBar) {
+                    progressBar.style.width = progress + '%';
+                }
+                
+                ticking = false;
+            }
+            
+            window.addEventListener('scroll', function() {
+                lastScrollPosition = window.scrollY;
+                
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        updateProgressBar();
+                        ticking = false;
+                    });
+                    
+                    ticking = true;
+                }
+            }, { passive: true });
+            
+            // Back to top button
+            function toggleBackToTopBtn() {
+                if (backToTopBtn) {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.style.opacity = '1';
+                    } else {
+                        backToTopBtn.style.opacity = '0';
+                    }
+                }
+            }
+            
+            window.addEventListener('scroll', toggleBackToTopBtn, { passive: true });
+            
+            if (backToTopBtn) {
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            if (scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // FAQ accordion with ARIA support
+            if (faqQuestions.length > 0) {
+                faqQuestions.forEach(question => {
+                    question.addEventListener('click', function() {
+                        const answer = this.nextElementSibling;
+                        const icon = this.querySelector('.faq-icon');
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                        
+                        // Close all other answers
+                        document.querySelectorAll('.faq-answer').forEach(item => {
+                            if (item !== answer) {
+                                item.style.maxHeight = '0';
+                                item.style.paddingTop = '0';
+                                
+                                const otherQuestion = item.previousElementSibling;
+                                const otherIcon = otherQuestion.querySelector('.faq-icon');
+                                
+                                if (otherQuestion) {
+                                    otherQuestion.setAttribute('aria-expanded', 'false');
+                                }
+                                
+                                if (otherIcon) {
+                                    otherIcon.style.transform = 'rotate(0deg)';
+                                }
+                            }
+                        });
+                        
+                        // Toggle current answer
+                        if (!isExpanded) {
+                            answer.style.maxHeight = answer.scrollHeight + 'px';
+                            answer.style.paddingTop = '1rem';
+                            icon.style.transform = 'rotate(180deg)';
+                            this.setAttribute('aria-expanded', 'true');
+                        } else {
+                            answer.style.maxHeight = '0';
+                            answer.style.paddingTop = '0';
+                            icon.style.transform = 'rotate(0deg)';
+                            this.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+                
+                // Open first FAQ by default
+                if (faqQuestions[0]) {
+                    const firstAnswer = faqQuestions[0].nextElementSibling;
+                    const firstIcon = faqQuestions[0].querySelector('.faq-icon');
+                    
+                    firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
+                    firstAnswer.style.paddingTop = '1rem';
+                    firstIcon.style.transform = 'rotate(180deg)';
+                    faqQuestions[0].setAttribute('aria-expanded', 'true');
+                }
+            }
+            
+            // Contact form handling with improved validation and error handling
             if (contactForm && formMessage) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // Basic validation
-                    let isValid = true;
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const subject = document.getElementById('subject').value;
-                    const message = document.getElementById('message').value;
-                    
-                    // Check required fields
-                    if (!name || !email || !subject || !message) {
-                        isValid = false;
+                    // Validate form
+                    if (!validateForm()) {
+                        return;
                     }
                     
-                    // Check email format
-                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailPattern.test(email)) {
-                        isValid = false;
+                    // Disable submit button and show loading state
+                    if (submitButton) {
+                        submitButton.disabled = true;
+                        submitButton.innerHTML = `
+                            <span class="relative z-10 flex items-center justify-center">
+                                <div class="loading-spinner mr-2"></div>
+                                <span>${document.documentElement.lang === 'ar' ? 'جاري الإرسال...' : 'Sending...'}</span>
+                            </span>
+                        `;
                     }
                     
-                    if (isValid) {
-                        // Show loading message
-                        formMessage.className = 'mt-4 text-center py-2 px-4 bg-dark-800/60 rounded-lg text-accent block';
-                        formMessage.textContent = document.documentElement.lang === 'ar' ? 
-                            'جاري إرسال رسالتك...' : 
-                            'Sending your message...';
+                    // Show loading message
+                    formMessage.className = 'mt-4 text-center py-2 px-4 bg-dark-800/60 rounded-lg text-accent block';
+                    formMessage.textContent = document.documentElement.lang === 'ar' ? 
+                        'جاري إرسال رسالتك...' : 
+                        'Sending your message...';
+                    
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    
+                    // Submit form via fetch API
+                    fetch(contactForm.action, {
+                        method: contactForm.method,
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        }
+                        throw new Error(document.documentElement.lang === 'ar' ? 
+                            'حدث خطأ أثناء إرسال النموذج. يرجى المحاولة مرة أخرى.' : 
+                            'There was an error submitting the form. Please try again.');
+                    })
+                    .then(data => {
+                        // Success
+                        formMessage.className = 'mt-4 text-center py-2 px-4 bg-green-950/40 text-green-400 rounded-lg block';
+                        formMessage.innerHTML = document.documentElement.lang === 'ar' ? 
+                            '<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> تم إرسال رسالتك بنجاح! سنرد عليك قريبًا.</span>' : 
+                            '<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> Message sent successfully! We\'ll get back to you soon.</span>';
                         
-                        // Submit form - this would normally use fetch or similar
-                        // but we're simulating success for this example
-                        setTimeout(() => {
-                            formMessage.className = 'mt-4 text-center py-2 px-4 bg-green-950/40 text-green-400 rounded-lg block';
-                            formMessage.innerHTML = document.documentElement.lang === 'ar' ? 
-                                '<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> تم إرسال رسالتك بنجاح! سنرد عليك قريبًا.</span>' : 
-                                '<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> Message sent successfully! We\'ll get back to you soon.</span>';
-                            
-                            // Reset form
-                            contactForm.reset();
-                            
-                            // Clear file list if present
-                            if (fileList) {
-                                fileList.innerHTML = '';
-                            }
-                            
-                            // Reset file label if present
-                            if (fileLabel) {
-                                fileLabel.textContent = document.documentElement.lang === 'ar' ? 
-                                    'اضغط لإرفاق ملفات' : 
-                                    'Click to upload files';
-                            }
-                        }, 1500);
-                    } else {
-                        // Show error message
+                        // Show toast notification
+                        showToast(document.documentElement.lang === 'ar' ? 'تم إرسال الرسالة بنجاح!' : 'Message sent successfully!');
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Clear file list if present
+                        if (fileList) {
+                            fileList.innerHTML = '';
+                        }
+                        
+                        // Reset file label if present
+                        if (fileLabel) {
+                            fileLabel.textContent = document.documentElement.lang === 'ar' ? 
+                                'اضغط لإرفاق ملفات' : 
+                                'Click to upload files';
+                        }
+                        
+                        // Reset submit button
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                            submitButton.innerHTML = `<span class="relative z-10" data-lang-key="form_submit">${document.documentElement.lang === 'ar' ? 'إرسال الرسالة' : 'Send Message'}</span>
+                                <span class="absolute inset-0 bg-gradient-to-r from-accent to-highlight opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>`;
+                        }
+                    })
+                    .catch(error => {
+                        // Error
                         formMessage.className = 'mt-4 text-center py-2 px-4 bg-red-950/40 text-red-400 rounded-lg block';
                         formMessage.innerHTML = document.documentElement.lang === 'ar' ? 
-                            '<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg> يرجى التحقق من صحة البيانات المدخلة.</span>' : 
-                            '<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg> Please check the entered information.</span>';
-                    }
-                });
-            }
-            
-            // Animate skill progress bars - Enhanced implementation
-            function animateSkillBars() {
-                if (!('IntersectionObserver' in window)) {
-                    // Fallback for browsers without IntersectionObserver
-                    skillProgressBars.forEach(bar => {
-                        setTimeout(() => {
-                            bar.classList.add('animate');
-                        }, 500);
-                    });
-                    return;
-                }
-                
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            setTimeout(() => {
-                                entry.target.classList.add('animate');
-                            }, 200);
-                            observer.unobserve(entry.target);
+                            `<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg> ${error.message}</span>` : 
+                            `<span class="flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg> ${error.message}</span>`;
+                        
+                        // Show toast notification
+                        showToast(document.documentElement.lang === 'ar' ? 'حدث خطأ أثناء إرسال الرسالة!' : 'Error sending message!', 5000);
+                        
+                        // Reset submit button
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                            submitButton.innerHTML = `<span class="relative z-10" data-lang-key="form_submit">${document.documentElement.lang === 'ar' ? 'إرسال الرسالة' : 'Send Message'}</span>
+                                <span class="absolute inset-0 bg-gradient-to-r from-accent to-highlight opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>`;
                         }
                     });
-                }, { threshold: 0.2 });
-                
-                skillProgressBars.forEach(bar => {
-                    observer.observe(bar);
                 });
             }
             
-            // Observe timeline items for animation - Enhanced implementation
-            function observeTimelineItems() {
-                if (!('IntersectionObserver' in window)) {
-                    // Fallback for browsers without IntersectionObserver
-                    timelineItems.forEach((item, index) => {
-                        setTimeout(() => {
-                            item.classList.add('visible');
-                        }, 300 * index);
+            // Skill tab functionality
+            if (skillTabs.length > 0) {
+                skillTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        // Get the skill category from data attribute
+                        const skillCategory = this.getAttribute('data-skill');
+                        
+                        // Reset all tabs
+                        skillTabs.forEach(t => {
+                            t.classList.remove('bg-primary-700', 'text-white');
+                            t.classList.add('bg-dark-800/60', 'text-dark-300', 'hover:bg-dark-700/60', 'hover:text-white');
+                        });
+                        
+                        // Set active tab
+                        this.classList.remove('bg-dark-800/60', 'text-dark-300', 'hover:bg-dark-700/60', 'hover:text-white');
+                        this.classList.add('bg-primary-700', 'text-white');
+                        
+                        // Update skill data based on the selected tab
+                        updateSkillData(skillCategory);
                     });
-                    return;
-                }
-                
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry, index) => {
-                        if (entry.isIntersecting) {
-                            setTimeout(() => {
-                                entry.target.classList.add('visible');
-                            }, 150 * index);
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
-                
-                timelineItems.forEach(item => {
-                    observer.observe(item);
                 });
             }
             
+            // Skill data and function to update it
+            const skillData = {
+                'programming': [
+                    { name: 'C#', value: 75 },
+                    { name: 'Unity', value: 80 },
+                    { name: 'Game Design', value: 65 },
+                    { name: 'Algorithms', value: 60 },
+                    { name: 'Performance Optimization', value: 70 }
+                ],
+                'design': [
+                    { name: 'UI/UX Design', value: 65 },
+                    { name: 'Character Design', value: 55 },
+                    { name: 'Environment Design', value: 60 },
+                    { name: 'Color Theory', value: 70 },
+                    { name: 'Game Assets', value: 50 }
+                ],
+                'animation': [
+                    { name: 'Sprite Animation', value: 60 },
+                    { name: '3D Animation', value: 40 },
+                    { name: 'Rigging', value: 35 },
+                    { name: 'Motion Graphics', value: 45 },
+                    { name: 'VFX', value: 30 }
+                ],
+                'sound': [
+                    { name: 'Game Audio', value: 40 },
+                    { name: 'Sound Effects', value: 55 },
+                    { name: 'Music Composition', value: 30 },
+                    { name: 'Voice Acting', value: 25 },
+                    { name: 'Audio Implementation', value: 45 }
+                ],
+                'story': [
+                    { name: 'Narrative Design', value: 60 },
+                    { name: 'Character Development', value: 70 },
+                    { name: 'World Building', value: 65 },
+                    { name: 'Dialogue Writing', value: 55 },
+                    { name: 'Quest Design', value: 50 }
+                ]
+            };
             
-            const skillProgressContainer = document.getElementById('skillProgressContainer');
-            const learningPathTimeline = document.getElementById('learningPathTimeline');
-            
-            // Function to update skill progress data
+            // Function to update skill data based on category
             function updateSkillData(skillCategory) {
+                const skillProgressContainer = document.getElementById('skillProgressContainer');
                 if (!skillProgressContainer) return;
-                
-                // Define skill data for different categories
-                const skillData = {
-                    'programming': [
-                        { name: 'C#', value: 75 },
-                        { name: 'Unity', value: 80 },
-                        { name: 'Game Design', value: 65 },
-                        { name: 'Algorithms', value: 60 },
-                        { name: 'Performance Optimization', value: 70 }
-                    ],
-                    'design': [
-                        { name: 'UI/UX Design', value: 65 },
-                        { name: 'Character Design', value: 55 },
-                        { name: 'Environment Design', value: 60 },
-                        { name: 'Color Theory', value: 70 },
-                        { name: 'Game Assets', value: 50 }
-                    ],
-                    'animation': [
-                        { name: 'Sprite Animation', value: 60 },
-                        { name: '3D Animation', value: 40 },
-                        { name: 'Rigging', value: 35 },
-                        { name: 'Motion Graphics', value: 45 },
-                        { name: 'VFX', value: 30 }
-                    ],
-                    'sound': [
-                        { name: 'Game Audio', value: 40 },
-                        { name: 'Sound Effects', value: 55 },
-                        { name: 'Music Composition', value: 30 },
-                        { name: 'Voice Acting', value: 25 },
-                        { name: 'Audio Implementation', value: 45 }
-                    ],
-                    'story': [
-                        { name: 'Narrative Design', value: 60 },
-                        { name: 'Character Development', value: 70 },
-                        { name: 'World Building', value: 65 },
-                        { name: 'Dialogue Writing', value: 55 },
-                        { name: 'Quest Design', value: 50 }
-                    ]
-                };
                 
                 // Choose skill data based on category
                 const skills = skillData[skillCategory] || skillData['programming'];
@@ -3390,449 +3230,19 @@
                 skillProgressContainer.innerHTML = skillHTML;
                 
                 // Animate the new skill bars
-                const newSkillBars = skillProgressContainer.querySelectorAll('.skill-progress-bar');
                 setTimeout(() => {
+                    const newSkillBars = skillProgressContainer.querySelectorAll('.skill-progress-bar');
                     newSkillBars.forEach(bar => {
                         bar.classList.add('animate');
                     });
                 }, 100);
             }
             
-            // Add skill tab click handlers
-            if (skillTabs.length > 0) {
-                skillTabs.forEach(tab => {
-                    tab.addEventListener('click', function() {
-                        // Get the skill category from text content or data attribute
-                        const skillCategory = this.textContent.toLowerCase().trim();
-                        
-                        // Reset all tabs
-                        skillTabs.forEach(t => {
-                            t.classList.remove('bg-primary-700', 'text-white');
-                            t.classList.add('bg-dark-800/60', 'text-dark-300', 'hover:bg-dark-700/60', 'hover:text-white');
-                        });
-                        
-                        // Set active tab
-                        this.classList.remove('bg-dark-800/60', 'text-dark-300', 'hover:bg-dark-700/60', 'hover:text-white');
-                        this.classList.add('bg-primary-700', 'text-white');
-                        
-                        // Update skill data based on the selected tab
-                        updateSkillData(skillCategory);
-                    });
-                });
-            }
-            
-            // Learning path progress animation with typing effect
-            function animateLearningPath() {
-                const steps = document.querySelectorAll('.learning-path-step');
-                
-                steps.forEach((step, index) => {
-                    // Add delay based on index to create sequential animation
-                    setTimeout(() => {
-                        step.classList.add('animate-fadeIn');
-                    }, 300 * index);
-                });
-            }
-            
-            // Typing effect for the learning path headings
-            function initTypeAnimation() {
-                const typingTexts = document.querySelectorAll('.typing-text');
-                
-                typingTexts.forEach(text => {
-                    const fullText = text.textContent;
-                    text.textContent = '';
-                    let charIndex = 0;
-                    
-                    function typeChar() {
-                        if (charIndex < fullText.length) {
-                            text.textContent += fullText.charAt(charIndex);
-                            charIndex++;
-                            setTimeout(typeChar, 100);
-                        }
-                    }
-                    
-                    // Start typing animation
-                    typeChar();
-                });
-            }
-            
-            
-            document.addEventListener('DOMContentLoaded', function() {
-                // Delay learning path animation to ensure it's visible when scrolled into view
-                if (learningPathTimeline) {
-                    const observer = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                animateLearningPath();
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    }, { threshold: 0.2 });
-                    
-                    observer.observe(learningPathTimeline);
-                }
-                
-                // Initialize typing effects
-                initTypeAnimation();
-                
-                // Initial skill data update for the default tab (Programming)
-                updateSkillData('programming');
-            });
+            // Initialize with welcome toast
+            setTimeout(() => {
+                showToast(document.documentElement.lang === 'ar' ? 'مرحبًا بك في Astravorix!' : 'Welcome to Astravorix!');
+            }, 2000);
         });
-        const skillData = {
-    'programming': [
-        { name: 'C#', value: 75 },
-        { name: 'Unity', value: 80 },
-        { name: 'Game Design', value: 65 },
-        { name: 'Algorithms', value: 60 },
-        { name: 'Performance Optimization', value: 70 }
-    ],
-    'design': [
-        { name: 'UI/UX Design', value: 65 },
-        { name: 'Character Design', value: 55 },
-        { name: 'Environment Design', value: 60 },
-        { name: 'Color Theory', value: 70 },
-        { name: 'Game Assets', value: 50 }
-    ],
-    'animation': [
-        { name: 'Sprite Animation', value: 60 },
-        { name: '3D Animation', value: 40 },
-        { name: 'Rigging', value: 35 },
-        { name: 'Motion Graphics', value: 45 },
-        { name: 'VFX', value: 30 }
-    ],
-    'sound': [
-        { name: 'Game Audio', value: 40 },
-        { name: 'Sound Effects', value: 55 },
-        { name: 'Music Composition', value: 30 },
-        { name: 'Voice Acting', value: 25 },
-        { name: 'Audio Implementation', value: 45 }
-    ],
-    'story': [
-        { name: 'Narrative Design', value: 60 },
-        { name: 'Character Development', value: 70 },
-        { name: 'World Building', value: 65 },
-        { name: 'Dialogue Writing', value: 55 },
-        { name: 'Quest Design', value: 50 }
-    ]
-};
-
-// Function to update skill data based on category
-function updateSkillData(skillCategory) {
-    const skillProgressContainer = document.getElementById('skillProgressContainer');
-    if (!skillProgressContainer) return;
-    
-    // Choose skill data based on category
-    const skills = skillData[skillCategory] || skillData['programming'];
-    
-    // Generate HTML for skills
-    let skillHTML = '';
-    skills.forEach(skill => {
-        skillHTML += `
-            <div class="skill-item">
-                <div class="flex justify-between mb-2">
-                    <span class="font-medium">${skill.name}</span>
-                    <span class="text-highlight">${skill.value}%</span>
-                </div>
-                <div class="skill-progress-bar" style="--progress-value: ${skill.value}%"></div>
-            </div>
-        `;
-    });
-    
-    // Update container
-    skillProgressContainer.innerHTML = skillHTML;
-    
-    // Animate the new skill bars
-    setTimeout(() => {
-        const newSkillBars = skillProgressContainer.querySelectorAll('.skill-progress-bar');
-        newSkillBars.forEach(bar => {
-            bar.classList.add('animate');
-        });
-    }, 100);
-}
-
-// Initialize skill data with the default "programming" category
-updateSkillData('programming');
-
-// Add language translations completion
-const englishTranslations = {
-    'nav_home': 'Home',
-    'nav_games': 'Games',
-    'nav_learning': 'Learning',
-    'nav_about': 'About Us',
-    'nav_team': 'Team',
-    'nav_contact': 'Contact',
-    'nav_try': 'Try Our Games',
-    
-    'news_1': 'Coming soon: The first game from Astravorix Studio!',
-    'news_2': 'Join our Discord community for the latest news and updates',
-    'news_3': 'Looking for new talents to join our team - Contact us now!',
-    
-    
-    'hero_tagline': 'A Saudi Game Studio',
-    'hero_title_1': 'We Create',
-    'hero_title_2': 'Incredible Worlds',
-    'hero_title_3': 'with Saudi Hands',
-    'hero_description': 'A small team with big ambitions, striving to develop unique games while continuously learning and improving.',
-    'hero_btn_explore': 'Explore Our Games',
-    'hero_btn_learning': 'Skill Development',
-    'hero_stat_months': 'Months Since Founding',
-    'hero_stat_games': 'Games in Development',
-    'hero_stat_team': 'Team Members',
-    'scroll_down': 'Scroll Down',
-    
-    'our_games': 'Our Games',
-    'games_title': 'Our Upcoming Games',
-    'games_subtitle': 'We are currently working on a collection of innovative games launching soon, each reflecting our vision and Saudi identity.',
-    'game1_name': 'The Leader Lamp',
-    'game1_desc': 'A boss fight-focused game set in a vast, interconnected world. It belongs to the Metroidvania genre while introducing a new category called Darkvania, offering a more challenging and darker experience.',
-    'game1_genre': 'Metroid/Darkvania',
-    'game_upcoming': 'Coming Soon...',
-    'game_upcoming_desc': 'Stay tuned for more amazing games coming soon. We are working hard to develop unique and special gaming experiences suitable for all players.',
-    'game_in_development': 'In Development',
-    'game_more': 'Learn More',
-    'games_view_all': 'View All Games',
-    'game_preview': 'Preview',
-    'game_details': 'Details',
-    'coming_soon': 'Coming Soon',
-    'dev_updates': 'Development Updates',
-    'dev_updates_title': 'Latest Development News',
-    'dev_updates_desc': 'Follow the latest updates on our game development process and the progress we\'re making on our various projects.',
-    'update_1': 'Completed the design of the main boss character in the game',
-    'update_2': 'Working on improving the combat system and player experience',
-    'update_3': 'Coming soon: Announcement of a new project!',
-    'view_all_updates': 'View All Updates',
-    
-    'learning_label': 'Learning Score',
-    'learning_title': 'Skill Development Journey',
-    'learning_subtitle': 'At Astravorix, we believe in the importance of continuous learning and skill development. We track our progress as a team to enhance our capabilities and achieve our professional goals.',
-    'skill_programming': 'Programming',
-    'skill_design': 'Design',
-    'skill_animation': 'Animation',
-    'skill_sound': 'Sound',
-    'skill_story': 'Storytelling',
-    'skills_progress': 'Skills Progress',
-    'learning_goals': 'Our Learning Goals',
-    'goal_1': 'Develop advanced programming skills in C# and Unity',
-    'goal_2': 'Improve performance optimization techniques and algorithms',
-    'goal_3': 'Master game AI techniques',
-    'goal_4': 'Learn animation techniques and 3D design',
-    'learning_path': 'Learning Path',
-    'learning_step1': 'Fundamentals',
-    'learning_step1_desc': 'Learn the basics of game development, C# programming, and introduction to Unity.',
-    'learning_step2': 'Initial Project',
-    'learning_step2_desc': 'Apply acquired knowledge to build a simple game and learn teamwork basics.',
-    'learning_step3': 'Intermediate Development',
-    'learning_step3_desc': 'Develop "The Leader Lamp" project and learn advanced techniques in Unity and game design.',
-    'learning_step4': 'Advanced Techniques',
-    'learning_step4_desc': 'Study advanced algorithms, performance optimization, game AI, and visual design.',
-    'learning_step5': 'Launch and Continuous Development',
-    'learning_step5_desc': 'Learn game launch processes, marketing, player analytics, and post-launch development.',
-    'status_completed': 'Completed',
-    'status_in_progress': 'In Progress',
-    'status_upcoming': 'Upcoming',
-    'learning_resources': 'Learning Resources',
-    'resource_1': 'Unity Learning',
-    'resource_1_desc': 'Official platform for learning Unity with interactive lessons and projects',
-    'resource_2': 'Brackeys',
-    'resource_2_desc': 'Educational channel offering programming and game development lessons',
-    'resource_3': 'Game Dev.tv',
-    'resource_3_desc': 'Professional courses in game development and programming',
-    'resource_4': 'Unity Forums',
-    'resource_4_desc': 'Community for discussing and solving game development issues',
-    'learn_more': 'Learn More',
-    'view_learning_dashboard': 'View Learning Dashboard',
-    'learning_score': 'Learning Score: 85',
-    'skills_specialization': 'Skills & Specializations',
-    'view_learning_path': 'View Learning Path',
-    
-    'join_community': 'Join Our Community',
-    'community_title': 'Be Part of the Journey',
-    'community_desc': 'Join our growing community of developers and enthusiastic players. Share your ideas, get exclusive updates, and be part of developing our games.',
-    
-    'about_us': 'About Us',
-    'about_title': 'Who We Are',
-    'about_p1': 'Our journey began as a graduation project, where we developed a game called "The Leader Lamp." While working on the game, some colleagues took an interest in the idea, and we started discussing the possibility of expanding into game development beyond our studies. Initially, it was just an idea, but it sparked our passion, leading us to consider forming a team.',
-    'about_p2': 'Over time, it became clear that we wanted to continue and grow in this field. Our goal was not just to create games but also to learn from the experience and enhance our skills in all aspects of development. This led to the founding of Astravorix, a team dedicated to working and learning together while focusing on delivering enjoyable gaming experiences.',
-    'about_p3': 'By the end of 2024, we officially began building the team, taking our first steps into the world of game development. Our journey is still in its early stages, and we know the road ahead is long, but we are committed to learning and evolving with every new project. This is our story so far, and we are excited to write the next chapters.',
-    'about_stat_months': 'Months Since Founding',
-    'about_stat_games': 'Games in Development',
-    'about_stat_team': 'Team Members',
-    'about_join_btn': 'Join Us',
-    
-    'our_team': 'Our Team',
-    'team_title': 'The Team',
-    'team_subtitle': 'We take pride in our exceptional team that combines passion, creativity, and skill in game development',
-    'team1_name': 'Yasser Moqbel',
-    'team1_role': 'Programmer, Artist, and Team Founder',
-    'team1_bio': 'A programmer and artist with one and a half years of experience in game development. I have worked on designing and programming multiple projects. Currently, I serve as the leader of Astravorix, aspiring to develop innovative games that blend creativity and technology.',
-    'team2_name': 'Yousef Abdullah',
-    'team2_role': 'Game Tester & Bug Finder',
-    'team2_bio': 'Part of the game testing team, focusing on gameplay experience and identifying any issues that may affect smoothness. Works on examining details and ensuring everything functions as it should, helping the team improve performance before release.',
-    'join_team_title': 'Join Our Team',
-    'join_team_desc': 'Do you have a passion for game development and want to be part of an ambitious team? We are always looking for new talents to join our adventure.',
-    'team_join_btn': 'Join Our Team',
-    'open_position_1': 'Game Developer (Unity)',
-    'open_position_1_desc': 'Experience with C# and Unity, able to develop gameplay mechanics',
-    'open_position_2': '2D/3D Game Artist',
-    'open_position_2_desc': 'Experience in game art design and character design',
-    
-    'contact_us': 'Contact Us',
-    'contact_title': 'Contact Us',
-    'contact_subtitle': 'We look forward to connecting with you! Whether you\'re interested in our games, seeking a partnership, or want to join our team',
-    'contact_info_title': 'Stay Connected',
-    'contact_description': 'We believe in the power of community and collaboration. Whether you are a passionate gamer, a developer seeking opportunities, or a potential partner, we would love to hear from you!',
-    'contact_email': 'Email',
-    'contact_phone': 'Phone',
-    'contact_location': 'Location',
-    'contact_address': 'Riyadh, Saudi Arabia',
-    'social_media': 'Follow Us on Social Media',
-    'upcoming_events': 'Upcoming Events',
-    'event_1': 'Workshop: Game Development for Beginners',
-    'event_1_details': 'Online | Friday, August 23, 6-8 PM',
-    'event_2': 'Preview of "The Leader Lamp" Game',
-    'event_2_details': 'Riyadh | Saturday, September 14, 4-7 PM',
-    'view_all_events': 'View All Events',
-    'form_name': 'Name',
-    'form_email': 'Email',
-    'form_subject': 'Subject',
-    'form_message': 'Message',
-    'form_reason': 'Reason for Contact',
-    'reason_general': 'General Inquiry',
-    'reason_business': 'Business Opportunities',
-    'reason_careers': 'Careers & Joining the Team',
-    'reason_learning': 'Skills Development & Learning',
-    'reason_support': 'Technical Support',
-    'form_file_upload': 'Attach Files (Optional)',
-    'upload_files': 'Click to upload files',
-    'file_upload_note': 'Allowed files: PDF, DOC, PNG, JPG (Max 5MB)',
-    'form_agreement': 'I agree to the privacy policy and terms of use',
-    'form_newsletter': 'I would like to subscribe to the newsletter to receive updates',
-    'form_submit': 'Send Message',
-    
-    'faq_label': 'FAQ',
-    'faq_title': 'Frequently Asked Questions',
-    'faq_q1': 'What games are you currently working on?',
-    'faq_a1': 'We are currently working on "The Leader Lamp," a Metroidvania game focused on boss battles in a vast, interconnected world. We are also developing initial concepts for future projects that will be announced in due course.',
-    'faq_q2': 'When will your games be released?',
-    'faq_a2': 'We aim to release our first game "The Leader Lamp" in 2028. We are a small team working passionately to deliver a high-quality experience, so we prefer to take the time necessary to ensure the quality of the final product.',
-    'faq_q3': 'How can I join the Astravorix team?',
-    'faq_a3': 'We always welcome new talents! You can contact us directly through the contact form with your resume and portfolio (if available).',
-    "faq_q4": "How can I follow the development progress of your games?",
-    "faq_a4": "You can follow us on social media platforms, especially Discord and Twitter, to get the latest updates and news about our projects. You can also subscribe to our newsletter through the contact form to receive updates directly via email.",
-    
-    'footer_description': 'We create incredible worlds with Saudi hands – a game development studio striving for creativity',
-    'footer_quick_links': 'Quick Links',
-    'footer_home': 'Home',
-    'footer_games': 'Games',
-    'footer_learning': 'Learning',
-    'footer_about': 'About Us',
-    'footer_team': 'Our Team',
-    'footer_contact': 'Contact Us',
-    'footer_our_games': 'Our Games',
-    'footer_upcoming': 'Upcoming Games',
-    'footer_resources': 'Resources',
-    'footer_learning_resources': 'Learning Resources',
-    'footer_workshops': 'Workshops',
-    'footer_blog': 'Blog',
-    'footer_legal': 'Legal',
-    'footer_privacy': 'Privacy Policy',
-    'footer_terms': 'Terms of Use',
-    'footer_cookies': 'Cookies Policy',
-    'footer_contact_us': 'Contact Us',
-    'footer_address': 'Riyadh, Saudi Arabia',
-    'footer_copyright': 'All rights reserved © Astravorix 2024',
-    'newsletter_join': 'Join Our Newsletter',
-    "the_leader_lamp": "the leader lamp",
-    "follow_us_again": "Follow Us Again",
-    "job_opportunities": "Job Opportunities",
-    "follow_us": "Follow Us",
-    "new_tag": "New",
-    "game_genre_label": "Metroidvania / Darkvania",
-    "genre": "Genre",
-    "expected_release_date": "Expected Release Date",
-    "platforms": "Platforms",
-    "development_status": "Development Status",
-    "early_development": "Early Development"
-};
-
-// Function to change language
-function changeLanguage(lang) {
-    // Update HTML lang and dir attributes
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    
-    // Update active language display
-    const currentLang = document.getElementById('currentLang');
-    const currentLangFooter = document.getElementById('currentLangFooter');
-    
-    if (currentLang) {
-        currentLang.textContent = lang === 'ar' ? 'العربية' : 'English';
-    }
-    
-    if (currentLangFooter) {
-        currentLangFooter.textContent = lang === 'ar' ? 'العربية' : 'English';
-    }
-    
-    // Apply translations to elements with data-lang-key attribute
-    const elements = document.querySelectorAll('[data-lang-key]');
-    const translationSet = lang === 'ar' ? translations['ar'] : englishTranslations;
-    
-    elements.forEach(el => {
-        const key = el.getAttribute('data-lang-key');
-        if (translationSet && translationSet[key]) {
-            // Check if it's an input or textarea
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                // For placeholder
-                if (el.getAttribute('placeholder')) {
-                    el.setAttribute('placeholder', translationSet[key]);
-                } 
-                // For value (e.g., submit buttons)
-                else if (el.type === 'submit' || el.type === 'button') {
-                    el.value = translationSet[key];
-                }
-            } 
-            // Regular elements
-            else {
-                el.textContent = translationSet[key];
-            }
-        }
-    });
-    
-    // Update language options active state
-    document.querySelectorAll('.lang-option').forEach(option => {
-        const optionLang = option.getAttribute('data-lang');
-        option.classList.toggle('active', optionLang === lang);
-    });
-    
-    // Save language preference
-    localStorage.setItem('language', lang);
-}
-
-// Handle language switching when lang-option is clicked
-document.querySelectorAll('.lang-option').forEach(option => {
-    option.addEventListener('click', function() {
-        const lang = this.getAttribute('data-lang');
-        changeLanguage(lang);
-    });
-});
-
-// Initialize language from localStorage or browser preference
-const savedLang = localStorage.getItem('language');
-const browserLang = navigator.language || navigator.userLanguage;
-const preferredLang = savedLang || (browserLang.startsWith('ar') ? 'ar' : 'en');
-
-// Apply initial language
-document.addEventListener('DOMContentLoaded', function() {
-    changeLanguage(preferredLang);
-});
-
-// Initialize event listeners when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Show welcome toast after a short delay
-    setTimeout(() => {
-        showToast(document.documentElement.lang === 'ar' ? 'مرحبًا بك في Astravorix!' : 'Welcome to Astravorix!');
-    }, 2000);
-});
     </script>
 </body>
 </html>
