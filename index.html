@@ -2040,7 +2040,7 @@
             <div class="dark-glass rounded-2xl overflow-hidden shadow-2xl">
                 <div class="relative">
                     <div class="aspect-video bg-gradient-to-br from-primary-800 to-dark-900 flex items-center justify-center">
-                        <img src="Main_Menu.png" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="Main Menu.png" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     </div>
                     <button id="closeGamePreview" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-dark-800/80 text-white flex items-center justify-center hover:bg-accent transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -2141,8 +2141,8 @@
                     gameDetailssBtns.forEach(btn => {
                         btn.addEventListener('click', function(e) {
                             e.preventDefault();
-                            const gameId = this.getAttribute('data-game');
-                            showToast('جاري تحميل تفاصيل اللعبة...');
+                            const gameId = this.getAttribute('-loading_game_details');
+                            showToast ('جاري تحميل تفاصيل اللعبة...');
                             // Here you would typically load game details via AJAX
                             setTimeout(() => {
                                 gamePreviewModal.classList.remove('opacity-0', 'pointer-events-none');
@@ -2418,6 +2418,7 @@
                     'hero_stat_team': 'أعضاء فريق العمل',
                     'scroll_down': 'اسحب للأسفل',
                     
+                    "loading_game_details":" جاري تحميل تفاصيل اللعبة...",
                     'our_games': 'ألعابنا',
                     'games_title': 'ألعابنا القادمة',
                     'games_subtitle': 'نعمل حاليًا على مجموعة من الألعاب المبتكرة التي ستنطلق قريبًا، كل لعبة تعكس رؤيتنا وهويتنا السعودية',
@@ -2617,6 +2618,7 @@
                     'hero_stat_team': 'Team Members',
                     'scroll_down': 'Scroll Down',
                     
+                    "loading_game_details": "Loading game details...",
                     'our_games': 'Our Games',
                     'games_title': 'Our Upcoming Games',
                     'games_subtitle': 'We are currently working on a collection of innovative games launching soon, each reflecting our vision and Saudi identity.',
