@@ -2142,7 +2142,8 @@
                         btn.addEventListener('click', function(e) {
                             e.preventDefault();
                             const gameId = this.getAttribute('-loading_game_details');
-                            showToast ('جاري تحميل تفاصيل اللعبة...');
+                            
+                            showToast(document.documentElement.lang === 'ar' ? 'جاري تحميل تفاصيل اللعبة...' : 'loading game details...');
                             // Here you would typically load game details via AJAX
                             setTimeout(() => {
                                 gamePreviewModal.classList.remove('opacity-0', 'pointer-events-none');
